@@ -14,9 +14,9 @@ Method | HTTP request | Description
 [**get_devices**](DeviceApi.md#get_devices) | **GET** /subscriptions/{subscriptionId}/registries/{registryId}/devices | 
 [**get_states**](DeviceApi.md#get_states) | **GET** /subscriptions/{subscriptionid}/registries/{registryId}/devices/{deviceId}/states | 
 [**send_command_to_device**](DeviceApi.md#send_command_to_device) | **POST** /subscriptions/{subscriptionid}/registries/{registryId}/devices/{deviceId}/sendCommandToDevice | 
-[**send_configuration_to_device**](DeviceApi.md#send_configuration_to_device) | **POST** /subscriptions/{subscriptionid}/registries/{registryId}/devices/{deviceId}/sendConfigurationToDevice | 
 [**un_bind_device**](DeviceApi.md#un_bind_device) | **POST** /subscriptions/{subscriptionId}/registries/{registryId}/unbindDeviceFromGateway | 
 [**un_bind_devices**](DeviceApi.md#un_bind_devices) | **POST** /subscriptions/{subscriptionId}/registries/{registryId}/unbindDevicesFromGateway | 
+[**update_configuration_to_device**](DeviceApi.md#update_configuration_to_device) | **POST** /subscriptions/{subscriptionid}/registries/{registryId}/devices/{deviceId}/updateConfigurationToDevice | 
 [**update_device**](DeviceApi.md#update_device) | **PATCH** /subscriptions/{subscriptionId}/registries/{registryId}/devices/{deviceId} | 
 
 
@@ -301,7 +301,7 @@ with OmniCore.ApiClient(configuration) as api_client:
     api_instance = OmniCore.DeviceApi(api_client)
     subscription_id = 'subscription_id_example' # str | Subscription ID
     registry_id = 'registry_id_example' # str | Registry ID
-    device = OmniCore.NewDevice() # NewDevice | application/json
+    device = OmniCore.CreateNewDevice() # CreateNewDevice | application/json
 
     try:
         api_response = api_instance.create_device(subscription_id, registry_id, device)
@@ -317,7 +317,7 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **subscription_id** | **str**| Subscription ID | 
  **registry_id** | **str**| Registry ID | 
- **device** | [**NewDevice**](NewDevice.md)| application/json | 
+ **device** | [**CreateNewDevice**](CreateNewDevice.md)| application/json | 
 
 ### Return type
 
@@ -842,88 +842,6 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **send_configuration_to_device**
-> DeviceConfig send_configuration_to_device(subscriptionid, registry_id, device_id, device)
-
-
-
-Send A Config To A Device
-
-### Example
-
-* Bearer (JWT) Authentication (bearerAuth):
-```python
-from __future__ import print_function
-import time
-import os
-import OmniCore
-from OmniCore.rest import ApiException
-from pprint import pprint
-# Defining the host is optional and defaults to https://demo-api.omnicore.cloud.korewireless.com/model-state-management
-# See configuration.py for a list of all supported configuration parameters.
-configuration = OmniCore.Configuration(
-    host = "https://demo-api.omnicore.cloud.korewireless.com/model-state-management"
-)
-
-# The client must configure the authentication and authorization parameters
-# in accordance with the API server security policy.
-# Examples for each auth method are provided below, use the example that
-# satisfies your auth use case.
-
-# Configure Bearer authorization (JWT): bearerAuth
-configuration = OmniCore.Configuration(
-    access_token = os.environ["BEARER_TOKEN"]
-)
-
-# Enter a context with an instance of the API client
-with OmniCore.ApiClient(configuration) as api_client:
-    # Create an instance of the API class
-    api_instance = OmniCore.DeviceApi(api_client)
-    subscriptionid = 'subscriptionid_example' # str | Subscription ID
-    registry_id = 'registry_id_example' # str | Registry ID
-    device_id = 'device_id_example' # str | Device ID
-    device = OmniCore.DeviceConfiguration() # DeviceConfiguration | application/json
-
-    try:
-        api_response = api_instance.send_configuration_to_device(subscriptionid, registry_id, device_id, device)
-        print("The response of DeviceApi->send_configuration_to_device:\n")
-        pprint(api_response)
-    except Exception as e:
-        print("Exception when calling DeviceApi->send_configuration_to_device: %s\n" % e)
-```
-
-### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **subscriptionid** | **str**| Subscription ID | 
- **registry_id** | **str**| Registry ID | 
- **device_id** | **str**| Device ID | 
- **device** | [**DeviceConfiguration**](DeviceConfiguration.md)| application/json | 
-
-### Return type
-
-[**DeviceConfig**](DeviceConfig.md)
-
-### Authorization
-
-[bearerAuth](../README.md#bearerAuth)
-
-### HTTP request headers
-
- - **Content-Type**: application/json
- - **Accept**: application/json
-
-### HTTP response details
-| Status code | Description | Response headers |
-|-------------|-------------|------------------|
-**200** | OK |  -  |
-**400** | Bad Request |  -  |
-**404** | Not Found |  -  |
-**500** | Internal Server Error |  -  |
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
-
 # **un_bind_device**
 > Info un_bind_device(subscription_id, registry_id, device)
 
@@ -1064,6 +982,88 @@ Name | Type | Description  | Notes
 ### Return type
 
 [**Info**](Info.md)
+
+### Authorization
+
+[bearerAuth](../README.md#bearerAuth)
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** | OK |  -  |
+**400** | Bad Request |  -  |
+**404** | Not Found |  -  |
+**500** | Internal Server Error |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **update_configuration_to_device**
+> DeviceConfig update_configuration_to_device(subscriptionid, registry_id, device_id, device)
+
+
+
+Update A Configuration Of A Device
+
+### Example
+
+* Bearer (JWT) Authentication (bearerAuth):
+```python
+from __future__ import print_function
+import time
+import os
+import OmniCore
+from OmniCore.rest import ApiException
+from pprint import pprint
+# Defining the host is optional and defaults to https://demo-api.omnicore.cloud.korewireless.com/model-state-management
+# See configuration.py for a list of all supported configuration parameters.
+configuration = OmniCore.Configuration(
+    host = "https://demo-api.omnicore.cloud.korewireless.com/model-state-management"
+)
+
+# The client must configure the authentication and authorization parameters
+# in accordance with the API server security policy.
+# Examples for each auth method are provided below, use the example that
+# satisfies your auth use case.
+
+# Configure Bearer authorization (JWT): bearerAuth
+configuration = OmniCore.Configuration(
+    access_token = os.environ["BEARER_TOKEN"]
+)
+
+# Enter a context with an instance of the API client
+with OmniCore.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = OmniCore.DeviceApi(api_client)
+    subscriptionid = 'subscriptionid_example' # str | Subscription ID
+    registry_id = 'registry_id_example' # str | Registry ID
+    device_id = 'device_id_example' # str | Device ID
+    device = OmniCore.DeviceConfiguration() # DeviceConfiguration | application/json
+
+    try:
+        api_response = api_instance.update_configuration_to_device(subscriptionid, registry_id, device_id, device)
+        print("The response of DeviceApi->update_configuration_to_device:\n")
+        pprint(api_response)
+    except Exception as e:
+        print("Exception when calling DeviceApi->update_configuration_to_device: %s\n" % e)
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **subscriptionid** | **str**| Subscription ID | 
+ **registry_id** | **str**| Registry ID | 
+ **device_id** | **str**| Device ID | 
+ **device** | [**DeviceConfiguration**](DeviceConfiguration.md)| application/json | 
+
+### Return type
+
+[**DeviceConfig**](DeviceConfig.md)
 
 ### Authorization
 
