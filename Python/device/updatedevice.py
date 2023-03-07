@@ -25,7 +25,7 @@ with OmniCore.ApiClient(configuration) as api_client:
     registry_id = 'Insert Registry Here'  # str | Registry ID
     device_id = 'shaizdev00'  # str | Device ID
     # str | Required. Only updates the device fields indicated by this mask. The field mask must not be empty, and it must not contain fields that are immutable or only set by the server. Mutable top-level fields: credentials,logLevel, blocked, and metadata
-    update_mask = 'crdentials,logLevel,blocked,metadata'
+    update_mask = 'credentials,logLevel,blocked,metadata'
     device = OmniCore.UpdateDevice()  # UpdateDevice | application/json
     device.blocked = False
     device.credentials = []
