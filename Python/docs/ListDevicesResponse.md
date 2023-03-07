@@ -1,0 +1,31 @@
+# ListDevicesResponse
+
+
+## Properties
+Name | Type | Description | Notes
+------------ | ------------- | ------------- | -------------
+**devices** | [**List[Device]**](Device.md) |  | 
+**page_number** | **int** |  | [optional] 
+**page_size** | **int** |  | [optional] 
+**total_count** | **int** |  | [optional] 
+
+## Example
+
+```python
+from OmniCore.models.list_devices_response import ListDevicesResponse
+
+# TODO update the JSON string below
+json = "{}"
+# create an instance of ListDevicesResponse from a JSON string
+list_devices_response_instance = ListDevicesResponse.from_json(json)
+# print the JSON string representation of the object
+print ListDevicesResponse.to_json()
+
+# convert the object into a dict
+list_devices_response_dict = list_devices_response_instance.to_dict()
+# create an instance of ListDevicesResponse from a dict
+list_devices_response_form_dict = list_devices_response.from_dict(list_devices_response_dict)
+```
+[[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
+
+
