@@ -75,7 +75,7 @@ with OmniCore.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = OmniCore.DeviceApi(api_client)
     subscription_id = 'subscription_id_example' # str | Subscription ID
-    registry_id = 'registry_id_example' # str | Registry ID
+    registry_id = 'Insert Registry Here' # str | Registry ID
     device = OmniCore.BindRequest() # BindRequest | application/json
 
     try:

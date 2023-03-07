@@ -2,13 +2,13 @@
 
 All URIs are relative to *https://demo-api.omnicore.cloud.korewireless.com/model-state-management*
 
-Method | HTTP request | Description
-------------- | ------------- | -------------
-[**create_registry**](RegistryApi.md#create_registry) | **POST** /subscriptions/{subscriptionId}/registries | 
-[**delete_registry**](RegistryApi.md#delete_registry) | **DELETE** /subscriptions/{subscriptionId}/registries/{registryId} | 
-[**get_registries**](RegistryApi.md#get_registries) | **GET** /subscriptions/{subscriptionId}/registries | 
-[**get_registry**](RegistryApi.md#get_registry) | **GET** /subscriptions/{subscriptionId}/registries/{registryId} | 
-[**update_registry**](RegistryApi.md#update_registry) | **PATCH** /subscriptions/{subscriptionId}/registries/{registryId} | 
+| Method                                                | HTTP request                                                       | Description |
+| ----------------------------------------------------- | ------------------------------------------------------------------ | ----------- |
+| [**create_registry**](RegistryApi.md#create_registry) | **POST** /subscriptions/{subscriptionId}/registries                |
+| [**delete_registry**](RegistryApi.md#delete_registry) | **DELETE** /subscriptions/{subscriptionId}/registries/{registryId} |
+| [**get_registries**](RegistryApi.md#get_registries)   | **GET** /subscriptions/{subscriptionId}/registries                 |
+| [**get_registry**](RegistryApi.md#get_registry)       | **GET** /subscriptions/{subscriptionId}/registries/{registryId}    |
+| [**update_registry**](RegistryApi.md#update_registry) | **PATCH** /subscriptions/{subscriptionId}/registries/{registryId}  |
 
 
 # **create_registry**
@@ -61,10 +61,10 @@ with OmniCore.ApiClient(configuration) as api_client:
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **subscription_id** | **str**| Subscription ID | 
- **registry** | [**NewRegistry**](NewRegistry.md)| application/json | 
+| Name                | Type                              | Description      | Notes |
+| ------------------- | --------------------------------- | ---------------- | ----- |
+| **subscription_id** | **str**                           | Subscription ID  |
+| **registry**        | [**NewRegistry**](NewRegistry.md) | application/json |
 
 ### Return type
 
@@ -80,12 +80,12 @@ Name | Type | Description  | Notes
  - **Accept**: application/json
 
 ### HTTP response details
-| Status code | Description | Response headers |
-|-------------|-------------|------------------|
-**200** | OK |  -  |
-**400** | Bad Request |  -  |
-**404** | Not Found |  -  |
-**500** | Internal Server Error |  -  |
+| Status code | Description           | Response headers |
+| ----------- | --------------------- | ---------------- |
+| **200**     | OK                    | -                |
+| **400**     | Bad Request           | -                |
+| **404**     | Not Found             | -                |
+| **500**     | Internal Server Error | -                |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
@@ -127,7 +127,7 @@ with OmniCore.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = OmniCore.RegistryApi(api_client)
     subscription_id = 'subscription_id_example' # str | Subscription ID
-    registry_id = 'registry_id_example' # str | Registry ID
+    registry_id = 'Insert Registry Here' # str | Registry ID
 
     try:
         api_response = api_instance.delete_registry(subscription_id, registry_id)
@@ -139,10 +139,10 @@ with OmniCore.ApiClient(configuration) as api_client:
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **subscription_id** | **str**| Subscription ID | 
- **registry_id** | **str**| Registry ID | 
+| Name                | Type    | Description     | Notes |
+| ------------------- | ------- | --------------- | ----- |
+| **subscription_id** | **str** | Subscription ID |
+| **registry_id**     | **str** | Registry ID     |
 
 ### Return type
 
@@ -158,12 +158,12 @@ Name | Type | Description  | Notes
  - **Accept**: application/json
 
 ### HTTP response details
-| Status code | Description | Response headers |
-|-------------|-------------|------------------|
-**200** | OK |  -  |
-**400** | Bad Request |  -  |
-**404** | Not Found |  -  |
-**500** | Internal Server Error |  -  |
+| Status code | Description           | Response headers |
+| ----------- | --------------------- | ---------------- |
+| **200**     | OK                    | -                |
+| **400**     | Bad Request           | -                |
+| **404**     | Not Found             | -                |
+| **500**     | Internal Server Error | -                |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
@@ -218,11 +218,11 @@ with OmniCore.ApiClient(configuration) as api_client:
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **subscription_id** | **str**| Subscription ID | 
- **page_number** | **int**| Page Number | [optional] 
- **page_size** | **int**| Page Size | [optional] 
+| Name                | Type    | Description     | Notes      |
+| ------------------- | ------- | --------------- | ---------- |
+| **subscription_id** | **str** | Subscription ID |
+| **page_number**     | **int** | Page Number     | [optional] |
+| **page_size**       | **int** | Page Size       | [optional] |
 
 ### Return type
 
@@ -238,12 +238,12 @@ Name | Type | Description  | Notes
  - **Accept**: application/json
 
 ### HTTP response details
-| Status code | Description | Response headers |
-|-------------|-------------|------------------|
-**200** | OK |  -  |
-**400** | Bad Request |  -  |
-**404** | Not Found |  -  |
-**500** | Internal Server Error |  -  |
+| Status code | Description           | Response headers |
+| ----------- | --------------------- | ---------------- |
+| **200**     | OK                    | -                |
+| **400**     | Bad Request           | -                |
+| **404**     | Not Found             | -                |
+| **500**     | Internal Server Error | -                |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
@@ -285,7 +285,7 @@ with OmniCore.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = OmniCore.RegistryApi(api_client)
     subscription_id = 'subscription_id_example' # str | Subscription ID
-    registry_id = 'registry_id_example' # str | Registry ID
+    registry_id = 'Insert Registry Here' # str | Registry ID
 
     try:
         api_response = api_instance.get_registry(subscription_id, registry_id)
@@ -297,10 +297,10 @@ with OmniCore.ApiClient(configuration) as api_client:
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **subscription_id** | **str**| Subscription ID | 
- **registry_id** | **str**| Registry ID | 
+| Name                | Type    | Description     | Notes |
+| ------------------- | ------- | --------------- | ----- |
+| **subscription_id** | **str** | Subscription ID |
+| **registry_id**     | **str** | Registry ID     |
 
 ### Return type
 
@@ -316,12 +316,12 @@ Name | Type | Description  | Notes
  - **Accept**: application/json
 
 ### HTTP response details
-| Status code | Description | Response headers |
-|-------------|-------------|------------------|
-**200** | OK |  -  |
-**400** | Bad Request |  -  |
-**404** | Not Found |  -  |
-**500** | Internal Server Error |  -  |
+| Status code | Description           | Response headers |
+| ----------- | --------------------- | ---------------- |
+| **200**     | OK                    | -                |
+| **400**     | Bad Request           | -                |
+| **404**     | Not Found             | -                |
+| **500**     | Internal Server Error | -                |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
@@ -363,7 +363,7 @@ with OmniCore.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = OmniCore.RegistryApi(api_client)
     subscription_id = 'subscription_id_example' # str | Subscription ID
-    registry_id = 'registry_id_example' # str | Registry ID
+    registry_id = 'Insert Registry Here' # str | Registry ID
     update_mask = 'update_mask_example' # str | values to be updated: eventNotificationConfigs,stateNotificationConfig.pubsub_topic_name,logNotificationConfig.pubsub_topic_name,mqttConfig.mqtt_enabled_state,httpConfig.http_enabled_state,logLevel,credentials
     registry = OmniCore.UpdateRegistry() # UpdateRegistry | application/json
 
@@ -377,12 +377,12 @@ with OmniCore.ApiClient(configuration) as api_client:
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **subscription_id** | **str**| Subscription ID | 
- **registry_id** | **str**| Registry ID | 
- **update_mask** | **str**| values to be updated: eventNotificationConfigs,stateNotificationConfig.pubsub_topic_name,logNotificationConfig.pubsub_topic_name,mqttConfig.mqtt_enabled_state,httpConfig.http_enabled_state,logLevel,credentials | 
- **registry** | [**UpdateRegistry**](UpdateRegistry.md)| application/json | 
+| Name                | Type                                    | Description                                                                                                                                                                                                       | Notes |
+| ------------------- | --------------------------------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ----- |
+| **subscription_id** | **str**                                 | Subscription ID                                                                                                                                                                                                   |
+| **registry_id**     | **str**                                 | Registry ID                                                                                                                                                                                                       |
+| **update_mask**     | **str**                                 | values to be updated: eventNotificationConfigs,stateNotificationConfig.pubsub_topic_name,logNotificationConfig.pubsub_topic_name,mqttConfig.mqtt_enabled_state,httpConfig.http_enabled_state,logLevel,credentials |
+| **registry**        | [**UpdateRegistry**](UpdateRegistry.md) | application/json                                                                                                                                                                                                  |
 
 ### Return type
 
@@ -398,12 +398,12 @@ Name | Type | Description  | Notes
  - **Accept**: application/json
 
 ### HTTP response details
-| Status code | Description | Response headers |
-|-------------|-------------|------------------|
-**200** | OK |  -  |
-**400** | Bad Request |  -  |
-**404** | Not Found |  -  |
-**500** | Internal Server Error |  -  |
+| Status code | Description           | Response headers |
+| ----------- | --------------------- | ---------------- |
+| **200**     | OK                    | -                |
+| **400**     | Bad Request           | -                |
+| **404**     | Not Found             | -                |
+| **500**     | Internal Server Error | -                |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
