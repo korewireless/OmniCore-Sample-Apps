@@ -24,7 +24,7 @@ with OmniCore.ApiClient(configuration) as api_client:
     api_instance = OmniCore.DeviceApi(api_client)
     subscription_id = 'Insert Subscription Here'  # str | Subscription ID
     registry_id = 'Insert Registry Here'  # str | Registry ID
-    device = OmniCore.NewDevice(
+    device = OmniCore.CreateNewDevice(
         id="Insert Gateway Id here",
 
     )  # NewDevice | application/json

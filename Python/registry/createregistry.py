@@ -28,13 +28,13 @@ with OmniCore.ApiClient(configuration) as api_client:
     )
     registry.event_notification_configs = [
         OmniCore.EventNotificationConfig(
-            pubsubTopicName="projects/gcp-iot-core-361019/topics/data",
+            pubsubTopicName="projects/gcp project id /topics/pubsubtopic name",
             subfolderMatches=""
         )
     ]
 
     registry.state_notification_config = OmniCore.NotificationConfig(
-        pubsubTopicName="projects/gcp-iot-core-361019/topics/control"
+        pubsubTopicName="projects/gcp project id /topics/pubsubtopic name"
     )
     registry.credentials = [
         OmniCore.RegistryCredential(

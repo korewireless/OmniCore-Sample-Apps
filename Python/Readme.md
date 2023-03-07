@@ -75,7 +75,7 @@ with OmniCore.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = OmniCore.DeviceApi(api_client)
     subscription_id = 'subscription_id_example' # str | Subscription ID
-    registry_id = 'Insert Registry Here' # str | Registry ID
+    registry_id = 'registry_id_example' # str | Registry ID
     device = OmniCore.BindRequest() # BindRequest | application/json
 
     try:
@@ -120,6 +120,8 @@ All URIs are relative to *https://demo-api.omnicore.cloud.korewireless.com/model
  - [BindRequestIdsGateway](docs/BindRequestIdsGateway.md)
  - [BlockCommunicationBody](docs/BlockCommunicationBody.md)
  - [CreateNewDevice](docs/CreateNewDevice.md)
+ - [CreateRegistry200Response](docs/CreateRegistry200Response.md)
+ - [CreateRegistryRequest](docs/CreateRegistryRequest.md)
  - [Device](docs/Device.md)
  - [DeviceCertificate](docs/DeviceCertificate.md)
  - [DeviceCommand](docs/DeviceCommand.md)
@@ -136,7 +138,7 @@ All URIs are relative to *https://demo-api.omnicore.cloud.korewireless.com/model
  - [HttpConfig](docs/HttpConfig.md)
  - [Info](docs/Info.md)
  - [ListDeviceConfigVersionsResponse](docs/ListDeviceConfigVersionsResponse.md)
- - [ListDeviceRegistriesResponse](docs/ListDeviceRegistriesResponse.md)
+ - [ListDeviceRegistries](docs/ListDeviceRegistries.md)
  - [ListDeviceStatesResponse](docs/ListDeviceStatesResponse.md)
  - [ListDevicesResponse](docs/ListDevicesResponse.md)
  - [LogLevel](docs/LogLevel.md)
@@ -149,6 +151,7 @@ All URIs are relative to *https://demo-api.omnicore.cloud.korewireless.com/model
  - [RegistryCredential](docs/RegistryCredential.md)
  - [UpdateDevice](docs/UpdateDevice.md)
  - [UpdateRegistry](docs/UpdateRegistry.md)
+ - [UpdateRegistryRequest](docs/UpdateRegistryRequest.md)
  - [X509CertificateDetails](docs/X509CertificateDetails.md)
 
 
