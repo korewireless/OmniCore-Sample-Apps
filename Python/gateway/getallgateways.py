@@ -39,7 +39,7 @@ with OmniCore.ApiClient(configuration) as api_client:
     # str | If set, only devices associated with the specified gateway are returned. The gateway ID can be numeric (num_id) or the user-defined string (id). For example, if 123 is specified, only devices bound to the gateway with num_id 123 are returned (optional)
     gateway_list_options_associations_gateway_id = ''
     # str | If GATEWAY is specified, only gateways are returned. If NON_GATEWAY is specified, only non-gateway devices are returned. If GATEWAY_TYPE_UNSPECIFIED is specified, all devices are returned. (optional)
-    gateway_list_options_gateway_type = ''
+    gateway_list_options_gateway_type = 'GATEWAY'
 
     try:
         # Get All Devices
@@ -53,5 +53,6 @@ with OmniCore.ApiClient(configuration) as api_client:
         print("Log Level:%s" % api_response.devices[0].log_level)
         print("Created On:%s" % api_response.devices[0].created_on)
         print("Updated On:%s" % api_response.devices[0].updated_on)
+        print("Gateway Config:%s" % api_response.devices[0].gateway_config)
     except Exception as e:
         print("Exception when calling DeviceApi->get_devices: %s\n" % e)
