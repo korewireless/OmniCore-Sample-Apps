@@ -39,7 +39,10 @@ module.exports.createRegistry = (token,subId,regId,hostUrl) => {
         }
         ]
     } // NewRegistry | application/json
-    apiInstance.createRegistry(subscriptionId, registry, (error, data, response) => {
+    let opts = {
+      registry,
+    }
+    apiInstance.createRegistry(subscriptionId, opts, (error, data, response) => {
       if (error) {
         console.error(error);
       } else {
@@ -140,7 +143,7 @@ let apiInstance = new OmnicoreModelAndStateManagementApi.RegistryApi();
 let subscriptionId = subId; // String | Subscription ID
 let registryId = regId; // String | Registry ID
 let updateMask = 'eventNotificationConfigs, stateNotificationConfig.pubsub_topic_name, logNotificationConfig.pubsub_topic_name, mqttConfig.mqtt_enabled_state, httpConfig.http_enabled_state, logLevel, credentials; // String | values to be updated: eventNotificationConfigs,stateNotificationConfig.pubsub_topic_name,logNotificationConfig.pubsub_topic_name,mqttConfig.mqtt_enabled_state,httpConfig.http_enabled_state,logLevel,credentials'
-let registryObj = {
+let registry = {
     mqttConfig: {
         mqttEnabledState: "MQTT_ENABLED" //String | Mqtt Config
     },
@@ -160,7 +163,10 @@ let registryObj = {
         }
     ]
 }
-apiInstance.updateRegistry(subscriptionId, registryId, updateMask, registryObj, (error, data, response) => {
+let opts = {
+  registry,
+}
+apiInstance.updateRegistry(subscriptionId, registryId, updateMask, opts, (error, data, response) => {
   if (error) {
     console.error(error);
   } else {
