@@ -26,7 +26,7 @@ with OmniCore.ApiClient(configuration) as api_client:
     registry_id = 'Insert Registry Here'  # str | Registry ID
     # str | values to be updated: eventNotificationConfigs,stateNotificationConfig.pubsub_topic_name,logNotificationConfig.pubsub_topic_name,mqttConfig.mqtt_enabled_state,httpConfig.http_enabled_state,logLevel,credentials
     update_mask = 'eventNotificationConfigs,stateNotificationConfig.pubsub_topic_name,logNotificationConfig.pubsub_topic_name,mqttConfig.mqtt_enabled_state,httpConfig.http_enabled_state,logLevel,credentials'
-    registry = OmniCore.UpdateRegistry()  # UpdateRegistry | application/json
+    registry = OmniCore.DeviceRegistry(id=registry_id)  # UpdateRegistry | application/json
     registry.event_notification_configs = [
         OmniCore.EventNotificationConfig(
             pubsubTopicName="projects/gcp project id /topics/pubsubtopic name",

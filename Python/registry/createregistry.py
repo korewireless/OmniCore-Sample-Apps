@@ -22,7 +22,7 @@ with OmniCore.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = OmniCore.RegistryApi(api_client)
     subscription_id = 'Insert Subscription Here'  # str | Subscription ID
-    registry = OmniCore.NewRegistry(
+    registry = OmniCore.DeviceRegistry(
         id="Insert Registry Here",
 
     )

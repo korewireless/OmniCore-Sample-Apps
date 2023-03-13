@@ -24,12 +24,12 @@ with OmniCore.ApiClient(configuration) as api_client:
     api_instance = OmniCore.DeviceApi(api_client)
     registry_id = 'Insert Registry Here'  # str | Registry ID
     subscription_id = 'Insert Subscription Here'  # str | Subscription ID
-    device_id = 'shaizgw00'  # str | Device ID
+    gateway_id = 'shaizgw00'  # str | Device ID
 
     try:
         # Get Device
         api_response = api_instance.get_device(
-            registry_id, subscription_id, device_id)
+            registry_id, subscription_id, gateway_id)
         print("The response of DeviceApi->get_device:\n")
         print("Device Id:%s" % api_response.id)
         print("Device Full Name:%s" % api_response.name)

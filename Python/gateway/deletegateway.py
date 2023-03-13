@@ -24,11 +24,11 @@ with OmniCore.ApiClient(configuration) as api_client:
     api_instance = OmniCore.DeviceApi(api_client)
     subscription_id = 'Insert Subscription Here'  # str | Subscription ID
     registry_id = 'Insert Registry Here'  # str | Registry ID
-    device_id = 'shaizgw00'  # str | Device ID
+    gateway_id = 'shaizgw00'  # str | Device ID
 
     try:
         api_response = api_instance.delete_device(
-            subscription_id, registry_id, device_id)
+            subscription_id, registry_id, gateway_id)
         print("The response of DeviceApi->delete_device:\n")
         pprint(api_response)
     except Exception as e:

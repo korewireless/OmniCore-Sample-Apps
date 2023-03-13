@@ -301,7 +301,7 @@ with OmniCore.ApiClient(configuration) as api_client:
     api_instance = OmniCore.DeviceApi(api_client)
     subscription_id = 'subscription_id_example' # str | Subscription ID
     registry_id = 'registry_id_example' # str | Registry ID
-    device = OmniCore.CreateNewDevice() # CreateNewDevice | application/json
+    device = OmniCore.Device() # Device | application/json
 
     try:
         api_response = api_instance.create_device(subscription_id, registry_id, device)
@@ -317,7 +317,7 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **subscription_id** | **str**| Subscription ID | 
  **registry_id** | **str**| Registry ID | 
- **device** | [**CreateNewDevice**](CreateNewDevice.md)| application/json | 
+ **device** | [**Device**](Device.md)| application/json | 
 
 ### Return type
 
@@ -1124,8 +1124,8 @@ with OmniCore.ApiClient(configuration) as api_client:
     subscription_id = 'subscription_id_example' # str | Subscription ID
     registry_id = 'registry_id_example' # str | Registry ID
     device_id = 'device_id_example' # str | Device ID
-    update_mask = 'update_mask_example' # str | Required. Only updates the device fields indicated by this mask. The field mask must not be empty, and it must not contain fields that are immutable or only set by the server. Mutable top-level fields: credentials,log_level, blocked, and metadata
-    device = OmniCore.UpdateDevice() # UpdateDevice | application/json
+    update_mask = 'update_mask_example' # str | Required. Only updates the device fields indicated by this mask. The field mask must not be empty, and it must not contain fields that are immutable or only set by the server. Mutable top-level fields: credentials,logLevel, blocked, and metadata
+    device = OmniCore.Device() # Device | application/json
 
     try:
         api_response = api_instance.update_device(subscription_id, registry_id, device_id, update_mask, device)
@@ -1142,8 +1142,8 @@ Name | Type | Description  | Notes
  **subscription_id** | **str**| Subscription ID | 
  **registry_id** | **str**| Registry ID | 
  **device_id** | **str**| Device ID | 
- **update_mask** | **str**| Required. Only updates the device fields indicated by this mask. The field mask must not be empty, and it must not contain fields that are immutable or only set by the server. Mutable top-level fields: credentials,log_level, blocked, and metadata | 
- **device** | [**UpdateDevice**](UpdateDevice.md)| application/json | 
+ **update_mask** | **str**| Required. Only updates the device fields indicated by this mask. The field mask must not be empty, and it must not contain fields that are immutable or only set by the server. Mutable top-level fields: credentials,logLevel, blocked, and metadata | 
+ **device** | [**Device**](Device.md)| application/json | 
 
 ### Return type
 

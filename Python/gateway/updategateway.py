@@ -23,10 +23,10 @@ with OmniCore.ApiClient(configuration) as api_client:
     api_instance = OmniCore.DeviceApi(api_client)
     subscription_id = 'Insert Subscription Here'  # str | Subscription ID
     registry_id = 'Insert Registry Here'  # str | Registry ID
-    device_id = 'shaizgw00'  # str | Device ID
+    gateway_id = 'shaizgw00'  # str | Device ID
     # str | Required. Only updates the device fields indicated by this mask. The field mask must not be empty, and it must not contain fields that are immutable or only set by the server. Mutable top-level fields: credentials,logLevel, blocked, and metadata
     update_mask = 'credentials,logLevel,blocked,metadata'
-    device = OmniCore.UpdateDevice()  # UpdateDevice | application/json
+    device = OmniCore.Device(id=gateway_id)  # UpdateDevice | application/json
     device.blocked = False
     device.credentials = []
     device.credentials.append(OmniCore.DeviceCredential(
@@ -41,7 +41,7 @@ with OmniCore.ApiClient(configuration) as api_client:
 
     try:
         api_response = api_instance.update_device(
-            subscription_id, registry_id, device_id, update_mask, device)
+            subscription_id, registry_id, gateway_id, update_mask, device)
         print("The response of DeviceApi->update_device:\n")
         pprint(api_response)
     except Exception as e:
