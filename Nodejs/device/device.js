@@ -306,8 +306,8 @@ apiInstance.getStates(subscriptionid, registryId, deviceId, opts, (error, data, 
     console.error(error);
   } else {
     console.log('API called successfully. Returned data: ');
-    console.log("Binary Data: ",data.deviceStates[0].binaryData)
-    console.log("Update Time: ",data.deviceStates[0].updateTime)
+      console.log("Binary Data: ",data.deviceStates ? data.deviceStates[0].binaryData:"")
+      console.log("Update Time: ",data.deviceStates ? data.deviceStates[0].updateTime:"")
   }
 });
 }
