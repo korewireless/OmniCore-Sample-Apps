@@ -103,9 +103,9 @@ Class | Method | HTTP request | Description
 *DeviceApi* | [**get_devices**](docs/DeviceApi.md#get_devices) | **GET** /model-state-management/subscriptions/{subscriptionId}/registries/{registryId}/devices | 
 *DeviceApi* | [**get_states**](docs/DeviceApi.md#get_states) | **GET** /model-state-management/subscriptions/{subscriptionid}/registries/{registryId}/devices/{deviceId}/states | 
 *DeviceApi* | [**send_command_to_device**](docs/DeviceApi.md#send_command_to_device) | **POST** /model-state-management/subscriptions/{subscriptionid}/registries/{registryId}/devices/{deviceId}/sendCommandToDevice | 
-*DeviceApi* | [**send_configuration_to_device**](docs/DeviceApi.md#send_configuration_to_device) | **POST** /model-state-management/subscriptions/{subscriptionid}/registries/{registryId}/devices/{deviceId}/sendConfigurationToDevice | 
 *DeviceApi* | [**un_bind_device**](docs/DeviceApi.md#un_bind_device) | **POST** /model-state-management/subscriptions/{subscriptionId}/registries/{registryId}/unbindDeviceFromGateway | 
 *DeviceApi* | [**un_bind_devices**](docs/DeviceApi.md#un_bind_devices) | **POST** /model-state-management/subscriptions/{subscriptionId}/registries/{registryId}/unbindDevicesFromGateway | 
+*DeviceApi* | [**update_configuration_to_device**](docs/DeviceApi.md#update_configuration_to_device) | **POST** /model-state-management/subscriptions/{subscriptionid}/registries/{registryId}/devices/{deviceId}/updateConfigurationToDevice | 
 *DeviceApi* | [**update_device**](docs/DeviceApi.md#update_device) | **PATCH** /model-state-management/subscriptions/{subscriptionId}/registries/{registryId}/devices/{deviceId} | 
 *RegistryApi* | [**create_registry**](docs/RegistryApi.md#create_registry) | **POST** /model-state-management/subscriptions/{subscriptionId}/registries | 
 *RegistryApi* | [**delete_registry**](docs/RegistryApi.md#delete_registry) | **DELETE** /model-state-management/subscriptions/{subscriptionId}/registries/{registryId} | 
