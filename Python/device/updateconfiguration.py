@@ -45,9 +45,9 @@ with OmniCore.ApiClient(configuration) as api_client:
     device.subfolder = ""
 
     try:
-        api_response = api_instance.update_configuration_to_device(
+        api_response = api_instance.send_configuration_to_device(
             subscriptionid, registry_id, device_id, device)
-        print("The response of DeviceApi->update_configuration_to_device:\n")
+        print("The response of DeviceApi->send_configuration_to_device:\n")
         print("Cloud Update Time", api_response.cloud_update_time)
     except Exception as e:
-        print("Exception when calling DeviceApi->update_configuration_to_device: %s\n" % e)
+        print("Exception when calling DeviceApi->send_configuration_to_device: %s\n" % e)

@@ -1,14 +1,14 @@
 # OmniCore.RegistryApi
 
-All URIs are relative to *https://demo-api.omnicore.cloud.korewireless.com/model-state-management*
+All URIs are relative to *https://demo-api.omnicore.cloud.korewireless.com*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**create_registry**](RegistryApi.md#create_registry) | **POST** /subscriptions/{subscriptionId}/registries | 
-[**delete_registry**](RegistryApi.md#delete_registry) | **DELETE** /subscriptions/{subscriptionId}/registries/{registryId} | 
-[**get_registries**](RegistryApi.md#get_registries) | **GET** /subscriptions/{subscriptionId}/registries | 
-[**get_registry**](RegistryApi.md#get_registry) | **GET** /subscriptions/{subscriptionId}/registries/{registryId} | 
-[**update_registry**](RegistryApi.md#update_registry) | **PATCH** /subscriptions/{subscriptionId}/registries/{registryId} | 
+[**create_registry**](RegistryApi.md#create_registry) | **POST** /model-state-management/subscriptions/{subscriptionId}/registries | 
+[**delete_registry**](RegistryApi.md#delete_registry) | **DELETE** /model-state-management/subscriptions/{subscriptionId}/registries/{registryId} | 
+[**get_registries**](RegistryApi.md#get_registries) | **GET** /model-state-management/subscriptions/{subscriptionId}/registries | 
+[**get_registry**](RegistryApi.md#get_registry) | **GET** /model-state-management/subscriptions/{subscriptionId}/registries/{registryId} | 
+[**update_registry**](RegistryApi.md#update_registry) | **PATCH** /model-state-management/subscriptions/{subscriptionId}/registries/{registryId} | 
 
 
 # **create_registry**
@@ -28,10 +28,10 @@ import os
 import OmniCore
 from OmniCore.rest import ApiException
 from pprint import pprint
-# Defining the host is optional and defaults to https://demo-api.omnicore.cloud.korewireless.com/model-state-management
+# Defining the host is optional and defaults to https://demo-api.omnicore.cloud.korewireless.com
 # See configuration.py for a list of all supported configuration parameters.
 configuration = OmniCore.Configuration(
-    host = "https://demo-api.omnicore.cloud.korewireless.com/model-state-management"
+    host = "https://demo-api.omnicore.cloud.korewireless.com"
 )
 
 # The client must configure the authentication and authorization parameters
@@ -106,10 +106,10 @@ import os
 import OmniCore
 from OmniCore.rest import ApiException
 from pprint import pprint
-# Defining the host is optional and defaults to https://demo-api.omnicore.cloud.korewireless.com/model-state-management
+# Defining the host is optional and defaults to https://demo-api.omnicore.cloud.korewireless.com
 # See configuration.py for a list of all supported configuration parameters.
 configuration = OmniCore.Configuration(
-    host = "https://demo-api.omnicore.cloud.korewireless.com/model-state-management"
+    host = "https://demo-api.omnicore.cloud.korewireless.com"
 )
 
 # The client must configure the authentication and authorization parameters
@@ -184,10 +184,10 @@ import os
 import OmniCore
 from OmniCore.rest import ApiException
 from pprint import pprint
-# Defining the host is optional and defaults to https://demo-api.omnicore.cloud.korewireless.com/model-state-management
+# Defining the host is optional and defaults to https://demo-api.omnicore.cloud.korewireless.com
 # See configuration.py for a list of all supported configuration parameters.
 configuration = OmniCore.Configuration(
-    host = "https://demo-api.omnicore.cloud.korewireless.com/model-state-management"
+    host = "https://demo-api.omnicore.cloud.korewireless.com"
 )
 
 # The client must configure the authentication and authorization parameters
@@ -264,10 +264,10 @@ import os
 import OmniCore
 from OmniCore.rest import ApiException
 from pprint import pprint
-# Defining the host is optional and defaults to https://demo-api.omnicore.cloud.korewireless.com/model-state-management
+# Defining the host is optional and defaults to https://demo-api.omnicore.cloud.korewireless.com
 # See configuration.py for a list of all supported configuration parameters.
 configuration = OmniCore.Configuration(
-    host = "https://demo-api.omnicore.cloud.korewireless.com/model-state-management"
+    host = "https://demo-api.omnicore.cloud.korewireless.com"
 )
 
 # The client must configure the authentication and authorization parameters
@@ -342,10 +342,10 @@ import os
 import OmniCore
 from OmniCore.rest import ApiException
 from pprint import pprint
-# Defining the host is optional and defaults to https://demo-api.omnicore.cloud.korewireless.com/model-state-management
+# Defining the host is optional and defaults to https://demo-api.omnicore.cloud.korewireless.com
 # See configuration.py for a list of all supported configuration parameters.
 configuration = OmniCore.Configuration(
-    host = "https://demo-api.omnicore.cloud.korewireless.com/model-state-management"
+    host = "https://demo-api.omnicore.cloud.korewireless.com"
 )
 
 # The client must configure the authentication and authorization parameters
