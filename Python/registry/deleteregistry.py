@@ -4,7 +4,7 @@ import os
 import OmniCore
 from OmniCore.rest import ApiException
 from pprint import pprint
-# Defining the host is optional and defaults to https://demo-api.omnicore.cloud.korewireless.com/model-state-management
+# Defining the host is optional and defaults to https://demo-api.omnicore.cloud.korewireless.com
 # See configuration.py for a list of all supported configuration parameters.
 
 # The client must configure the authentication and authorization parameters
@@ -14,7 +14,7 @@ from pprint import pprint
 
 # Configure Bearer authorization (JWT): bearerAuth
 configuration = OmniCore.Configuration(
-    host="https://demo-api.omnicore.cloud.korewireless.com/model-state-management",
+    host="https://demo-api.omnicore.cloud.korewireless.com",
     access_token="Insert Token Here"
 )
 # Enter a context with an instance of the API client
