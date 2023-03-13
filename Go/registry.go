@@ -15,7 +15,7 @@ func CreateRegistry(registryId string, subscriptionId string, topicName string) 
 	var format = "X509_CERTIFICATE_PEM"
 	var MqttConfig = "MQTT_DISABLED"
 	var HttpConfig = "HTTP_DISABLED"
-	registry := omnicore.NewRegistry{
+	registry := omnicore.DeviceRegistry{
 		Id: registryId,
 		EventNotificationConfigs: []omnicore.EventNotificationConfig{
 			{
@@ -112,7 +112,6 @@ func GetRegistries(subscriptionId string) {
 
 func UpdateRegistry(subscriptionId string, registryId string) {
 	configuration := omnicore.NewConfiguration()
-	//configuration.Host = ""
 	apiClient := omnicore.NewAPIClient(configuration)
 	updateMask := "eventNotificationConfigs,stateNotificationConfig.pubsub_topic_name,logNotificationConfig.pubsub_topic_name,mqttConfig.mqtt_enabled_state,httpConfig.http_enabled_state,logLevel,credentials"
 	var eventTopic = "projects/gcp-iot-core-361019/topics/data"
@@ -122,7 +121,7 @@ func UpdateRegistry(subscriptionId string, registryId string) {
 	var format = "X509_CERTIFICATE_PEM"
 	var MqttConfig = "MQTT_ENABLED"
 	var HttpConfig = "HTTP_ENABLED"
-	registry := omnicore.UpdateRegistry{
+	registry := omnicore.DeviceRegistry{
 		EventNotificationConfigs: []omnicore.EventNotificationConfig{
 			{
 				PubsubTopicName: &eventTopic,
