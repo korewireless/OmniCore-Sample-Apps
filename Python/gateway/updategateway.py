@@ -4,7 +4,7 @@ import os
 import OmniCore
 from OmniCore.rest import ApiException
 from pprint import pprint
-# Defining the host is optional and defaults to https://demo-api.omnicore.cloud.korewireless.com/model-state-management
+# Defining the host is optional and defaults to https://demo-api.omnicore.cloud.korewireless.com
 # See configuration.py for a list of all supported configuration parameters.
 
 # The client must configure the authentication and authorization parameters
@@ -14,7 +14,7 @@ from pprint import pprint
 
 # Configure Bearer authorization (JWT): bearerAuth
 configuration = OmniCore.Configuration(
-    host="https://demo-api.omnicore.cloud.korewireless.com/model-state-management",
+    host="https://demo-api.omnicore.cloud.korewireless.com",
     access_token="Insert Token Here"
 )
 # Enter a context with an instance of the API client
@@ -23,10 +23,10 @@ with OmniCore.ApiClient(configuration) as api_client:
     api_instance = OmniCore.DeviceApi(api_client)
     subscription_id = 'Insert Subscription Here'  # str | Subscription ID
     registry_id = 'Insert Registry Here'  # str | Registry ID
-    device_id = 'shaizgw00'  # str | Device ID
+    gateway_id = 'shaizgw00'  # str | Device ID
     # str | Required. Only updates the device fields indicated by this mask. The field mask must not be empty, and it must not contain fields that are immutable or only set by the server. Mutable top-level fields: credentials,logLevel, blocked, and metadata
     update_mask = 'credentials,logLevel,blocked,metadata'
-    device = OmniCore.UpdateDevice()  # UpdateDevice | application/json
+    device = OmniCore.Device(id=gateway_id)  # UpdateDevice | application/json
     device.blocked = False
     device.credentials = []
     device.credentials.append(OmniCore.DeviceCredential(
@@ -41,7 +41,7 @@ with OmniCore.ApiClient(configuration) as api_client:
 
     try:
         api_response = api_instance.update_device(
-            subscription_id, registry_id, device_id, update_mask, device)
+            subscription_id, registry_id, gateway_id, update_mask, device)
         print("The response of DeviceApi->update_device:\n")
         pprint(api_response)
     except Exception as e:

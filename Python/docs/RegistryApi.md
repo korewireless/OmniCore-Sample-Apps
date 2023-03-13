@@ -1,18 +1,18 @@
 # OmniCore.RegistryApi
 
-All URIs are relative to *https://demo-api.omnicore.cloud.korewireless.com/model-state-management*
+All URIs are relative to *https://demo-api.omnicore.cloud.korewireless.com*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**create_registry**](RegistryApi.md#create_registry) | **POST** /subscriptions/{subscriptionId}/registries | 
-[**delete_registry**](RegistryApi.md#delete_registry) | **DELETE** /subscriptions/{subscriptionId}/registries/{registryId} | 
-[**get_registries**](RegistryApi.md#get_registries) | **GET** /subscriptions/{subscriptionId}/registries | 
-[**get_registry**](RegistryApi.md#get_registry) | **GET** /subscriptions/{subscriptionId}/registries/{registryId} | 
-[**update_registry**](RegistryApi.md#update_registry) | **PATCH** /subscriptions/{subscriptionId}/registries/{registryId} | 
+[**create_registry**](RegistryApi.md#create_registry) | **POST** /model-state-management/subscriptions/{subscriptionId}/registries | 
+[**delete_registry**](RegistryApi.md#delete_registry) | **DELETE** /model-state-management/subscriptions/{subscriptionId}/registries/{registryId} | 
+[**get_registries**](RegistryApi.md#get_registries) | **GET** /model-state-management/subscriptions/{subscriptionId}/registries | 
+[**get_registry**](RegistryApi.md#get_registry) | **GET** /model-state-management/subscriptions/{subscriptionId}/registries/{registryId} | 
+[**update_registry**](RegistryApi.md#update_registry) | **PATCH** /model-state-management/subscriptions/{subscriptionId}/registries/{registryId} | 
 
 
 # **create_registry**
-> CreateRegistry200Response create_registry(subscription_id, registry=registry)
+> DeviceRegistry create_registry(subscription_id, registry=registry)
 
 
 
@@ -28,10 +28,10 @@ import os
 import OmniCore
 from OmniCore.rest import ApiException
 from pprint import pprint
-# Defining the host is optional and defaults to https://demo-api.omnicore.cloud.korewireless.com/model-state-management
+# Defining the host is optional and defaults to https://demo-api.omnicore.cloud.korewireless.com
 # See configuration.py for a list of all supported configuration parameters.
 configuration = OmniCore.Configuration(
-    host = "https://demo-api.omnicore.cloud.korewireless.com/model-state-management"
+    host = "https://demo-api.omnicore.cloud.korewireless.com"
 )
 
 # The client must configure the authentication and authorization parameters
@@ -49,7 +49,7 @@ with OmniCore.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = OmniCore.RegistryApi(api_client)
     subscription_id = 'subscription_id_example' # str | Subscription ID
-    registry = OmniCore.CreateRegistryRequest() # CreateRegistryRequest | application/json (optional)
+    registry = OmniCore.DeviceRegistry() # DeviceRegistry | application/json (optional)
 
     try:
         api_response = api_instance.create_registry(subscription_id, registry=registry)
@@ -64,11 +64,11 @@ with OmniCore.ApiClient(configuration) as api_client:
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **subscription_id** | **str**| Subscription ID | 
- **registry** | [**CreateRegistryRequest**](CreateRegistryRequest.md)| application/json | [optional] 
+ **registry** | [**DeviceRegistry**](DeviceRegistry.md)| application/json | [optional] 
 
 ### Return type
 
-[**CreateRegistry200Response**](CreateRegistry200Response.md)
+[**DeviceRegistry**](DeviceRegistry.md)
 
 ### Authorization
 
@@ -106,10 +106,10 @@ import os
 import OmniCore
 from OmniCore.rest import ApiException
 from pprint import pprint
-# Defining the host is optional and defaults to https://demo-api.omnicore.cloud.korewireless.com/model-state-management
+# Defining the host is optional and defaults to https://demo-api.omnicore.cloud.korewireless.com
 # See configuration.py for a list of all supported configuration parameters.
 configuration = OmniCore.Configuration(
-    host = "https://demo-api.omnicore.cloud.korewireless.com/model-state-management"
+    host = "https://demo-api.omnicore.cloud.korewireless.com"
 )
 
 # The client must configure the authentication and authorization parameters
@@ -184,10 +184,10 @@ import os
 import OmniCore
 from OmniCore.rest import ApiException
 from pprint import pprint
-# Defining the host is optional and defaults to https://demo-api.omnicore.cloud.korewireless.com/model-state-management
+# Defining the host is optional and defaults to https://demo-api.omnicore.cloud.korewireless.com
 # See configuration.py for a list of all supported configuration parameters.
 configuration = OmniCore.Configuration(
-    host = "https://demo-api.omnicore.cloud.korewireless.com/model-state-management"
+    host = "https://demo-api.omnicore.cloud.korewireless.com"
 )
 
 # The client must configure the authentication and authorization parameters
@@ -264,10 +264,10 @@ import os
 import OmniCore
 from OmniCore.rest import ApiException
 from pprint import pprint
-# Defining the host is optional and defaults to https://demo-api.omnicore.cloud.korewireless.com/model-state-management
+# Defining the host is optional and defaults to https://demo-api.omnicore.cloud.korewireless.com
 # See configuration.py for a list of all supported configuration parameters.
 configuration = OmniCore.Configuration(
-    host = "https://demo-api.omnicore.cloud.korewireless.com/model-state-management"
+    host = "https://demo-api.omnicore.cloud.korewireless.com"
 )
 
 # The client must configure the authentication and authorization parameters
@@ -326,7 +326,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **update_registry**
-> CreateRegistry200Response update_registry(subscription_id, registry_id, update_mask, registry=registry)
+> DeviceRegistry update_registry(subscription_id, registry_id, update_mask, registry=registry)
 
 
 
@@ -342,10 +342,10 @@ import os
 import OmniCore
 from OmniCore.rest import ApiException
 from pprint import pprint
-# Defining the host is optional and defaults to https://demo-api.omnicore.cloud.korewireless.com/model-state-management
+# Defining the host is optional and defaults to https://demo-api.omnicore.cloud.korewireless.com
 # See configuration.py for a list of all supported configuration parameters.
 configuration = OmniCore.Configuration(
-    host = "https://demo-api.omnicore.cloud.korewireless.com/model-state-management"
+    host = "https://demo-api.omnicore.cloud.korewireless.com"
 )
 
 # The client must configure the authentication and authorization parameters
@@ -365,7 +365,7 @@ with OmniCore.ApiClient(configuration) as api_client:
     subscription_id = 'subscription_id_example' # str | Subscription ID
     registry_id = 'registry_id_example' # str | Registry ID
     update_mask = 'update_mask_example' # str | values to be updated: eventNotificationConfigs,stateNotificationConfig.pubsub_topic_name,logNotificationConfig.pubsub_topic_name,mqttConfig.mqtt_enabled_state,httpConfig.http_enabled_state,logLevel,credentials
-    registry = OmniCore.UpdateRegistryRequest() # UpdateRegistryRequest | application/json (optional)
+    registry = OmniCore.DeviceRegistry() # DeviceRegistry | application/json (optional)
 
     try:
         api_response = api_instance.update_registry(subscription_id, registry_id, update_mask, registry=registry)
@@ -382,11 +382,11 @@ Name | Type | Description  | Notes
  **subscription_id** | **str**| Subscription ID | 
  **registry_id** | **str**| Registry ID | 
  **update_mask** | **str**| values to be updated: eventNotificationConfigs,stateNotificationConfig.pubsub_topic_name,logNotificationConfig.pubsub_topic_name,mqttConfig.mqtt_enabled_state,httpConfig.http_enabled_state,logLevel,credentials | 
- **registry** | [**UpdateRegistryRequest**](UpdateRegistryRequest.md)| application/json | [optional] 
+ **registry** | [**DeviceRegistry**](DeviceRegistry.md)| application/json | [optional] 
 
 ### Return type
 
-[**CreateRegistry200Response**](CreateRegistry200Response.md)
+[**DeviceRegistry**](DeviceRegistry.md)
 
 ### Authorization
 

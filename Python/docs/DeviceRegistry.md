@@ -5,10 +5,10 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **id** | **str** |  | 
-**name** | **str** |  | [optional] 
-**parent** | **str** |  | 
-**created_on** | **str** |  | [optional] 
-**updated_on** | **str** |  | [optional] 
+**name** | **str** |  | [optional] [readonly] 
+**parent** | **str** |  | [optional] [readonly] 
+**created_on** | **str** |  | [optional] [readonly] 
+**updated_on** | **str** |  | [optional] [readonly] 
 **credentials** | [**List[RegistryCredential]**](RegistryCredential.md) |  | [optional] 
 **http_config** | [**HttpConfig**](HttpConfig.md) |  | [optional] 
 **mqtt_config** | [**MqttConfig**](MqttConfig.md) |  | [optional] 
@@ -16,8 +16,8 @@ Name | Type | Description | Notes
 **event_notification_configs** | [**List[EventNotificationConfig]**](EventNotificationConfig.md) |  | [optional] 
 **log_notification_config** | [**NotificationConfig**](NotificationConfig.md) |  | [optional] 
 **state_notification_config** | [**NotificationConfig**](NotificationConfig.md) |  | [optional] 
-**number_of_devices** | **int** |  | [optional] 
-**number_of_gateways** | **int** |  | [optional] 
+**number_of_devices** | **int** |  | [optional] [readonly] 
+**number_of_gateways** | **int** |  | [optional] [readonly] 
 
 ## Example
 

@@ -4,9 +4,9 @@
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**code** | **int** |  | [optional] 
-**details** | **str** |  | [optional] 
-**message** | **str** |  | [optional] 
+**code** | **int** |  | [optional] [readonly] 
+**details** | **str** |  | [optional] [readonly] 
+**message** | **str** |  | [optional] [readonly] 
 
 ## Example
 
