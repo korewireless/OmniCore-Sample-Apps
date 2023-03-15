@@ -22,7 +22,7 @@ configuration = OmniCore.Configuration(
 
 # Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 # configuration.api_key_prefix['apiKey'] = 'Bearer'
-
+# ALTERNATIVE
 # Configure Bearer authorization (JWT): bearerAuth
 # configuration = OmniCore.Configuration(
 #     access_token="Insert Token Here"
