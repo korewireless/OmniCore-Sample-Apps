@@ -1,6 +1,7 @@
 package main
 
 var jwtToken = "<YOUR ACCESS TOKEN>"
+var apiKey = "<YOUR API KEY>"
 
 func main() {
 	CreateRegistry("sample-registry-sdk", "korewireless-development", "projects/gcp-iot-core-361019/topics/data")

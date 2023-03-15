@@ -10,6 +10,7 @@ import (
 
 func CreateGateway(subscriptionId string, registryId string, deviceId string) {
 	configuration := omnicore.NewConfiguration()
+	configuration.AddDefaultHeader("x-api-key", apiKey)
 	apiClient := omnicore.NewAPIClient(configuration)
 	var format = "RSA_X509_PEM"
 	var key = "-----BEGIN CERTIFICATE-----\nMIIDujCCAqKgAwIBAgITaOszYpBme+SRHZUkFWLgDs7EMDANBgkqhkiG9w0BAQsF\nADAeMQ0wCwYDVQQKEwRrb3JlMQ0wCwYDVQQDEwRrb3JlMB4XDTIyMDgwNDEwMzQy\nMloXDTMyMDgwMTEwMzIwOFowADCCASIwDQYJKoZIhvcNAQEBBQADggEPADCCAQoC\nggEBAMFvTBHPdgH7+5wVlUnEdIS/0a4p9fkVzMdEMdDVr5s62VoGO7nZWxMCaxxU\nXqQiGuX3N7SINyD7h8LI8CxQsn5zyDda3QVNGU7I96iWjwzOYJmNHAN1nRI2hRDY\n8fJoQgTZI+IiRDBmgkmL9yjTY04qY7UP8zpofuMnKRuTwP6Ey1eFEMBqFfvgwrVl\niLNcq9At0bd/vlQ0VUnKV6oKqSTq9ZDPB6Cxu5amhejVwTeE6p5GGmiKw5vskmtB\ndGNgsom1K/pJdOMes8lODVp00tIVnsplL3jLgrWfbfCPALRnGz/C5XlKW8fNKEuW\nqFw2Lhnk51dtobw/oBo7vJcx2w0CAwEAAaOCAQ0wggEJMA4GA1UdDwEB/wQEAwIF\noDAMBgNVHRMBAf8EAjAAMB0GA1UdDgQWBBQUiRS8X3OWpJNpjQoJ+22xGb3xXTAf\nBgNVHSMEGDAWgBTKO7S10CConGVgZZli7NVAcim/AzCBjQYIKwYBBQUHAQEEgYAw\nfjB8BggrBgEFBQcwAoZwaHR0cDovL3ByaXZhdGVjYS1jb250ZW50LTYyZTM5YmRh\nLTAwMDAtMjI0My1hNjFhLTNjMjg2ZDRlZWUwYS5zdG9yYWdlLmdvb2dsZWFwaXMu\nY29tL2MwZGQxZjg3ZDcwZGZhMDEwNGEwL2NhLmNydDAZBgNVHREBAf8EDzANggtn\nYWRnZW9uLmNvbTANBgkqhkiG9w0BAQsFAAOCAQEAK82b/xGn8B6Nfogw0myKjy3O\nWg53YPXuct3E04qRmD3JJtFzpSkjI2WyRmIkRX1b5SKF+ImOmGzvENZDkjT/Y2I/\nnsBL639OlXnz/+GYSq4rL6fVxXistP4LGA+khoBYSfHFZb7EYoVOYJFzZjnvJbtz\n7XG0jTMeHo8KhCBPxrNWkOERrcc7OWqREldQ36yg7zdbRLjDOjeD6FByTrpRhbDC\n0AeozF9ug9W/gPYtnkI++ksUqjJcV06uGd+9XLJPGcjH0Bai1alxROh+dkWx6TcB\nHC94el4KR6EJijMvylmnOyKHedmYaDvb52+B6zXTW9rQkh1UycmONlmAlA3OeQ==\n-----END CERTIFICATE-----"
@@ -56,6 +57,7 @@ func CreateGateway(subscriptionId string, registryId string, deviceId string) {
 
 func GetGateway(subscriptionId string, registryId string, deviceId string) {
 	configuration := omnicore.NewConfiguration()
+	configuration.AddDefaultHeader("x-api-key", apiKey)
 	apiClient := omnicore.NewAPIClient(configuration)
 	ctx := context.WithValue(context.Background(), omnicore.ContextAccessToken, jwtToken)
 	response, r, err := apiClient.DeviceApi.GetDevice(ctx, registryId, subscriptionId, deviceId).Execute()
@@ -75,6 +77,7 @@ func GetGateway(subscriptionId string, registryId string, deviceId string) {
 
 func GetGateways(subscriptionId string, registryId string) {
 	configuration := omnicore.NewConfiguration()
+	configuration.AddDefaultHeader("x-api-key", apiKey)
 	apiClient := omnicore.NewAPIClient(configuration)
 	ctx := context.WithValue(context.Background(), omnicore.ContextAccessToken, jwtToken)
 	resp, r, err := apiClient.DeviceApi.GetDevices(ctx, registryId, subscriptionId).GatewayListOptionsGatewayType("GATEWAY").Execute()
@@ -97,6 +100,7 @@ func GetGateways(subscriptionId string, registryId string) {
 
 func UpdateGateway(subscriptionId string, registryId string, deviceId string) {
 	configuration := omnicore.NewConfiguration()
+	configuration.AddDefaultHeader("x-api-key", apiKey)
 	apiClient := omnicore.NewAPIClient(configuration)
 	updateMask := "credentials,logLevel,blocked,metadata"
 	var format = "RSA_X509_PEM"
@@ -139,6 +143,7 @@ func UpdateGateway(subscriptionId string, registryId string, deviceId string) {
 
 func DeleteGateway(subscriptionId string, registryId string, deviceId string) {
 	configuration := omnicore.NewConfiguration()
+	configuration.AddDefaultHeader("x-api-key", apiKey)
 	apiClient := omnicore.NewAPIClient(configuration)
 	ctx := context.WithValue(context.Background(), omnicore.ContextAccessToken, jwtToken)
 	resp, r, err := apiClient.DeviceApi.DeleteDevice(ctx, subscriptionId, registryId, deviceId).Execute()
@@ -155,6 +160,7 @@ func bindDeviceToGateway(subscriptionId string, registryId string, deviceId stri
 	device := *omnicore.NewBindRequest(deviceId, "sample-gateway-sdk") // BindRequest | application/json
 
 	configuration := omnicore.NewConfiguration()
+	configuration.AddDefaultHeader("x-api-key", apiKey)
 	apiClient := omnicore.NewAPIClient(configuration)
 	ctx := context.WithValue(context.Background(), omnicore.ContextAccessToken, jwtToken)
 	resp, r, err := apiClient.DeviceApi.BindDevice(ctx, subscriptionId, registryId).Device(device).Execute()
@@ -172,6 +178,7 @@ func unbindDeviceFromGateway(subscriptionId string, registryId string, deviceId 
 	device := *omnicore.NewBindRequest(deviceId, "sample-gateway-sdk") // BindRequest | application/json
 
 	configuration := omnicore.NewConfiguration()
+	configuration.AddDefaultHeader("x-api-key", apiKey)
 	apiClient := omnicore.NewAPIClient(configuration)
 	resp, r, err := apiClient.DeviceApi.UnBindDevice(ctx, subscriptionId, registryId).Device(device).Execute()
 	if err != nil {
@@ -188,6 +195,7 @@ func bindDevicesToGateway(subscriptionId string, registryId string, deviceId str
 	device := *omnicore.NewBindRequestIdsGateway([]string{deviceId}, "sample-gateway-sdk") // BindRequestIdsGateway | application/json
 
 	configuration := omnicore.NewConfiguration()
+	configuration.AddDefaultHeader("x-api-key", apiKey)
 	apiClient := omnicore.NewAPIClient(configuration)
 	resp, r, err := apiClient.DeviceApi.BindDevices(ctx, subscriptionId, registryId).Device(device).Execute()
 	if err != nil {
@@ -204,6 +212,7 @@ func unbindDevicesFromGateway(subscriptionId string, registryId string, deviceId
 	device := *omnicore.NewBindRequestIdsGateway([]string{deviceId}, "sample-gateway-sdk") // BindRequestIdsGateway | application/json
 
 	configuration := omnicore.NewConfiguration()
+	configuration.AddDefaultHeader("x-api-key", apiKey)
 	apiClient := omnicore.NewAPIClient(configuration)
 	resp, r, err := apiClient.DeviceApi.UnBindDevices(ctx, subscriptionId, registryId).Device(device).Execute()
 	if err != nil {
