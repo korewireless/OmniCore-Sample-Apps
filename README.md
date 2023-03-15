@@ -11,7 +11,10 @@ If the python package is hosted on a repository, you can install directly using:
 ```sh
 pip install git+https://github.com/korewireless/OmniCore-Python-SDK.git
 ```
-(you may need to run `pip` with root permission: `sudo pip install git+https://github.com/korewireless/OmniCore-Python-SDK.git`)
+you may need to run `pip` with root permission: 
+```sh
+`sudo pip install git+https://github.com/korewireless/OmniCore-Python-SDK.git`
+```
 
 [More Details](/Python/Readme.md)
 
@@ -32,7 +35,7 @@ dotnet add package KORE-Wireless.OmniCore --version 2.1.0
 Put the package under your project folder and add the following in import:
 
 ```golang
-import OmniCore "github.com/korewireless/OmniCore-Go-SDK"
+go get "github.com/korewireless/OmniCore-Go-SDK"
 ```
 
 [More Details](/Go/README.md)
@@ -44,12 +47,12 @@ import OmniCore "github.com/korewireless/OmniCore-Go-SDK"
 
 #### npm
 
-To publish the library as a [npm](https://www.npmjs.com/), please follow the procedure in ["Publishing npm packages"](https://docs.npmjs.com/getting-started/publishing-npm-packages).
 
-Then install it via:
+
+Install it via:
 
 ```shell
-npm install omni_core_model_and_state_management_api --save
+npm install https://github.com/korewireless/OmniCore-Node-SDK
 ```
 
 [More Details](/Nodejs/Readme.md)
