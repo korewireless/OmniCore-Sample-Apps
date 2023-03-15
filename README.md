@@ -1,5 +1,5 @@
 # OmniCore-Sample-Apps
-sample code in popular languages showiing how to consume OmniCore APIs
+Sample codes in popular languages showing OmniCore SDK usage
 
 
 ## Python
