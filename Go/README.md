@@ -11,13 +11,6 @@ For more information, please visit [http://www.korewireless.com](http://www.kore
 
 ## Installation
 
-Install the following dependencies:
-
-```shell
-go get github.com/stretchr/testify/assert
-go get golang.org/x/net/context
-```
-
 Put the package under your project folder and add the following in import:
 
 ```golang
