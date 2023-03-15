@@ -150,7 +150,7 @@ let registry = {
     httpConfig: {
         httpEnabledState: "HTTP_DISABLED" //String | Http Config 
     },
-    logLevel: "INFO", // String | Loglevel
+    logLevel: "ERROR", // String | Loglevel
     stateNotificationConfig: {
         pubsubTopicName: ""  // String | State Pubsub topic
     },

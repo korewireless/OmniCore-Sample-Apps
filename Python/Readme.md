@@ -64,6 +64,12 @@ configuration = OmniCore.Configuration(
 # Examples for each auth method are provided below, use the example that
 # satisfies your auth use case.
 
+# Configure API key authorization: apiKey
+configuration.api_key['apiKey'] = os.environ["API_KEY"]
+
+# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+# configuration.api_key_prefix['apiKey'] = 'Bearer'
+
 # Configure Bearer authorization (JWT): bearerAuth
 configuration = OmniCore.Configuration(
     access_token = os.environ["BEARER_TOKEN"]
@@ -152,6 +158,13 @@ Class | Method | HTTP request | Description
 ## bearerAuth
 
 - **Type**: Bearer authentication (JWT)
+
+
+## apiKey
+
+- **Type**: API key
+- **API key parameter name**: x-api-key
+- **Location**: HTTP header
 
 
 ## Author
