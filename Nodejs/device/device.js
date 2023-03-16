@@ -1,8 +1,11 @@
-var OmnicoreModelAndStateManagementApi = require('omni_core_model_and_state_management_api');;
+var OmnicoreModelAndStateManagementApi = require('omni_core_model_and_state_management_api');
 
-module.exports.createDevice =(token,subId,regId,devId,hostUrl)=>{
+module.exports.createDevice =(token,subId,regId,devId,hostUrl,key)=>{
 let defaultClient = OmnicoreModelAndStateManagementApi.ApiClient.instance;
 defaultClient.basePath = hostUrl // API url end point
+// Configure API key authorization: apiKey
+var apiKey = defaultClient.authentications['apiKey'];
+apiKey.apiKey = key
 // Configure Bearer (JWT) access token for authorization: bearerAuth
 let bearerAuth = defaultClient.authentications['bearerAuth'];
 bearerAuth.accessToken = token
@@ -64,9 +67,12 @@ apiInstance.createDevice(subscriptionId, registryId, deviceObj, (error, data, re
 });
 }
 
-module.exports.getDevice =(token,subId,regId,devId,hostUrl)=>{
+module.exports.getDevice =(token,subId,regId,devId,hostUrl,key)=>{
     let defaultClient = OmnicoreModelAndStateManagementApi.ApiClient.instance;
     defaultClient.basePath = hostUrl
+    // Configure API key authorization: apiKey
+    var apiKey = defaultClient.authentications['apiKey'];
+    apiKey.apiKey = key
     // Configure Bearer (JWT) access token for authorization: bearerAuth
     let bearerAuth = defaultClient.authentications['bearerAuth'];
     bearerAuth.accessToken = token
@@ -112,12 +118,15 @@ module.exports.getDevice =(token,subId,regId,devId,hostUrl)=>{
     });
 }
 
-module.exports.updateDevice = (token,subId,regId,devId,hostUrl) => {
+module.exports.updateDevice = (token,subId,regId,devId,hostUrl,key) => {
     let defaultClient = OmnicoreModelAndStateManagementApi.ApiClient.instance;
     defaultClient.basePath = hostUrl
-// Configure Bearer (JWT) access token for authorization: bearerAuth
-let bearerAuth = defaultClient.authentications['bearerAuth'];
-bearerAuth.accessToken = token
+    // Configure API key authorization: apiKey
+    var apiKey = defaultClient.authentications['apiKey'];
+    apiKey.apiKey = key
+    // Configure Bearer (JWT) access token for authorization: bearerAuth
+    let bearerAuth = defaultClient.authentications['bearerAuth'];
+    bearerAuth.accessToken = token
 
 let apiInstance = new OmnicoreModelAndStateManagementApi.DeviceApi();
 let subscriptionId = subId; // String | Subscription ID
@@ -172,9 +181,12 @@ apiInstance.updateDevice(subscriptionId, registryId, deviceId, updateMask, devic
 });
 }
 
-module.exports.getDevices = (token,subId,regId,devId,hostUrl) => {
+module.exports.getDevices = (token,subId,regId,devId,hostUrl,key) => {
 let defaultClient = OmnicoreModelAndStateManagementApi.ApiClient.instance;
-defaultClient.basePath = hostUrl   
+defaultClient.basePath = hostUrl
+// Configure API key authorization: apiKey
+var apiKey = defaultClient.authentications['apiKey'];
+apiKey.apiKey = key 
 // Configure Bearer (JWT) access token for authorization: bearerAuth
 let bearerAuth = defaultClient.authentications['bearerAuth'];
 bearerAuth.accessToken = token
@@ -230,9 +242,12 @@ apiInstance.getDevices(registryId, subscriptionId, opts, (error, data, response)
 });
 }
 
-module.exports.sendCommandToDevice =(token,subId,regId,devId,hostUrl)=>{
+module.exports.sendCommandToDevice =(token,subId,regId,devId,hostUrl,key)=>{
 let defaultClient = OmnicoreModelAndStateManagementApi.ApiClient.instance;
 defaultClient.basePath = hostUrl
+// Configure API key authorization: apiKey
+var apiKey = defaultClient.authentications['apiKey'];
+apiKey.apiKey = key
 // Configure Bearer (JWT) access token for authorization: bearerAuth
 let bearerAuth = defaultClient.authentications['bearerAuth'];
 bearerAuth.accessToken = token;
@@ -256,9 +271,12 @@ apiInstance.sendCommandToDevice(subscriptionid, registryId, deviceId, device, (e
 });
 }
 
-module.exports.updateConfigurationToDevice = (token,subId,regId,devId,hostUrl)=>{
+module.exports.updateConfigurationToDevice = (token,subId,regId,devId,hostUrl,key)=>{
 let defaultClient = OmnicoreModelAndStateManagementApi.ApiClient.instance;
 defaultClient.basePath = hostUrl
+// Configure API key authorization: apiKey
+var apiKey = defaultClient.authentications['apiKey'];
+apiKey.apiKey = key
 // Configure Bearer (JWT) access token for authorization: bearerAuth
 let bearerAuth = defaultClient.authentications['bearerAuth'];
 bearerAuth.accessToken = token;
@@ -287,9 +305,12 @@ apiInstance.updateConfigurationToDevice(subscriptionid, registryId, deviceId, de
 });
 }
 
-module.exports.getState = (token,subId,regId,devId,hostUrl)=>{
+module.exports.getState = (token,subId,regId,devId,hostUrl,key)=>{
 let defaultClient = OmnicoreModelAndStateManagementApi.ApiClient.instance;
 defaultClient.basePath = hostUrl
+// Configure API key authorization: apiKey
+var apiKey = defaultClient.authentications['apiKey'];
+apiKey.apiKey = key
 // Configure Bearer (JWT) access token for authorization: bearerAuth
 let bearerAuth = defaultClient.authentications['bearerAuth'];
 bearerAuth.accessToken = token;
@@ -312,9 +333,12 @@ apiInstance.getStates(subscriptionid, registryId, deviceId, opts, (error, data, 
 });
 }
 
-module.exports.getConfig=(token,subId,regId,devId,hostUrl)=>{
+module.exports.getConfig=(token,subId,regId,devId,hostUrl,key)=>{
 let defaultClient = OmnicoreModelAndStateManagementApi.ApiClient.instance;
 defaultClient.basePath = hostUrl
+// Configure API key authorization: apiKey
+var apiKey = defaultClient.authentications['apiKey'];
+apiKey.apiKey = key
 // Configure Bearer (JWT) access token for authorization: bearerAuth
 let bearerAuth = defaultClient.authentications['bearerAuth'];
 bearerAuth.accessToken = token
@@ -337,9 +361,12 @@ apiInstance.getConfig(subscriptionid, registryId, deviceId, numVersions, (error,
 });
 }
 
-module.exports.blockDeviceCommunication=(token,subId,regId,devId,hostUrl)=>{
+module.exports.blockDeviceCommunication=(token,subId,regId,devId,hostUrl,key)=>{
 let defaultClient = OmnicoreModelAndStateManagementApi.ApiClient.instance;
 defaultClient.basePath = hostUrl
+// Configure API key authorization: apiKey
+var apiKey = defaultClient.authentications['apiKey'];
+apiKey.apiKey = key
 // Configure Bearer (JWT) access token for authorization: bearerAuth
 let bearerAuth = defaultClient.authentications['bearerAuth'];
 bearerAuth.accessToken = token
@@ -360,9 +387,12 @@ apiInstance.blockDeviceCommuncation(subscriptionid, registryId, deviceId, device
 });
 }
 
-module.exports.deleteDevice = (token,subId,regId,devId,hostUrl)=>{
+module.exports.deleteDevice = (token,subId,regId,devId,hostUrl,key)=>{
 let defaultClient = OmnicoreModelAndStateManagementApi.ApiClient.instance;
 defaultClient.basePath = hostUrl
+// Configure API key authorization: apiKey
+var apiKey = defaultClient.authentications['apiKey'];
+apiKey.apiKey = key
 // Configure Bearer (JWT) access token for authorization: bearerAuth
 let bearerAuth = defaultClient.authentications['bearerAuth'];
 bearerAuth.accessToken = token

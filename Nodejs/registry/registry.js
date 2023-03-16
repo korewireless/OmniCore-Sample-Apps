@@ -1,8 +1,11 @@
 var OmnicoreModelAndStateManagementApi = require('omni_core_model_and_state_management_api');
 
-module.exports.createRegistry = (token,subId,regId,hostUrl) => {
+module.exports.createRegistry = (token,subId,regId,hostUrl,key) => {
     let defaultClient = OmnicoreModelAndStateManagementApi.ApiClient.instance;
     defaultClient.basePath = hostUrl
+    // Configure API key authorization: apiKey
+    var apiKey = defaultClient.authentications['apiKey'];
+    apiKey.apiKey = key
     // Configure Bearer (JWT) access token for authorization: bearerAuth
     let bearerAuth = defaultClient.authentications['bearerAuth'];
     bearerAuth.accessToken = token
@@ -65,9 +68,12 @@ module.exports.createRegistry = (token,subId,regId,hostUrl) => {
     
 }
 
-module.exports.getRegistry = (token,subId,regId,hostUrl) => {
+module.exports.getRegistry = (token,subId,regId,hostUrl,key) => {
 let defaultClient = OmnicoreModelAndStateManagementApi.ApiClient.instance;
 defaultClient.basePath = hostUrl
+// Configure API key authorization: apiKey
+var apiKey = defaultClient.authentications['apiKey'];
+apiKey.apiKey = key
 // Configure Bearer (JWT) access token for authorization: bearerAuth
 let bearerAuth = defaultClient.authentications['bearerAuth'];
 bearerAuth.accessToken = token
@@ -97,9 +103,12 @@ apiInstance.getRegistry(subscriptionId, registryId, (error, data, response) => {
 });
 }
 
-module.exports.getRegistries = (token,subId,regId,hostUrl) => {
+module.exports.getRegistries = (token,subId,regId,hostUrl,key) => {
 let defaultClient = OmnicoreModelAndStateManagementApi.ApiClient.instance;
 defaultClient.basePath = hostUrl
+// Configure API key authorization: apiKey
+var apiKey = defaultClient.authentications['apiKey'];
+apiKey.apiKey = key
 // Configure Bearer (JWT) access token for authorization: bearerAuth
 let bearerAuth = defaultClient.authentications['bearerAuth'];
 bearerAuth.accessToken = token
@@ -132,9 +141,12 @@ apiInstance.getRegistries(subscriptionId, opts, (error, data, response) => {
 });
 }
 
-module.exports.updateRegistry = (token,subId,regId,hostUrl) => {
+module.exports.updateRegistry = (token,subId,regId,hostUrl,key) => {
 let defaultClient = OmnicoreModelAndStateManagementApi.ApiClient.instance;
 defaultClient.basePath = hostUrl
+// Configure API key authorization: apiKey
+var apiKey = defaultClient.authentications['apiKey'];
+apiKey.apiKey = key
 // Configure Bearer (JWT) access token for authorization: bearerAuth
 let bearerAuth = defaultClient.authentications['bearerAuth'];
 bearerAuth.accessToken = token
@@ -188,9 +200,12 @@ apiInstance.updateRegistry(subscriptionId, registryId, updateMask, opts, (error,
 });
 }
 
-module.exports.deleteRegistry = (token,subId,regId,hostUrl)=>{
+module.exports.deleteRegistry = (token,subId,regId,hostUrl,key)=>{
     let defaultClient = OmnicoreModelAndStateManagementApi.ApiClient.instance;
     defaultClient.basePath = hostUrl
+    // Configure API key authorization: apiKey
+    var apiKey = defaultClient.authentications['apiKey'];
+    apiKey.apiKey = key
     // Configure Bearer (JWT) access token for authorization: bearerAuth
     let bearerAuth = defaultClient.authentications['bearerAuth'];
     bearerAuth.accessToken = token
