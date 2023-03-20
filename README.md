@@ -4,9 +4,7 @@ Sample codes in popular languages showing OmniCore SDK usage
 
 ## Python
 <a name="installation"></a>
-
-
-If the python package is hosted on a repository, you can install directly using:
+ 
 
 ```sh
 pip install git+https://github.com/korewireless/OmniCore-Python-SDK.git
