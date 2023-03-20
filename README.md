@@ -5,6 +5,7 @@ Sample codes in popular languages showing OmniCore SDK usage
 ## Python
 <a name="installation"></a>
  
+Install it via:
 
 ```sh
 pip install git+https://github.com/korewireless/OmniCore-Python-SDK.git
@@ -30,7 +31,7 @@ dotnet add package KORE-Wireless.OmniCore --version 2.1.0
 ## Go 
 <a name="installation"></a>
 ## Usage
-Put the package under your project folder and add the following in import:
+Install it via:
 
 ```golang
 go get "github.com/korewireless/OmniCore-Go-SDK"
@@ -44,8 +45,6 @@ go get "github.com/korewireless/OmniCore-Go-SDK"
 ### For [Node.js](https://nodejs.org/)
 
 #### npm
-
-
 
 Install it via:
 
