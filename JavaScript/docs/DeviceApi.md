@@ -1,23 +1,23 @@
 # OmniCoreModelAndStateManagementApi.DeviceApi
 
-All URIs are relative to *https://demo-api.omnicore.cloud.korewireless.com/model-state-management*
+All URIs are relative to *https://api.omnicore.korewireless.com*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**bindDevice**](DeviceApi.md#bindDevice) | **POST** /subscriptions/{subscriptionId}/registries/{registryId}/bindDeviceToGateway | 
-[**bindDevices**](DeviceApi.md#bindDevices) | **POST** /subscriptions/{subscriptionId}/registries/{registryId}/bindDevicesToGateway | 
-[**blockDeviceCommuncation**](DeviceApi.md#blockDeviceCommuncation) | **PUT** /subscriptions/{subscriptionid}/registries/{registryId}/devices/{deviceId}/communication | 
-[**createDevice**](DeviceApi.md#createDevice) | **POST** /subscriptions/{subscriptionId}/registries/{registryId}/devices | 
-[**deleteDevice**](DeviceApi.md#deleteDevice) | **DELETE** /subscriptions/{subscriptionId}/registries/{registryId}/devices/{deviceId} | 
-[**getConfig**](DeviceApi.md#getConfig) | **GET** /subscriptions/{subscriptionid}/registries/{registryId}/devices/{deviceId}/configVersions | 
-[**getDevice**](DeviceApi.md#getDevice) | **GET** /subscriptions/{subscriptionId}/registries/{registryId}/devices/{deviceId} | 
-[**getDevices**](DeviceApi.md#getDevices) | **GET** /subscriptions/{subscriptionId}/registries/{registryId}/devices | 
-[**getStates**](DeviceApi.md#getStates) | **GET** /subscriptions/{subscriptionid}/registries/{registryId}/devices/{deviceId}/states | 
-[**sendCommandToDevice**](DeviceApi.md#sendCommandToDevice) | **POST** /subscriptions/{subscriptionid}/registries/{registryId}/devices/{deviceId}/sendCommandToDevice | 
-[**unBindDevice**](DeviceApi.md#unBindDevice) | **POST** /subscriptions/{subscriptionId}/registries/{registryId}/unbindDeviceFromGateway | 
-[**unBindDevices**](DeviceApi.md#unBindDevices) | **POST** /subscriptions/{subscriptionId}/registries/{registryId}/unbindDevicesFromGateway | 
-[**updateConfigurationToDevice**](DeviceApi.md#updateConfigurationToDevice) | **POST** /subscriptions/{subscriptionid}/registries/{registryId}/devices/{deviceId}/updateConfigurationToDevice | 
-[**updateDevice**](DeviceApi.md#updateDevice) | **PATCH** /subscriptions/{subscriptionId}/registries/{registryId}/devices/{deviceId} | 
+[**bindDevice**](DeviceApi.md#bindDevice) | **POST** /model-state-management/subscriptions/{subscriptionId}/registries/{registryId}/bindDeviceToGateway | 
+[**bindDevices**](DeviceApi.md#bindDevices) | **POST** /model-state-management/subscriptions/{subscriptionId}/registries/{registryId}/bindDevicesToGateway | 
+[**blockDeviceCommuncation**](DeviceApi.md#blockDeviceCommuncation) | **PUT** /model-state-management/subscriptions/{subscriptionid}/registries/{registryId}/devices/{deviceId}/communication | 
+[**createDevice**](DeviceApi.md#createDevice) | **POST** /model-state-management/subscriptions/{subscriptionId}/registries/{registryId}/devices | 
+[**deleteDevice**](DeviceApi.md#deleteDevice) | **DELETE** /model-state-management/subscriptions/{subscriptionId}/registries/{registryId}/devices/{deviceId} | 
+[**getConfig**](DeviceApi.md#getConfig) | **GET** /model-state-management/subscriptions/{subscriptionid}/registries/{registryId}/devices/{deviceId}/configVersions | 
+[**getDevice**](DeviceApi.md#getDevice) | **GET** /model-state-management/subscriptions/{subscriptionId}/registries/{registryId}/devices/{deviceId} | 
+[**getDevices**](DeviceApi.md#getDevices) | **GET** /model-state-management/subscriptions/{subscriptionId}/registries/{registryId}/devices | 
+[**getStates**](DeviceApi.md#getStates) | **GET** /model-state-management/subscriptions/{subscriptionid}/registries/{registryId}/devices/{deviceId}/states | 
+[**sendCommandToDevice**](DeviceApi.md#sendCommandToDevice) | **POST** /model-state-management/subscriptions/{subscriptionid}/registries/{registryId}/devices/{deviceId}/sendCommandToDevice | 
+[**unBindDevice**](DeviceApi.md#unBindDevice) | **POST** /model-state-management/subscriptions/{subscriptionId}/registries/{registryId}/unbindDeviceFromGateway | 
+[**unBindDevices**](DeviceApi.md#unBindDevices) | **POST** /model-state-management/subscriptions/{subscriptionId}/registries/{registryId}/unbindDevicesFromGateway | 
+[**updateConfigurationToDevice**](DeviceApi.md#updateConfigurationToDevice) | **POST** /model-state-management/subscriptions/{subscriptionid}/registries/{registryId}/devices/{deviceId}/updateConfigurationToDevice | 
+[**updateDevice**](DeviceApi.md#updateDevice) | **PATCH** /model-state-management/subscriptions/{subscriptionId}/registries/{registryId}/devices/{deviceId} | 
 
 
 
@@ -34,6 +34,11 @@ Bind  a device to a gateway under a registry
 ```javascript
 import OmniCoreModelAndStateManagementApi from 'omni_core_model_and_state_management_api';
 let defaultClient = OmniCoreModelAndStateManagementApi.ApiClient.instance;
+// Configure API key authorization: apiKey
+let apiKey = defaultClient.authentications['apiKey'];
+apiKey.apiKey = 'YOUR API KEY';
+// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+//apiKey.apiKeyPrefix = 'Token';
 // Configure Bearer (JWT) access token for authorization: bearerAuth
 let bearerAuth = defaultClient.authentications['bearerAuth'];
 bearerAuth.accessToken = "YOUR ACCESS TOKEN"
@@ -66,7 +71,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[bearerAuth](../README.md#bearerAuth)
+[apiKey](../README.md#apiKey), [bearerAuth](../README.md#bearerAuth)
 
 ### HTTP request headers
 
@@ -87,6 +92,11 @@ Bind devices to a gateway under a registry
 ```javascript
 import OmniCoreModelAndStateManagementApi from 'omni_core_model_and_state_management_api';
 let defaultClient = OmniCoreModelAndStateManagementApi.ApiClient.instance;
+// Configure API key authorization: apiKey
+let apiKey = defaultClient.authentications['apiKey'];
+apiKey.apiKey = 'YOUR API KEY';
+// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+//apiKey.apiKeyPrefix = 'Token';
 // Configure Bearer (JWT) access token for authorization: bearerAuth
 let bearerAuth = defaultClient.authentications['bearerAuth'];
 bearerAuth.accessToken = "YOUR ACCESS TOKEN"
@@ -119,7 +129,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[bearerAuth](../README.md#bearerAuth)
+[apiKey](../README.md#apiKey), [bearerAuth](../README.md#bearerAuth)
 
 ### HTTP request headers
 
@@ -140,6 +150,11 @@ Blocks All Communication From A Device
 ```javascript
 import OmniCoreModelAndStateManagementApi from 'omni_core_model_and_state_management_api';
 let defaultClient = OmniCoreModelAndStateManagementApi.ApiClient.instance;
+// Configure API key authorization: apiKey
+let apiKey = defaultClient.authentications['apiKey'];
+apiKey.apiKey = 'YOUR API KEY';
+// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+//apiKey.apiKeyPrefix = 'Token';
 // Configure Bearer (JWT) access token for authorization: bearerAuth
 let bearerAuth = defaultClient.authentications['bearerAuth'];
 bearerAuth.accessToken = "YOUR ACCESS TOKEN"
@@ -174,7 +189,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[bearerAuth](../README.md#bearerAuth)
+[apiKey](../README.md#apiKey), [bearerAuth](../README.md#bearerAuth)
 
 ### HTTP request headers
 
@@ -195,6 +210,11 @@ Create a device under a registry
 ```javascript
 import OmniCoreModelAndStateManagementApi from 'omni_core_model_and_state_management_api';
 let defaultClient = OmniCoreModelAndStateManagementApi.ApiClient.instance;
+// Configure API key authorization: apiKey
+let apiKey = defaultClient.authentications['apiKey'];
+apiKey.apiKey = 'YOUR API KEY';
+// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+//apiKey.apiKeyPrefix = 'Token';
 // Configure Bearer (JWT) access token for authorization: bearerAuth
 let bearerAuth = defaultClient.authentications['bearerAuth'];
 bearerAuth.accessToken = "YOUR ACCESS TOKEN"
@@ -202,7 +222,7 @@ bearerAuth.accessToken = "YOUR ACCESS TOKEN"
 let apiInstance = new OmniCoreModelAndStateManagementApi.DeviceApi();
 let subscriptionId = "subscriptionId_example"; // String | Subscription ID
 let registryId = "registryId_example"; // String | Registry ID
-let device = new OmniCoreModelAndStateManagementApi.CreateNewDevice(); // CreateNewDevice | application/json
+let device = new OmniCoreModelAndStateManagementApi.Device(); // Device | application/json
 apiInstance.createDevice(subscriptionId, registryId, device, (error, data, response) => {
   if (error) {
     console.error(error);
@@ -219,7 +239,7 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **subscriptionId** | **String**| Subscription ID | 
  **registryId** | **String**| Registry ID | 
- **device** | [**CreateNewDevice**](CreateNewDevice.md)| application/json | 
+ **device** | [**Device**](Device.md)| application/json | 
 
 ### Return type
 
@@ -227,7 +247,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[bearerAuth](../README.md#bearerAuth)
+[apiKey](../README.md#apiKey), [bearerAuth](../README.md#bearerAuth)
 
 ### HTTP request headers
 
@@ -248,6 +268,11 @@ Delete a device under a registry
 ```javascript
 import OmniCoreModelAndStateManagementApi from 'omni_core_model_and_state_management_api';
 let defaultClient = OmniCoreModelAndStateManagementApi.ApiClient.instance;
+// Configure API key authorization: apiKey
+let apiKey = defaultClient.authentications['apiKey'];
+apiKey.apiKey = 'YOUR API KEY';
+// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+//apiKey.apiKeyPrefix = 'Token';
 // Configure Bearer (JWT) access token for authorization: bearerAuth
 let bearerAuth = defaultClient.authentications['bearerAuth'];
 bearerAuth.accessToken = "YOUR ACCESS TOKEN"
@@ -280,7 +305,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[bearerAuth](../README.md#bearerAuth)
+[apiKey](../README.md#apiKey), [bearerAuth](../README.md#bearerAuth)
 
 ### HTTP request headers
 
@@ -301,6 +326,11 @@ Get Configs Of Devices
 ```javascript
 import OmniCoreModelAndStateManagementApi from 'omni_core_model_and_state_management_api';
 let defaultClient = OmniCoreModelAndStateManagementApi.ApiClient.instance;
+// Configure API key authorization: apiKey
+let apiKey = defaultClient.authentications['apiKey'];
+apiKey.apiKey = 'YOUR API KEY';
+// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+//apiKey.apiKeyPrefix = 'Token';
 // Configure Bearer (JWT) access token for authorization: bearerAuth
 let bearerAuth = defaultClient.authentications['bearerAuth'];
 bearerAuth.accessToken = "YOUR ACCESS TOKEN"
@@ -335,7 +365,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[bearerAuth](../README.md#bearerAuth)
+[apiKey](../README.md#apiKey), [bearerAuth](../README.md#bearerAuth)
 
 ### HTTP request headers
 
@@ -356,6 +386,11 @@ Get a device under a registry
 ```javascript
 import OmniCoreModelAndStateManagementApi from 'omni_core_model_and_state_management_api';
 let defaultClient = OmniCoreModelAndStateManagementApi.ApiClient.instance;
+// Configure API key authorization: apiKey
+let apiKey = defaultClient.authentications['apiKey'];
+apiKey.apiKey = 'YOUR API KEY';
+// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+//apiKey.apiKeyPrefix = 'Token';
 // Configure Bearer (JWT) access token for authorization: bearerAuth
 let bearerAuth = defaultClient.authentications['bearerAuth'];
 bearerAuth.accessToken = "YOUR ACCESS TOKEN"
@@ -388,7 +423,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[bearerAuth](../README.md#bearerAuth)
+[apiKey](../README.md#apiKey), [bearerAuth](../README.md#bearerAuth)
 
 ### HTTP request headers
 
@@ -409,6 +444,11 @@ Get all devices under a registry
 ```javascript
 import OmniCoreModelAndStateManagementApi from 'omni_core_model_and_state_management_api';
 let defaultClient = OmniCoreModelAndStateManagementApi.ApiClient.instance;
+// Configure API key authorization: apiKey
+let apiKey = defaultClient.authentications['apiKey'];
+apiKey.apiKey = 'YOUR API KEY';
+// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+//apiKey.apiKeyPrefix = 'Token';
 // Configure Bearer (JWT) access token for authorization: bearerAuth
 let bearerAuth = defaultClient.authentications['bearerAuth'];
 bearerAuth.accessToken = "YOUR ACCESS TOKEN"
@@ -457,7 +497,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[bearerAuth](../README.md#bearerAuth)
+[apiKey](../README.md#apiKey), [bearerAuth](../README.md#bearerAuth)
 
 ### HTTP request headers
 
@@ -478,6 +518,11 @@ Get States Of Devices
 ```javascript
 import OmniCoreModelAndStateManagementApi from 'omni_core_model_and_state_management_api';
 let defaultClient = OmniCoreModelAndStateManagementApi.ApiClient.instance;
+// Configure API key authorization: apiKey
+let apiKey = defaultClient.authentications['apiKey'];
+apiKey.apiKey = 'YOUR API KEY';
+// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+//apiKey.apiKeyPrefix = 'Token';
 // Configure Bearer (JWT) access token for authorization: bearerAuth
 let bearerAuth = defaultClient.authentications['bearerAuth'];
 bearerAuth.accessToken = "YOUR ACCESS TOKEN"
@@ -514,7 +559,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[bearerAuth](../README.md#bearerAuth)
+[apiKey](../README.md#apiKey), [bearerAuth](../README.md#bearerAuth)
 
 ### HTTP request headers
 
@@ -535,6 +580,11 @@ Send A Command To A Device
 ```javascript
 import OmniCoreModelAndStateManagementApi from 'omni_core_model_and_state_management_api';
 let defaultClient = OmniCoreModelAndStateManagementApi.ApiClient.instance;
+// Configure API key authorization: apiKey
+let apiKey = defaultClient.authentications['apiKey'];
+apiKey.apiKey = 'YOUR API KEY';
+// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+//apiKey.apiKeyPrefix = 'Token';
 // Configure Bearer (JWT) access token for authorization: bearerAuth
 let bearerAuth = defaultClient.authentications['bearerAuth'];
 bearerAuth.accessToken = "YOUR ACCESS TOKEN"
@@ -569,7 +619,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[bearerAuth](../README.md#bearerAuth)
+[apiKey](../README.md#apiKey), [bearerAuth](../README.md#bearerAuth)
 
 ### HTTP request headers
 
@@ -590,6 +640,11 @@ UnBind  a device from a gateway under a registry
 ```javascript
 import OmniCoreModelAndStateManagementApi from 'omni_core_model_and_state_management_api';
 let defaultClient = OmniCoreModelAndStateManagementApi.ApiClient.instance;
+// Configure API key authorization: apiKey
+let apiKey = defaultClient.authentications['apiKey'];
+apiKey.apiKey = 'YOUR API KEY';
+// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+//apiKey.apiKeyPrefix = 'Token';
 // Configure Bearer (JWT) access token for authorization: bearerAuth
 let bearerAuth = defaultClient.authentications['bearerAuth'];
 bearerAuth.accessToken = "YOUR ACCESS TOKEN"
@@ -622,7 +677,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[bearerAuth](../README.md#bearerAuth)
+[apiKey](../README.md#apiKey), [bearerAuth](../README.md#bearerAuth)
 
 ### HTTP request headers
 
@@ -643,6 +698,11 @@ UnBind devices from a gateway under a registry
 ```javascript
 import OmniCoreModelAndStateManagementApi from 'omni_core_model_and_state_management_api';
 let defaultClient = OmniCoreModelAndStateManagementApi.ApiClient.instance;
+// Configure API key authorization: apiKey
+let apiKey = defaultClient.authentications['apiKey'];
+apiKey.apiKey = 'YOUR API KEY';
+// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+//apiKey.apiKeyPrefix = 'Token';
 // Configure Bearer (JWT) access token for authorization: bearerAuth
 let bearerAuth = defaultClient.authentications['bearerAuth'];
 bearerAuth.accessToken = "YOUR ACCESS TOKEN"
@@ -675,7 +735,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[bearerAuth](../README.md#bearerAuth)
+[apiKey](../README.md#apiKey), [bearerAuth](../README.md#bearerAuth)
 
 ### HTTP request headers
 
@@ -696,6 +756,11 @@ Update A Configuration Of A Device
 ```javascript
 import OmniCoreModelAndStateManagementApi from 'omni_core_model_and_state_management_api';
 let defaultClient = OmniCoreModelAndStateManagementApi.ApiClient.instance;
+// Configure API key authorization: apiKey
+let apiKey = defaultClient.authentications['apiKey'];
+apiKey.apiKey = 'YOUR API KEY';
+// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+//apiKey.apiKeyPrefix = 'Token';
 // Configure Bearer (JWT) access token for authorization: bearerAuth
 let bearerAuth = defaultClient.authentications['bearerAuth'];
 bearerAuth.accessToken = "YOUR ACCESS TOKEN"
@@ -730,7 +795,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[bearerAuth](../README.md#bearerAuth)
+[apiKey](../README.md#apiKey), [bearerAuth](../README.md#bearerAuth)
 
 ### HTTP request headers
 
@@ -751,6 +816,11 @@ Modify device under a registry
 ```javascript
 import OmniCoreModelAndStateManagementApi from 'omni_core_model_and_state_management_api';
 let defaultClient = OmniCoreModelAndStateManagementApi.ApiClient.instance;
+// Configure API key authorization: apiKey
+let apiKey = defaultClient.authentications['apiKey'];
+apiKey.apiKey = 'YOUR API KEY';
+// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+//apiKey.apiKeyPrefix = 'Token';
 // Configure Bearer (JWT) access token for authorization: bearerAuth
 let bearerAuth = defaultClient.authentications['bearerAuth'];
 bearerAuth.accessToken = "YOUR ACCESS TOKEN"
@@ -759,8 +829,8 @@ let apiInstance = new OmniCoreModelAndStateManagementApi.DeviceApi();
 let subscriptionId = "subscriptionId_example"; // String | Subscription ID
 let registryId = "registryId_example"; // String | Registry ID
 let deviceId = "deviceId_example"; // String | Device ID
-let updateMask = "updateMask_example"; // String | Required. Only updates the device fields indicated by this mask. The field mask must not be empty, and it must not contain fields that are immutable or only set by the server. Mutable top-level fields: credentials,log_level, blocked, and metadata
-let device = new OmniCoreModelAndStateManagementApi.UpdateDevice(); // UpdateDevice | application/json
+let updateMask = "updateMask_example"; // String | Required. Only updates the device fields indicated by this mask. The field mask must not be empty, and it must not contain fields that are immutable or only set by the server. Mutable top-level fields: credentials,logLevel, blocked, and metadata
+let device = new OmniCoreModelAndStateManagementApi.Device(); // Device | application/json
 apiInstance.updateDevice(subscriptionId, registryId, deviceId, updateMask, device, (error, data, response) => {
   if (error) {
     console.error(error);
@@ -778,8 +848,8 @@ Name | Type | Description  | Notes
  **subscriptionId** | **String**| Subscription ID | 
  **registryId** | **String**| Registry ID | 
  **deviceId** | **String**| Device ID | 
- **updateMask** | **String**| Required. Only updates the device fields indicated by this mask. The field mask must not be empty, and it must not contain fields that are immutable or only set by the server. Mutable top-level fields: credentials,log_level, blocked, and metadata | 
- **device** | [**UpdateDevice**](UpdateDevice.md)| application/json | 
+ **updateMask** | **String**| Required. Only updates the device fields indicated by this mask. The field mask must not be empty, and it must not contain fields that are immutable or only set by the server. Mutable top-level fields: credentials,logLevel, blocked, and metadata | 
+ **device** | [**Device**](Device.md)| application/json | 
 
 ### Return type
 
@@ -787,7 +857,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[bearerAuth](../README.md#bearerAuth)
+[apiKey](../README.md#apiKey), [bearerAuth](../README.md#bearerAuth)
 
 ### HTTP request headers
 
