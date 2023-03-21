@@ -4,8 +4,8 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**code** | **Number** |  | [optional] 
-**details** | **String** |  | [optional] 
-**message** | **String** |  | [optional] 
+**code** | **Number** |  | [optional] [readonly] 
+**details** | **String** |  | [optional] [readonly] 
+**message** | **String** |  | [optional] [readonly] 
 
 
