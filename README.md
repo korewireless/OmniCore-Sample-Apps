@@ -39,17 +39,16 @@ go get "github.com/korewireless/OmniCore-Go-SDK"
 
 [More Details](/Go/README.md)
 
-## NodeJS 
+## JavaScript 
 <a name="installation"></a>
-## Usage
-### For [Node.js](https://nodejs.org/)
+## Usage 
 
 #### npm
 
 Install it via:
 
 ```shell
-npm install https://github.com/korewireless/OmniCore-Node-SDK
+npm install https://github.com/korewireless/OmniCore-JavaScript-SDK
 ```
 
-[More Details](/Nodejs/Readme.md)
+[More Details](/JavaScript/Readme.md)
