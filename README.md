@@ -51,4 +51,4 @@ Install it via:
 npm install https://github.com/korewireless/OmniCore-JavaScript-SDK
 ```
 
-[More Details](/JavaScript/Readme.md)
+[More Details](/JavaScript/README.md)
