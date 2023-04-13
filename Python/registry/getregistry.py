@@ -49,6 +49,8 @@ with OmniCore.ApiClient(configuration) as api_client:
         print("State Notification Config:%s" %
               api_response.state_notification_config)
         print("Log Level:%s" % api_response.log_level)
+        print("Custom Onboard Status:%s" % api_response.custom_onboard_enabled)
+        print("Custom Onboard Notification Config:%s" % api_response.custom_onboard_notification_config)
         print("Created On:%s" % api_response.created_on)
         print("Updated On:%s" % api_response.updated_on)
     except Exception as e:

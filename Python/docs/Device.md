@@ -31,6 +31,7 @@ Name | Type | Description | Notes
 **metadata** | **Dict[str, str]** |  | [optional] 
 **config** | [**DeviceConfig**](DeviceConfig.md) |  | [optional] 
 **state** | [**DeviceState**](DeviceState.md) |  | [optional] 
+**policy** | [**Policy**](Policy.md) |  | [optional] 
 
 ## Example
 

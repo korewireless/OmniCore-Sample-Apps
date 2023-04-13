@@ -5,6 +5,7 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **expiration_time** | **str** | ExpirationTime: [Optional] The time at which this credential becomes invalid. This credential will be ignored for new client authentication requests after this timestamp; however, it will not be automatically deleted. | [optional] 
+**id** | **str** |  | [optional] [readonly] 
 **public_key** | [**PublicKeyCredential**](PublicKeyCredential.md) |  | [optional] 
 
 ## Example

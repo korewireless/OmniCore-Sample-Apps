@@ -58,6 +58,10 @@ with OmniCore.ApiClient(configuration) as api_client:
         mqttEnabledState="MQTT_ENABLED"
     )
     registry.log_level = "INFO"
+    registry.custom_onboard_enabled=True
+    registry.custom_onboard_notification_config = OmniCore.NotificationConfig(
+        pubsubTopicName="projects/gcp project id /topics/pubsubtopic name"
+    )
     try:
         # Add New Registry
         api_response = api_instance.create_registry(subscription_id, registry)
