@@ -34,8 +34,8 @@ with OmniCore.ApiClient(configuration) as api_client:
     api_instance = OmniCore.RegistryApi(api_client)
     subscription_id = 'Insert Subscription Here'  # str | Subscription ID
     registry_id = 'Insert Registry Here'  # str | Registry ID
-    # str | values to be updated: eventNotificationConfigs,stateNotificationConfig.pubsub_topic_name,logNotificationConfig.pubsub_topic_name,mqttConfig.mqtt_enabled_state,httpConfig.http_enabled_state,logLevel,credentials
-    update_mask = 'eventNotificationConfigs,stateNotificationConfig.pubsub_topic_name,logNotificationConfig.pubsub_topic_name,mqttConfig.mqtt_enabled_state,httpConfig.http_enabled_state,logLevel,credentials'
+    # str | values to be updated: eventNotificationConfigs,stateNotificationConfig.pubsub_topic_name,logNotificationConfig.pubsub_topic_name,mqttConfig.mqtt_enabled_state,httpConfig.http_enabled_state,logLevel,credentials,customOnboardNotificationConfig.pubsub_topic_name,customOnboardEnabled
+    update_mask = 'eventNotificationConfigs,stateNotificationConfig.pubsub_topic_name,logNotificationConfig.pubsub_topic_name,mqttConfig.mqtt_enabled_state,httpConfig.http_enabled_state,logLevel,credentials,customOnboardNotificationConfig.pubsub_topic_name,customOnboardEnabled'
     # UpdateRegistry | application/json
     registry = OmniCore.DeviceRegistry(id=registry_id)
     registry.event_notification_configs = [
@@ -60,6 +60,10 @@ with OmniCore.ApiClient(configuration) as api_client:
         mqttEnabledState="MQTT_ENABLED"
     )
     registry.log_level = "ERROR"
+    registry.custom_onboard_enabled = True
+    registry.custom_onboard_notification_config = OmniCore.NotificationConfig(
+        pubsubTopicName="projects/gcp project id /topics/pubsubtopic name"
+    )
     try:
         api_response = api_instance.update_registry(
             subscription_id, registry_id, update_mask, registry)

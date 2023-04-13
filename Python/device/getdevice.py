@@ -48,6 +48,7 @@ with OmniCore.ApiClient(configuration) as api_client:
         print("Log Level:%s" % api_response.log_level)
         print("Created On:%s" % api_response.created_on)
         print("Updated On:%s" % api_response.updated_on)
+        print("Policy:%s" % api_response.policy)
 
     except Exception as e:
         print("Exception when calling DeviceApi->get_device: %s\n" % e)

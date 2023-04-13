@@ -51,6 +51,8 @@ with OmniCore.ApiClient(configuration) as api_client:
     device.metadata = {
         "floor": "3"
     }
+    device.policy = OmniCore.Policy(Connect=True, PublishEvents=True, PublishLoopback=True, PublishState=True, SubscribeBroadcast=True,
+                                    SubscribeConfig=True, SubscribeCommand=True, PublishEventsRegex=".*", SubscribeCommandRegex=".*", SubscribeBroadcastRegex=".*")
 
     try:
         # Add New Device

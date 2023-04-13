@@ -52,7 +52,8 @@ with OmniCore.ApiClient(configuration) as api_client:
     }
     device.gateway_config = OmniCore.GatewayConfig(gatewayAuthMethod="ASSOCIATION_ONLY",
                                                    gatewayType="GATEWAY")
-
+    device.policy = OmniCore.Policy(Connect=True, PublishEvents=True, PublishLoopback=True, PublishState=True, SubscribeBroadcast=True,
+                                    SubscribeConfig=True, SubscribeCommand=True, PublishEventsRegex=".*", SubscribeCommandRegex=".*", SubscribeBroadcastRegex=".*")
     try:
         # Add New Device
         api_response = api_instance.create_device(

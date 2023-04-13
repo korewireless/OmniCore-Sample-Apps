@@ -5,6 +5,7 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **public_key_certificate** | [**PublicKeyCertificate**](PublicKeyCertificate.md) |  | [optional] 
+**id** | **str** |  | [optional] [readonly] 
 
 ## Example
 
