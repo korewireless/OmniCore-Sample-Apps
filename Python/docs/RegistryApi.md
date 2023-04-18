@@ -1,6 +1,6 @@
 # OmniCore.RegistryApi
 
-All URIs are relative to *https://api.omnicore.korewireless.com/model-state-management*
+All URIs are relative to *https://api.korewireless.com/omnicore*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
@@ -29,10 +29,10 @@ import os
 import OmniCore
 from OmniCore.rest import ApiException
 from pprint import pprint
-# Defining the host is optional and defaults to https://api.omnicore.korewireless.com/model-state-management
+# Defining the host is optional and defaults to https://api.korewireless.com/omnicore
 # See configuration.py for a list of all supported configuration parameters.
 configuration = OmniCore.Configuration(
-    host = "https://api.omnicore.korewireless.com/model-state-management"
+    host = "https://api.korewireless.com/omnicore"
 )
 
 # The client must configure the authentication and authorization parameters
@@ -74,10 +74,10 @@ import os
 import OmniCore
 from OmniCore.rest import ApiException
 from pprint import pprint
-# Defining the host is optional and defaults to https://api.omnicore.korewireless.com/model-state-management
+# Defining the host is optional and defaults to https://api.korewireless.com/omnicore
 # See configuration.py for a list of all supported configuration parameters.
 configuration = OmniCore.Configuration(
-    host = "https://api.omnicore.korewireless.com/model-state-management"
+    host = "https://api.korewireless.com/omnicore"
 )
 
 # The client must configure the authentication and authorization parameters
@@ -158,10 +158,10 @@ import os
 import OmniCore
 from OmniCore.rest import ApiException
 from pprint import pprint
-# Defining the host is optional and defaults to https://api.omnicore.korewireless.com/model-state-management
+# Defining the host is optional and defaults to https://api.korewireless.com/omnicore
 # See configuration.py for a list of all supported configuration parameters.
 configuration = OmniCore.Configuration(
-    host = "https://api.omnicore.korewireless.com/model-state-management"
+    host = "https://api.korewireless.com/omnicore"
 )
 
 # The client must configure the authentication and authorization parameters
@@ -203,10 +203,10 @@ import os
 import OmniCore
 from OmniCore.rest import ApiException
 from pprint import pprint
-# Defining the host is optional and defaults to https://api.omnicore.korewireless.com/model-state-management
+# Defining the host is optional and defaults to https://api.korewireless.com/omnicore
 # See configuration.py for a list of all supported configuration parameters.
 configuration = OmniCore.Configuration(
-    host = "https://api.omnicore.korewireless.com/model-state-management"
+    host = "https://api.korewireless.com/omnicore"
 )
 
 # The client must configure the authentication and authorization parameters
@@ -287,10 +287,10 @@ import os
 import OmniCore
 from OmniCore.rest import ApiException
 from pprint import pprint
-# Defining the host is optional and defaults to https://api.omnicore.korewireless.com/model-state-management
+# Defining the host is optional and defaults to https://api.korewireless.com/omnicore
 # See configuration.py for a list of all supported configuration parameters.
 configuration = OmniCore.Configuration(
-    host = "https://api.omnicore.korewireless.com/model-state-management"
+    host = "https://api.korewireless.com/omnicore"
 )
 
 # The client must configure the authentication and authorization parameters
@@ -334,10 +334,10 @@ import os
 import OmniCore
 from OmniCore.rest import ApiException
 from pprint import pprint
-# Defining the host is optional and defaults to https://api.omnicore.korewireless.com/model-state-management
+# Defining the host is optional and defaults to https://api.korewireless.com/omnicore
 # See configuration.py for a list of all supported configuration parameters.
 configuration = OmniCore.Configuration(
-    host = "https://api.omnicore.korewireless.com/model-state-management"
+    host = "https://api.korewireless.com/omnicore"
 )
 
 # The client must configure the authentication and authorization parameters
@@ -422,10 +422,10 @@ import os
 import OmniCore
 from OmniCore.rest import ApiException
 from pprint import pprint
-# Defining the host is optional and defaults to https://api.omnicore.korewireless.com/model-state-management
+# Defining the host is optional and defaults to https://api.korewireless.com/omnicore
 # See configuration.py for a list of all supported configuration parameters.
 configuration = OmniCore.Configuration(
-    host = "https://api.omnicore.korewireless.com/model-state-management"
+    host = "https://api.korewireless.com/omnicore"
 )
 
 # The client must configure the authentication and authorization parameters
@@ -467,10 +467,10 @@ import os
 import OmniCore
 from OmniCore.rest import ApiException
 from pprint import pprint
-# Defining the host is optional and defaults to https://api.omnicore.korewireless.com/model-state-management
+# Defining the host is optional and defaults to https://api.korewireless.com/omnicore
 # See configuration.py for a list of all supported configuration parameters.
 configuration = OmniCore.Configuration(
-    host = "https://api.omnicore.korewireless.com/model-state-management"
+    host = "https://api.korewireless.com/omnicore"
 )
 
 # The client must configure the authentication and authorization parameters
@@ -551,10 +551,10 @@ import os
 import OmniCore
 from OmniCore.rest import ApiException
 from pprint import pprint
-# Defining the host is optional and defaults to https://api.omnicore.korewireless.com/model-state-management
+# Defining the host is optional and defaults to https://api.korewireless.com/omnicore
 # See configuration.py for a list of all supported configuration parameters.
 configuration = OmniCore.Configuration(
-    host = "https://api.omnicore.korewireless.com/model-state-management"
+    host = "https://api.korewireless.com/omnicore"
 )
 
 # The client must configure the authentication and authorization parameters
@@ -597,10 +597,10 @@ import os
 import OmniCore
 from OmniCore.rest import ApiException
 from pprint import pprint
-# Defining the host is optional and defaults to https://api.omnicore.korewireless.com/model-state-management
+# Defining the host is optional and defaults to https://api.korewireless.com/omnicore
 # See configuration.py for a list of all supported configuration parameters.
 configuration = OmniCore.Configuration(
-    host = "https://api.omnicore.korewireless.com/model-state-management"
+    host = "https://api.korewireless.com/omnicore"
 )
 
 # The client must configure the authentication and authorization parameters
@@ -683,10 +683,10 @@ import os
 import OmniCore
 from OmniCore.rest import ApiException
 from pprint import pprint
-# Defining the host is optional and defaults to https://api.omnicore.korewireless.com/model-state-management
+# Defining the host is optional and defaults to https://api.korewireless.com/omnicore
 # See configuration.py for a list of all supported configuration parameters.
 configuration = OmniCore.Configuration(
-    host = "https://api.omnicore.korewireless.com/model-state-management"
+    host = "https://api.korewireless.com/omnicore"
 )
 
 # The client must configure the authentication and authorization parameters
@@ -730,10 +730,10 @@ import os
 import OmniCore
 from OmniCore.rest import ApiException
 from pprint import pprint
-# Defining the host is optional and defaults to https://api.omnicore.korewireless.com/model-state-management
+# Defining the host is optional and defaults to https://api.korewireless.com/omnicore
 # See configuration.py for a list of all supported configuration parameters.
 configuration = OmniCore.Configuration(
-    host = "https://api.omnicore.korewireless.com/model-state-management"
+    host = "https://api.korewireless.com/omnicore"
 )
 
 # The client must configure the authentication and authorization parameters
