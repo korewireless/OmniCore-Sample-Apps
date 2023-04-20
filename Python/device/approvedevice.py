@@ -26,10 +26,9 @@ with OmniCore.ApiClient(configuration) as api_client:
     api_instance = OmniCore.DeviceApi(api_client)
     subscription_id = 'Insert Subscription Here'  # str | Subscription ID
     registry_id = 'Insert Registry Here'  # str | Registry ID
-    device = OmniCore.Device(
-        id="Insert Device Id Here",
-
+    device = OmniCore.CustomOnboard(
     )  # NewDevice | application/json
+    device.id = "Insert Device Id Here",
     device.blocked = False
     device.credentials = []
     device.credentials.append(OmniCore.DeviceCredential(
@@ -43,10 +42,11 @@ with OmniCore.ApiClient(configuration) as api_client:
     }
     device.policy = OmniCore.Policy(Connect=True, PublishEvents=True, PublishLoopback=True, PublishState=True, SubscribeBroadcast=True,
                                     SubscribeConfig=True, SubscribeCommand=True, PublishEventsRegex=".*", SubscribeCommandRegex=".*", SubscribeBroadcastRegex=".*")
-
+    device.is_approve = True
+    device.custom_onboard_data = "Data to send to device"
     try:
         # Add New Device
-        api_response = api_instance.create_device(
+        api_response = api_instance.update_custom_onboard_request(
             subscription_id, registry_id, device)
         print("The response of DeviceApi->create_device:\n")
         pprint(api_response)

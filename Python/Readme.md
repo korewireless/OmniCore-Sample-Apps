@@ -53,10 +53,10 @@ import OmniCore
 from OmniCore.rest import ApiException
 from pprint import pprint
 
-# Defining the host is optional and defaults to https://api.omnicore.korewireless.com/model-state-management
+# Defining the host is optional and defaults to https://api.korewireless.com/omnicore
 # See configuration.py for a list of all supported configuration parameters.
 configuration = OmniCore.Configuration(
-    host = "https://api.omnicore.korewireless.com/model-state-management"
+    host = "https://api.korewireless.com/omnicore"
 )
 
 # The client must configure the authentication and authorization parameters
@@ -95,7 +95,7 @@ with OmniCore.ApiClient(configuration) as api_client:
 
 ## Documentation for API Endpoints
 
-All URIs are relative to *https://api.omnicore.korewireless.com/model-state-management*
+All URIs are relative to *https://api.korewireless.com/omnicore*
 
 Class | Method | HTTP request | Description
 ------------ | ------------- | ------------- | -------------
@@ -112,6 +112,7 @@ Class | Method | HTTP request | Description
 *DeviceApi* | [**un_bind_device**](docs/DeviceApi.md#un_bind_device) | **POST** /subscriptions/{subscriptionId}/registries/{registryId}/unbindDeviceFromGateway | 
 *DeviceApi* | [**un_bind_devices**](docs/DeviceApi.md#un_bind_devices) | **POST** /subscriptions/{subscriptionId}/registries/{registryId}/unbindDevicesFromGateway | 
 *DeviceApi* | [**update_configuration_to_device**](docs/DeviceApi.md#update_configuration_to_device) | **POST** /subscriptions/{subscriptionid}/registries/{registryId}/devices/{deviceId}/updateConfigurationToDevice | 
+*DeviceApi* | [**update_custom_onboard_request**](docs/DeviceApi.md#update_custom_onboard_request) | **POST** /subscriptions/{subscriptionid}/registries/{registryId}/devices/{deviceId}/updateCustomOnboardRequest | 
 *DeviceApi* | [**update_device**](docs/DeviceApi.md#update_device) | **PATCH** /subscriptions/{subscriptionId}/registries/{registryId}/devices/{deviceId} | 
 *RegistryApi* | [**create_registry**](docs/RegistryApi.md#create_registry) | **POST** /subscriptions/{subscriptionId}/registries | 
 *RegistryApi* | [**delete_registry**](docs/RegistryApi.md#delete_registry) | **DELETE** /subscriptions/{subscriptionId}/registries/{registryId} | 
@@ -126,6 +127,7 @@ Class | Method | HTTP request | Description
  - [BindRequest](docs/BindRequest.md)
  - [BindRequestIdsGateway](docs/BindRequestIdsGateway.md)
  - [BlockCommunicationBody](docs/BlockCommunicationBody.md)
+ - [CustomOnboard](docs/CustomOnboard.md)
  - [Device](docs/Device.md)
  - [DeviceCommand](docs/DeviceCommand.md)
  - [DeviceConfig](docs/DeviceConfig.md)
