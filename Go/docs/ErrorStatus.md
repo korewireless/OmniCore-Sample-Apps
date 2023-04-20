@@ -4,9 +4,9 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**Code** | Pointer to **int32** |  | [optional] 
-**Details** | Pointer to **string** |  | [optional] 
-**Message** | Pointer to **string** |  | [optional] 
+**Code** | Pointer to **int32** |  | [optional] [readonly] 
+**Details** | Pointer to **string** |  | [optional] [readonly] 
+**Message** | Pointer to **string** |  | [optional] [readonly] 
 
 ## Methods
 

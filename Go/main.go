@@ -17,7 +17,8 @@ func main() {
 	updateConfigToDevice("korewireless-development", "sample-registry-sdk", "sample-device-sdk")
 	getConfigurations("korewireless-development", "sample-registry-sdk", "sample-device-sdk")
 	getStates("korewireless-development", "sample-registry-sdk", "sample-device-sdk")
-
+	SendBroadcastToDevices("korewireless-development", "sample-registry-sdk")
+	CustomOnBoardDevice("korewireless-development", "sample-registry-sdk", "sample-custom-device-sdk")
 	CreateGateway("korewireless-development", "sample-registry-sdk", "sample-gateway-sdk")
 	GetGateways("korewireless-development", "sample-registry-sdk")
 	GetGateway("korewireless-development", "sample-registry-sdk", "sample-gateway-sdk")
@@ -27,8 +28,9 @@ func main() {
 	bindDevicesToGateway("korewireless-development", "sample-registry-sdk", "sample-device-sdk")
 	unbindDevicesFromGateway("korewireless-development", "sample-registry-sdk", "sample-device-sdk")
 
+	DeleteDevice("korewireless-development", "sample-registry-sdk", "sample-custom-device-sdk")
 	DeleteDevice("korewireless-development", "sample-registry-sdk", "sample-device-sdk")
-
+	
 	DeleteGateway("korewireless-development", "sample-registry-sdk", "sample-gateway-sdk")
 
 	DeleteRegistry("korewireless-development", "sample-registry-sdk")

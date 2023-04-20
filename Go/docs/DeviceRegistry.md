@@ -5,10 +5,10 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **Id** | **string** |  | 
-**Name** | Pointer to **string** |  | [optional] 
-**Parent** | **string** |  | 
-**CreatedOn** | Pointer to **string** |  | [optional] 
-**UpdatedOn** | Pointer to **string** |  | [optional] 
+**Name** | Pointer to **string** |  | [optional] [readonly] 
+**Parent** | Pointer to **string** |  | [optional] [readonly] 
+**CreatedOn** | Pointer to **string** |  | [optional] [readonly] 
+**UpdatedOn** | Pointer to **string** |  | [optional] [readonly] 
 **Credentials** | Pointer to [**[]RegistryCredential**](RegistryCredential.md) |  | [optional] 
 **HttpConfig** | Pointer to [**HttpConfig**](HttpConfig.md) |  | [optional] 
 **MqttConfig** | Pointer to [**MqttConfig**](MqttConfig.md) |  | [optional] 
@@ -16,14 +16,16 @@ Name | Type | Description | Notes
 **EventNotificationConfigs** | Pointer to [**[]EventNotificationConfig**](EventNotificationConfig.md) |  | [optional] 
 **LogNotificationConfig** | Pointer to [**NotificationConfig**](NotificationConfig.md) |  | [optional] 
 **StateNotificationConfig** | Pointer to [**NotificationConfig**](NotificationConfig.md) |  | [optional] 
-**NumberOfDevices** | Pointer to **int32** |  | [optional] 
-**NumberOfGateways** | Pointer to **int32** |  | [optional] 
+**CustomOnboardNotificationConfig** | Pointer to [**NotificationConfig**](NotificationConfig.md) |  | [optional] 
+**CustomOnboardEnabled** | Pointer to **bool** |  | [optional] 
+**NumberOfDevices** | Pointer to **int32** |  | [optional] [readonly] 
+**NumberOfGateways** | Pointer to **int32** |  | [optional] [readonly] 
 
 ## Methods
 
 ### NewDeviceRegistry
 
-`func NewDeviceRegistry(id string, parent string, ) *DeviceRegistry`
+`func NewDeviceRegistry(id string, ) *DeviceRegistry`
 
 NewDeviceRegistry instantiates a new DeviceRegistry object
 This constructor will assign default values to properties that have it defined,
@@ -102,6 +104,11 @@ and a boolean to check if the value has been set.
 
 SetParent sets Parent field to given value.
 
+### HasParent
+
+`func (o *DeviceRegistry) HasParent() bool`
+
+HasParent returns a boolean if a field has been set.
 
 ### GetCreatedOn
 
@@ -327,6 +334,56 @@ SetStateNotificationConfig sets StateNotificationConfig field to given value.
 `func (o *DeviceRegistry) HasStateNotificationConfig() bool`
 
 HasStateNotificationConfig returns a boolean if a field has been set.
+
+### GetCustomOnboardNotificationConfig
+
+`func (o *DeviceRegistry) GetCustomOnboardNotificationConfig() NotificationConfig`
+
+GetCustomOnboardNotificationConfig returns the CustomOnboardNotificationConfig field if non-nil, zero value otherwise.
+
+### GetCustomOnboardNotificationConfigOk
+
+`func (o *DeviceRegistry) GetCustomOnboardNotificationConfigOk() (*NotificationConfig, bool)`
+
+GetCustomOnboardNotificationConfigOk returns a tuple with the CustomOnboardNotificationConfig field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetCustomOnboardNotificationConfig
+
+`func (o *DeviceRegistry) SetCustomOnboardNotificationConfig(v NotificationConfig)`
+
+SetCustomOnboardNotificationConfig sets CustomOnboardNotificationConfig field to given value.
+
+### HasCustomOnboardNotificationConfig
+
+`func (o *DeviceRegistry) HasCustomOnboardNotificationConfig() bool`
+
+HasCustomOnboardNotificationConfig returns a boolean if a field has been set.
+
+### GetCustomOnboardEnabled
+
+`func (o *DeviceRegistry) GetCustomOnboardEnabled() bool`
+
+GetCustomOnboardEnabled returns the CustomOnboardEnabled field if non-nil, zero value otherwise.
+
+### GetCustomOnboardEnabledOk
+
+`func (o *DeviceRegistry) GetCustomOnboardEnabledOk() (*bool, bool)`
+
+GetCustomOnboardEnabledOk returns a tuple with the CustomOnboardEnabled field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetCustomOnboardEnabled
+
+`func (o *DeviceRegistry) SetCustomOnboardEnabled(v bool)`
+
+SetCustomOnboardEnabled sets CustomOnboardEnabled field to given value.
+
+### HasCustomOnboardEnabled
+
+`func (o *DeviceRegistry) HasCustomOnboardEnabled() bool`
+
+HasCustomOnboardEnabled returns a boolean if a field has been set.
 
 ### GetNumberOfDevices
 

@@ -5,6 +5,7 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **ExpirationTime** | Pointer to **string** | ExpirationTime: [Optional] The time at which this credential becomes invalid. This credential will be ignored for new client authentication requests after this timestamp; however, it will not be automatically deleted. | [optional] 
+**Id** | Pointer to **string** |  | [optional] [readonly] 
 **PublicKey** | Pointer to [**PublicKeyCredential**](PublicKeyCredential.md) |  | [optional] 
 
 ## Methods
@@ -50,6 +51,31 @@ SetExpirationTime sets ExpirationTime field to given value.
 `func (o *DeviceCredential) HasExpirationTime() bool`
 
 HasExpirationTime returns a boolean if a field has been set.
+
+### GetId
+
+`func (o *DeviceCredential) GetId() string`
+
+GetId returns the Id field if non-nil, zero value otherwise.
+
+### GetIdOk
+
+`func (o *DeviceCredential) GetIdOk() (*string, bool)`
+
+GetIdOk returns a tuple with the Id field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetId
+
+`func (o *DeviceCredential) SetId(v string)`
+
+SetId sets Id field to given value.
+
+### HasId
+
+`func (o *DeviceCredential) HasId() bool`
+
+HasId returns a boolean if a field has been set.
 
 ### GetPublicKey
 

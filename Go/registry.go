@@ -2,15 +2,18 @@ package main
 
 import (
 	"context"
+	"encoding/base64"
 	"fmt"
-	omnicore "github.com/korewireless/OmniCore-Go-SDK"
 	"log"
 	"os"
+
+	omnicore "github.com/korewireless/OmniCore-Go-SDK"
 )
 
 func CreateRegistry(registryId string, subscriptionId string, topicName string) {
 	configuration := omnicore.NewConfiguration()
 	configuration.AddDefaultHeader("x-api-key", apiKey)
+
 	apiClient := omnicore.NewAPIClient(configuration)
 	var certificate = "-----BEGIN CERTIFICATE-----\nMIIDLDCCAhSgAwIBAgITMNZHEBss/CrpIrK9eX8aMQtGNDANBgkqhkiG9w0BAQsF\nADAeMQ0wCwYDVQQKEwRrb3JlMQ0wCwYDVQQDEwRrb3JlMB4XDTIyMDgwNDEwMzIw\nOVoXDTMyMDgwMTEwMzIwOFowHjENMAsGA1UEChMEa29yZTENMAsGA1UEAxMEa29y\nZTCCASIwDQYJKoZIhvcNAQEBBQADggEPADCCAQoCggEBAL69ASS6Fz8EXBI1yPqm\nKASYIpyOVZN5VcMnV1spqn7uLtVHVnyeLuQon+aHTqb59TjafP+d7az8hyByL2Zm\n98juwo9vCnT4rKceskZM55olnfF07dbd+DpIT/3hbDh2RlU+rSRYwYoXZ3DOF7jd\nLsEJN9tFpExInAk5GK0ZaPXiZzCY+a9hjg+6RSPPqBhoTWuI6zPrPYeWSTKHvqNG\ngWiytwriss3hBp34Gdg4sO8COD+0uf9/Ia0hB/tpcr0Myyshgzw/SqCDK4mWVqNs\nLcsBeqZkPwNvbC3ZFvUI8NJMpeAyghW25qvswyQZWxIsvJgMI9SmSXgYCBf0DyFV\nGH8CAwEAAaNjMGEwDgYDVR0PAQH/BAQDAgEGMA8GA1UdEwEB/wQFMAMBAf8wHQYD\nVR0OBBYEFMo7tLXQIKicZWBlmWLs1UByKb8DMB8GA1UdIwQYMBaAFMo7tLXQIKic\nZWBlmWLs1UByKb8DMA0GCSqGSIb3DQEBCwUAA4IBAQCS7aFBnvAZ66HEC5ssutgC\nJ0Ak0Li7x8YThz0+AqWyU42/8woitwuxmyQOYP4g9CJty6bqM1LoKc3bOvb1GOMm\nZ0xhAe/+H3ZIKs6g5zXon7mZOEpGJSZQLMuyPI5searFIp+3mgIo4UpgcjYFrBTE\nYJezh93GxirAFVUQ2ZcOltvt13LiavjATlSNNwhSNKZ7lUzD2Y9d5VBkPIYBZw4U\neeJ4GnDPg3IX62rJWWpJ/unJQcmxTwjY8CT85P8C0oROjqCJc93dm8aNXpw7afVq\n+0R+VZwrzkHCmfJEV6ogrR0fUQODUWSvLmR8Z956s/OijpSqRmr88mzq1UZtbnwA\n-----END CERTIFICATE-----"
 	var format = "X509_CERTIFICATE_PEM"
@@ -126,6 +129,7 @@ func UpdateRegistry(subscriptionId string, registryId string) {
 	var MqttConfig = "MQTT_ENABLED"
 	var HttpConfig = "HTTP_ENABLED"
 	registry := omnicore.DeviceRegistry{
+		Id: registryId,
 		EventNotificationConfigs: []omnicore.EventNotificationConfig{
 			{
 				PubsubTopicName: &eventTopic,
@@ -169,7 +173,23 @@ func UpdateRegistry(subscriptionId string, registryId string) {
 	fmt.Printf("\tEventNotificationConfigs: %+v\n", registry.EventNotificationConfigs[0].GetPubsubTopicName())
 	fmt.Printf("\tStateNotificationConfig: %+v\n", registry.StateNotificationConfig.GetPubsubTopicName())
 	fmt.Printf("\tLogNotificationConfig: %+v\n", registry.LogNotificationConfig.GetPubsubTopicName())
+}
 
+func SendBroadcastToDevices(subscriptionId string, registryId string) {
+	var data = base64.StdEncoding.EncodeToString([]byte("Broadcast_example"))
+	configuration := omnicore.NewConfiguration()
+	configuration.AddDefaultHeader("x-api-key", apiKey)
+	apiClient := omnicore.NewAPIClient(configuration)
+	broadcastData := *omnicore.NewDeviceCommand(data) // DeviceCommand | application/json
+	ctx := context.WithValue(context.Background(), omnicore.ContextAccessToken, jwtToken)
+	resp, r, err := apiClient.RegistryApi.SendBroadcastToDevices(ctx, subscriptionId, registryId).Registry(broadcastData).Execute()
+	if err != nil {
+		fmt.Fprintf(os.Stderr, "Error when calling `RegistryApi.SendBroadcastToDevices``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r.Body)
+		return
+	}
+	// response from `SendBroadcastToDevices`: map[string]interface{}
+	fmt.Fprintf(os.Stdout, "Response from `RegistryApi.SendBroadcastToDevices`: %v\n", resp)
 }
 
 func DeleteRegistry(subscriptionId string, registryId string) {
