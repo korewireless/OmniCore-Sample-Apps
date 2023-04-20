@@ -13,21 +13,13 @@ from pprint import pprint
 # Examples for each auth method are provided below, use the example that
 # satisfies your auth use case.
 
-# Configure Either access token or apikey
+# Configure access token and apikey
 configuration = OmniCore.Configuration(
     host="https://demo-api.omnicore.cloud.korewireless.com",
     access_token="Insert Token Here",
     api_key={"apiKey": "Insert API Key Here"}
 )
-# Configure API key authorization: apiKey
-# configuration.api_key['apiKey'] = "Insert API Key Here"
 
-
-# ALTERNATIVE
-# Configure Bearer authorization (JWT): bearerAuth
-# configuration = OmniCore.Configuration(
-#     access_token="Insert Token Here"
-# )
 
 # Enter a context with an instance of the API client
 with OmniCore.ApiClient(configuration) as api_client:
@@ -50,7 +42,8 @@ with OmniCore.ApiClient(configuration) as api_client:
               api_response.state_notification_config)
         print("Log Level:%s" % api_response.log_level)
         print("Custom Onboard Status:%s" % api_response.custom_onboard_enabled)
-        print("Custom Onboard Notification Config:%s" % api_response.custom_onboard_notification_config)
+        print("Custom Onboard Notification Config:%s" %
+              api_response.custom_onboard_notification_config)
         print("Created On:%s" % api_response.created_on)
         print("Updated On:%s" % api_response.updated_on)
     except Exception as e:

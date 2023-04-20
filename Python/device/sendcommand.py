@@ -14,21 +14,12 @@ from pprint import pprint
 # Examples for each auth method are provided below, use the example that
 # satisfies your auth use case.
 
-# Configure Either access token or apikey
+# Configure access token and apikey
 configuration = OmniCore.Configuration(
     host="https://demo-api.omnicore.cloud.korewireless.com",
     access_token="Insert Token Here",
     api_key={"apiKey": "Insert API Key Here"}
 )
-# Configure API key authorization: apiKey
-# configuration.api_key['apiKey'] = "Insert API Key Here"
-
-
-# ALTERNATIVE
-# Configure Bearer authorization (JWT): bearerAuth
-# configuration = OmniCore.Configuration(
-#     access_token="Insert Token Here"
-# )
 
 
 def encode_to_base64(input: str):
