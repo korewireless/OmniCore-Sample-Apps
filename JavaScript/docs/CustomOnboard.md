@@ -1,4 +1,4 @@
-# OmniCoreModelAndStateManagementApi.Device
+# OmniCoreModelAndStateManagementApi.CustomOnboard
 
 ## Properties
 
@@ -32,5 +32,7 @@ Name | Type | Description | Notes
 **config** | [**DeviceConfig**](DeviceConfig.md) |  | [optional] 
 **state** | [**DeviceState**](DeviceState.md) |  | [optional] 
 **policy** | [**Policy**](Policy.md) |  | [optional] 
+**customOnboardData** | **String** |  | [optional] 
+**isApprove** | **Boolean** |  | [optional] 
 
 

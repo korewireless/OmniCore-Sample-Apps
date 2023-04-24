@@ -1,23 +1,24 @@
 # OmniCoreModelAndStateManagementApi.DeviceApi
 
-All URIs are relative to *https://api.omnicore.korewireless.com*
+All URIs are relative to *https://api.korewireless.com/omnicore*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**bindDevice**](DeviceApi.md#bindDevice) | **POST** /model-state-management/subscriptions/{subscriptionId}/registries/{registryId}/bindDeviceToGateway | 
-[**bindDevices**](DeviceApi.md#bindDevices) | **POST** /model-state-management/subscriptions/{subscriptionId}/registries/{registryId}/bindDevicesToGateway | 
-[**blockDeviceCommuncation**](DeviceApi.md#blockDeviceCommuncation) | **PUT** /model-state-management/subscriptions/{subscriptionid}/registries/{registryId}/devices/{deviceId}/communication | 
-[**createDevice**](DeviceApi.md#createDevice) | **POST** /model-state-management/subscriptions/{subscriptionId}/registries/{registryId}/devices | 
-[**deleteDevice**](DeviceApi.md#deleteDevice) | **DELETE** /model-state-management/subscriptions/{subscriptionId}/registries/{registryId}/devices/{deviceId} | 
-[**getConfig**](DeviceApi.md#getConfig) | **GET** /model-state-management/subscriptions/{subscriptionid}/registries/{registryId}/devices/{deviceId}/configVersions | 
-[**getDevice**](DeviceApi.md#getDevice) | **GET** /model-state-management/subscriptions/{subscriptionId}/registries/{registryId}/devices/{deviceId} | 
-[**getDevices**](DeviceApi.md#getDevices) | **GET** /model-state-management/subscriptions/{subscriptionId}/registries/{registryId}/devices | 
-[**getStates**](DeviceApi.md#getStates) | **GET** /model-state-management/subscriptions/{subscriptionid}/registries/{registryId}/devices/{deviceId}/states | 
-[**sendCommandToDevice**](DeviceApi.md#sendCommandToDevice) | **POST** /model-state-management/subscriptions/{subscriptionid}/registries/{registryId}/devices/{deviceId}/sendCommandToDevice | 
-[**unBindDevice**](DeviceApi.md#unBindDevice) | **POST** /model-state-management/subscriptions/{subscriptionId}/registries/{registryId}/unbindDeviceFromGateway | 
-[**unBindDevices**](DeviceApi.md#unBindDevices) | **POST** /model-state-management/subscriptions/{subscriptionId}/registries/{registryId}/unbindDevicesFromGateway | 
-[**updateConfigurationToDevice**](DeviceApi.md#updateConfigurationToDevice) | **POST** /model-state-management/subscriptions/{subscriptionid}/registries/{registryId}/devices/{deviceId}/updateConfigurationToDevice | 
-[**updateDevice**](DeviceApi.md#updateDevice) | **PATCH** /model-state-management/subscriptions/{subscriptionId}/registries/{registryId}/devices/{deviceId} | 
+[**bindDevice**](DeviceApi.md#bindDevice) | **POST** /subscriptions/{subscriptionId}/registries/{registryId}/bindDeviceToGateway | 
+[**bindDevices**](DeviceApi.md#bindDevices) | **POST** /subscriptions/{subscriptionId}/registries/{registryId}/bindDevicesToGateway | 
+[**blockDeviceCommuncation**](DeviceApi.md#blockDeviceCommuncation) | **PUT** /subscriptions/{subscriptionid}/registries/{registryId}/devices/{deviceId}/communication | 
+[**createDevice**](DeviceApi.md#createDevice) | **POST** /subscriptions/{subscriptionId}/registries/{registryId}/devices | 
+[**deleteDevice**](DeviceApi.md#deleteDevice) | **DELETE** /subscriptions/{subscriptionId}/registries/{registryId}/devices/{deviceId} | 
+[**getConfig**](DeviceApi.md#getConfig) | **GET** /subscriptions/{subscriptionid}/registries/{registryId}/devices/{deviceId}/configVersions | 
+[**getDevice**](DeviceApi.md#getDevice) | **GET** /subscriptions/{subscriptionId}/registries/{registryId}/devices/{deviceId} | 
+[**getDevices**](DeviceApi.md#getDevices) | **GET** /subscriptions/{subscriptionId}/registries/{registryId}/devices | 
+[**getStates**](DeviceApi.md#getStates) | **GET** /subscriptions/{subscriptionid}/registries/{registryId}/devices/{deviceId}/states | 
+[**sendCommandToDevice**](DeviceApi.md#sendCommandToDevice) | **POST** /subscriptions/{subscriptionid}/registries/{registryId}/devices/{deviceId}/sendCommandToDevice | 
+[**unBindDevice**](DeviceApi.md#unBindDevice) | **POST** /subscriptions/{subscriptionId}/registries/{registryId}/unbindDeviceFromGateway | 
+[**unBindDevices**](DeviceApi.md#unBindDevices) | **POST** /subscriptions/{subscriptionId}/registries/{registryId}/unbindDevicesFromGateway | 
+[**updateConfigurationToDevice**](DeviceApi.md#updateConfigurationToDevice) | **POST** /subscriptions/{subscriptionid}/registries/{registryId}/devices/{deviceId}/updateConfigurationToDevice | 
+[**updateCustomOnboardRequest**](DeviceApi.md#updateCustomOnboardRequest) | **POST** /subscriptions/{subscriptionid}/registries/{registryId}/devices/{deviceId}/updateCustomOnboardRequest | 
+[**updateDevice**](DeviceApi.md#updateDevice) | **PATCH** /subscriptions/{subscriptionId}/registries/{registryId}/devices/{deviceId} | 
 
 
 
@@ -315,7 +316,7 @@ Name | Type | Description  | Notes
 
 ## getConfig
 
-> ListDeviceConfigVersionsResponse getConfig(subscriptionid, registryId, deviceId, numVersions)
+> ListDeviceConfigVersionsResponse getConfig(subscriptionid, registryId, deviceId, opts)
 
 
 
@@ -339,8 +340,10 @@ let apiInstance = new OmniCoreModelAndStateManagementApi.DeviceApi();
 let subscriptionid = "subscriptionid_example"; // String | Subscription ID
 let registryId = "registryId_example"; // String | Registry ID
 let deviceId = "deviceId_example"; // String | Device ID
-let numVersions = 56; // Number | Device ID
-apiInstance.getConfig(subscriptionid, registryId, deviceId, numVersions, (error, data, response) => {
+let opts = {
+  'numVersions': 56 // Number | The number of versions to list. Versions are listed in decreasing order of the version number. The maximum number of versions retained is 10. If this value is zero, it will return all the versions available.
+};
+apiInstance.getConfig(subscriptionid, registryId, deviceId, opts, (error, data, response) => {
   if (error) {
     console.error(error);
   } else {
@@ -357,7 +360,7 @@ Name | Type | Description  | Notes
  **subscriptionid** | **String**| Subscription ID | 
  **registryId** | **String**| Registry ID | 
  **deviceId** | **String**| Device ID | 
- **numVersions** | **Number**| Device ID | 
+ **numVersions** | **Number**| The number of versions to list. Versions are listed in decreasing order of the version number. The maximum number of versions retained is 10. If this value is zero, it will return all the versions available. | [optional] 
 
 ### Return type
 
@@ -803,6 +806,66 @@ Name | Type | Description  | Notes
 - **Accept**: application/json
 
 
+## updateCustomOnboardRequest
+
+> Info updateCustomOnboardRequest(subscriptionid, registryId, deviceId, device)
+
+
+
+Approve/Reject a Custom Onboard Request
+
+### Example
+
+```javascript
+import OmniCoreModelAndStateManagementApi from 'omni_core_model_and_state_management_api';
+let defaultClient = OmniCoreModelAndStateManagementApi.ApiClient.instance;
+// Configure API key authorization: apiKey
+let apiKey = defaultClient.authentications['apiKey'];
+apiKey.apiKey = 'YOUR API KEY';
+// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+//apiKey.apiKeyPrefix = 'Token';
+// Configure Bearer (JWT) access token for authorization: bearerAuth
+let bearerAuth = defaultClient.authentications['bearerAuth'];
+bearerAuth.accessToken = "YOUR ACCESS TOKEN"
+
+let apiInstance = new OmniCoreModelAndStateManagementApi.DeviceApi();
+let subscriptionid = "subscriptionid_example"; // String | Subscription ID
+let registryId = "registryId_example"; // String | Registry ID
+let deviceId = "deviceId_example"; // String | Device ID
+let device = new OmniCoreModelAndStateManagementApi.CustomOnboard(); // CustomOnboard | application/json
+apiInstance.updateCustomOnboardRequest(subscriptionid, registryId, deviceId, device, (error, data, response) => {
+  if (error) {
+    console.error(error);
+  } else {
+    console.log('API called successfully. Returned data: ' + data);
+  }
+});
+```
+
+### Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **subscriptionid** | **String**| Subscription ID | 
+ **registryId** | **String**| Registry ID | 
+ **deviceId** | **String**| Device ID | 
+ **device** | [**CustomOnboard**](CustomOnboard.md)| application/json | 
+
+### Return type
+
+[**Info**](Info.md)
+
+### Authorization
+
+[apiKey](../README.md#apiKey), [bearerAuth](../README.md#bearerAuth)
+
+### HTTP request headers
+
+- **Content-Type**: application/json
+- **Accept**: application/json
+
+
 ## updateDevice
 
 > Device updateDevice(subscriptionId, registryId, deviceId, updateMask, device)
@@ -829,7 +892,7 @@ let apiInstance = new OmniCoreModelAndStateManagementApi.DeviceApi();
 let subscriptionId = "subscriptionId_example"; // String | Subscription ID
 let registryId = "registryId_example"; // String | Registry ID
 let deviceId = "deviceId_example"; // String | Device ID
-let updateMask = "updateMask_example"; // String | Required. Only updates the device fields indicated by this mask. The field mask must not be empty, and it must not contain fields that are immutable or only set by the server. Mutable top-level fields: credentials,logLevel, blocked, and metadata
+let updateMask = "updateMask_example"; // String | Required. Only updates the device fields indicated by this mask. The field mask must not be empty, and it must not contain fields that are immutable or only set by the server. Mutable top-level fields: credentials,logLevel, blocked,policy and metadata
 let device = new OmniCoreModelAndStateManagementApi.Device(); // Device | application/json
 apiInstance.updateDevice(subscriptionId, registryId, deviceId, updateMask, device, (error, data, response) => {
   if (error) {
@@ -848,7 +911,7 @@ Name | Type | Description  | Notes
  **subscriptionId** | **String**| Subscription ID | 
  **registryId** | **String**| Registry ID | 
  **deviceId** | **String**| Device ID | 
- **updateMask** | **String**| Required. Only updates the device fields indicated by this mask. The field mask must not be empty, and it must not contain fields that are immutable or only set by the server. Mutable top-level fields: credentials,logLevel, blocked, and metadata | 
+ **updateMask** | **String**| Required. Only updates the device fields indicated by this mask. The field mask must not be empty, and it must not contain fields that are immutable or only set by the server. Mutable top-level fields: credentials,logLevel, blocked,policy and metadata | 
  **device** | [**Device**](Device.md)| application/json | 
 
 ### Return type
