@@ -5,7 +5,7 @@ const deviceApi = require('./device/device')
 const gatewayApi = require('./gateway/gateway')
 const registryApi = require('./registry/registry')
 
-token = process.env.FIREBASE_TOKEN ? process.env.FIREBASE_TOKEN : "Token example"
+token = process.env.API_TOKEN ? process.env.API_TOKEN : "Token example"
 subscriptionId = process.env.SUBSCRIPTION_ID ? process.env.SUBSCRIPTION_ID : "Subscription_id example"
 registryId = process.env.REGISTRY_ID ? process.env.REGISTRY_ID : "registry_id example"
 deviceID = process.env.DEVICE_ID ? process.env.DEVICE_ID : "deviceId_example"
