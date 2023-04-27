@@ -22,7 +22,7 @@ Method | HTTP request | Description
 
 
 # **bind_device**
-> Info bind_device(subscription_id, registry_id, device)
+> Info bind_device(subscription_id, registry_id, bind)
 
 
 
@@ -66,10 +66,10 @@ with OmniCore.ApiClient(configuration) as api_client:
     api_instance = OmniCore.DeviceApi(api_client)
     subscription_id = 'subscription_id_example' # str | Subscription ID
     registry_id = 'registry_id_example' # str | Registry ID
-    device = OmniCore.BindRequest() # BindRequest | application/json
+    bind = OmniCore.BindRequest() # BindRequest | application/json
 
     try:
-        api_response = api_instance.bind_device(subscription_id, registry_id, device)
+        api_response = api_instance.bind_device(subscription_id, registry_id, bind)
         print("The response of DeviceApi->bind_device:\n")
         pprint(api_response)
     except Exception as e:
@@ -112,10 +112,10 @@ with OmniCore.ApiClient(configuration) as api_client:
     api_instance = OmniCore.DeviceApi(api_client)
     subscription_id = 'subscription_id_example' # str | Subscription ID
     registry_id = 'registry_id_example' # str | Registry ID
-    device = OmniCore.BindRequest() # BindRequest | application/json
+    bind = OmniCore.BindRequest() # BindRequest | application/json
 
     try:
-        api_response = api_instance.bind_device(subscription_id, registry_id, device)
+        api_response = api_instance.bind_device(subscription_id, registry_id, bind)
         print("The response of DeviceApi->bind_device:\n")
         pprint(api_response)
     except Exception as e:
@@ -128,7 +128,7 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **subscription_id** | **str**| Subscription ID | 
  **registry_id** | **str**| Registry ID | 
- **device** | [**BindRequest**](BindRequest.md)| application/json | 
+ **bind** | [**BindRequest**](BindRequest.md)| application/json | 
 
 ### Return type
 
@@ -154,7 +154,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **bind_devices**
-> Info bind_devices(subscription_id, registry_id, device)
+> Info bind_devices(subscription_id, registry_id, bind)
 
 
 
@@ -198,10 +198,10 @@ with OmniCore.ApiClient(configuration) as api_client:
     api_instance = OmniCore.DeviceApi(api_client)
     subscription_id = 'subscription_id_example' # str | Subscription ID
     registry_id = 'registry_id_example' # str | Registry ID
-    device = OmniCore.BindRequestIdsGateway() # BindRequestIdsGateway | application/json
+    bind = OmniCore.BindRequestIdsGateway() # BindRequestIdsGateway | application/json
 
     try:
-        api_response = api_instance.bind_devices(subscription_id, registry_id, device)
+        api_response = api_instance.bind_devices(subscription_id, registry_id, bind)
         print("The response of DeviceApi->bind_devices:\n")
         pprint(api_response)
     except Exception as e:
@@ -244,10 +244,10 @@ with OmniCore.ApiClient(configuration) as api_client:
     api_instance = OmniCore.DeviceApi(api_client)
     subscription_id = 'subscription_id_example' # str | Subscription ID
     registry_id = 'registry_id_example' # str | Registry ID
-    device = OmniCore.BindRequestIdsGateway() # BindRequestIdsGateway | application/json
+    bind = OmniCore.BindRequestIdsGateway() # BindRequestIdsGateway | application/json
 
     try:
-        api_response = api_instance.bind_devices(subscription_id, registry_id, device)
+        api_response = api_instance.bind_devices(subscription_id, registry_id, bind)
         print("The response of DeviceApi->bind_devices:\n")
         pprint(api_response)
     except Exception as e:
@@ -260,7 +260,7 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **subscription_id** | **str**| Subscription ID | 
  **registry_id** | **str**| Registry ID | 
- **device** | [**BindRequestIdsGateway**](BindRequestIdsGateway.md)| application/json | 
+ **bind** | [**BindRequestIdsGateway**](BindRequestIdsGateway.md)| application/json | 
 
 ### Return type
 
@@ -286,7 +286,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **block_device_communcation**
-> object block_device_communcation(subscriptionid, registry_id, device_id, device)
+> object block_device_communcation(subscriptionid, registry_id, device_id, block)
 
 
 
@@ -331,10 +331,10 @@ with OmniCore.ApiClient(configuration) as api_client:
     subscriptionid = 'subscriptionid_example' # str | Subscription ID
     registry_id = 'registry_id_example' # str | Registry ID
     device_id = 'device_id_example' # str | Device ID
-    device = OmniCore.BlockCommunicationBody() # BlockCommunicationBody | application/json
+    block = OmniCore.BlockCommunicationBody() # BlockCommunicationBody | application/json
 
     try:
-        api_response = api_instance.block_device_communcation(subscriptionid, registry_id, device_id, device)
+        api_response = api_instance.block_device_communcation(subscriptionid, registry_id, device_id, block)
         print("The response of DeviceApi->block_device_communcation:\n")
         pprint(api_response)
     except Exception as e:
@@ -378,10 +378,10 @@ with OmniCore.ApiClient(configuration) as api_client:
     subscriptionid = 'subscriptionid_example' # str | Subscription ID
     registry_id = 'registry_id_example' # str | Registry ID
     device_id = 'device_id_example' # str | Device ID
-    device = OmniCore.BlockCommunicationBody() # BlockCommunicationBody | application/json
+    block = OmniCore.BlockCommunicationBody() # BlockCommunicationBody | application/json
 
     try:
-        api_response = api_instance.block_device_communcation(subscriptionid, registry_id, device_id, device)
+        api_response = api_instance.block_device_communcation(subscriptionid, registry_id, device_id, block)
         print("The response of DeviceApi->block_device_communcation:\n")
         pprint(api_response)
     except Exception as e:
@@ -395,7 +395,7 @@ Name | Type | Description  | Notes
  **subscriptionid** | **str**| Subscription ID | 
  **registry_id** | **str**| Registry ID | 
  **device_id** | **str**| Device ID | 
- **device** | [**BlockCommunicationBody**](BlockCommunicationBody.md)| application/json | 
+ **block** | [**BlockCommunicationBody**](BlockCommunicationBody.md)| application/json | 
 
 ### Return type
 
@@ -1240,7 +1240,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **send_command_to_device**
-> object send_command_to_device(subscriptionid, registry_id, device_id, device)
+> object send_command_to_device(subscriptionid, registry_id, device_id, command)
 
 
 
@@ -1285,10 +1285,10 @@ with OmniCore.ApiClient(configuration) as api_client:
     subscriptionid = 'subscriptionid_example' # str | Subscription ID
     registry_id = 'registry_id_example' # str | Registry ID
     device_id = 'device_id_example' # str | Device ID
-    device = OmniCore.DeviceCommand() # DeviceCommand | application/json
+    command = OmniCore.DeviceCommand() # DeviceCommand | application/json
 
     try:
-        api_response = api_instance.send_command_to_device(subscriptionid, registry_id, device_id, device)
+        api_response = api_instance.send_command_to_device(subscriptionid, registry_id, device_id, command)
         print("The response of DeviceApi->send_command_to_device:\n")
         pprint(api_response)
     except Exception as e:
@@ -1332,10 +1332,10 @@ with OmniCore.ApiClient(configuration) as api_client:
     subscriptionid = 'subscriptionid_example' # str | Subscription ID
     registry_id = 'registry_id_example' # str | Registry ID
     device_id = 'device_id_example' # str | Device ID
-    device = OmniCore.DeviceCommand() # DeviceCommand | application/json
+    command = OmniCore.DeviceCommand() # DeviceCommand | application/json
 
     try:
-        api_response = api_instance.send_command_to_device(subscriptionid, registry_id, device_id, device)
+        api_response = api_instance.send_command_to_device(subscriptionid, registry_id, device_id, command)
         print("The response of DeviceApi->send_command_to_device:\n")
         pprint(api_response)
     except Exception as e:
@@ -1349,7 +1349,7 @@ Name | Type | Description  | Notes
  **subscriptionid** | **str**| Subscription ID | 
  **registry_id** | **str**| Registry ID | 
  **device_id** | **str**| Device ID | 
- **device** | [**DeviceCommand**](DeviceCommand.md)| application/json | 
+ **command** | [**DeviceCommand**](DeviceCommand.md)| application/json | 
 
 ### Return type
 
@@ -1375,7 +1375,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **un_bind_device**
-> Info un_bind_device(subscription_id, registry_id, device)
+> Info un_bind_device(subscription_id, registry_id, unbind)
 
 
 
@@ -1419,10 +1419,10 @@ with OmniCore.ApiClient(configuration) as api_client:
     api_instance = OmniCore.DeviceApi(api_client)
     subscription_id = 'subscription_id_example' # str | Subscription ID
     registry_id = 'registry_id_example' # str | Registry ID
-    device = OmniCore.BindRequest() # BindRequest | application/json
+    unbind = OmniCore.BindRequest() # BindRequest | application/json
 
     try:
-        api_response = api_instance.un_bind_device(subscription_id, registry_id, device)
+        api_response = api_instance.un_bind_device(subscription_id, registry_id, unbind)
         print("The response of DeviceApi->un_bind_device:\n")
         pprint(api_response)
     except Exception as e:
@@ -1465,10 +1465,10 @@ with OmniCore.ApiClient(configuration) as api_client:
     api_instance = OmniCore.DeviceApi(api_client)
     subscription_id = 'subscription_id_example' # str | Subscription ID
     registry_id = 'registry_id_example' # str | Registry ID
-    device = OmniCore.BindRequest() # BindRequest | application/json
+    unbind = OmniCore.BindRequest() # BindRequest | application/json
 
     try:
-        api_response = api_instance.un_bind_device(subscription_id, registry_id, device)
+        api_response = api_instance.un_bind_device(subscription_id, registry_id, unbind)
         print("The response of DeviceApi->un_bind_device:\n")
         pprint(api_response)
     except Exception as e:
@@ -1481,7 +1481,7 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **subscription_id** | **str**| Subscription ID | 
  **registry_id** | **str**| Registry ID | 
- **device** | [**BindRequest**](BindRequest.md)| application/json | 
+ **unbind** | [**BindRequest**](BindRequest.md)| application/json | 
 
 ### Return type
 
@@ -1507,7 +1507,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **un_bind_devices**
-> Info un_bind_devices(subscription_id, registry_id, device)
+> Info un_bind_devices(subscription_id, registry_id, unbind)
 
 
 
@@ -1551,10 +1551,10 @@ with OmniCore.ApiClient(configuration) as api_client:
     api_instance = OmniCore.DeviceApi(api_client)
     subscription_id = 'subscription_id_example' # str | Subscription ID
     registry_id = 'registry_id_example' # str | Registry ID
-    device = OmniCore.BindRequestIdsGateway() # BindRequestIdsGateway | application/json
+    unbind = OmniCore.BindRequestIdsGateway() # BindRequestIdsGateway | application/json
 
     try:
-        api_response = api_instance.un_bind_devices(subscription_id, registry_id, device)
+        api_response = api_instance.un_bind_devices(subscription_id, registry_id, unbind)
         print("The response of DeviceApi->un_bind_devices:\n")
         pprint(api_response)
     except Exception as e:
@@ -1597,10 +1597,10 @@ with OmniCore.ApiClient(configuration) as api_client:
     api_instance = OmniCore.DeviceApi(api_client)
     subscription_id = 'subscription_id_example' # str | Subscription ID
     registry_id = 'registry_id_example' # str | Registry ID
-    device = OmniCore.BindRequestIdsGateway() # BindRequestIdsGateway | application/json
+    unbind = OmniCore.BindRequestIdsGateway() # BindRequestIdsGateway | application/json
 
     try:
-        api_response = api_instance.un_bind_devices(subscription_id, registry_id, device)
+        api_response = api_instance.un_bind_devices(subscription_id, registry_id, unbind)
         print("The response of DeviceApi->un_bind_devices:\n")
         pprint(api_response)
     except Exception as e:
@@ -1613,7 +1613,7 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **subscription_id** | **str**| Subscription ID | 
  **registry_id** | **str**| Registry ID | 
- **device** | [**BindRequestIdsGateway**](BindRequestIdsGateway.md)| application/json | 
+ **unbind** | [**BindRequestIdsGateway**](BindRequestIdsGateway.md)| application/json | 
 
 ### Return type
 
@@ -1639,7 +1639,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **update_configuration_to_device**
-> DeviceConfig update_configuration_to_device(subscriptionid, registry_id, device_id, device)
+> DeviceConfig update_configuration_to_device(subscriptionid, registry_id, device_id, configuration)
 
 
 
@@ -1684,10 +1684,10 @@ with OmniCore.ApiClient(configuration) as api_client:
     subscriptionid = 'subscriptionid_example' # str | Subscription ID
     registry_id = 'registry_id_example' # str | Registry ID
     device_id = 'device_id_example' # str | Device ID
-    device = OmniCore.DeviceConfiguration() # DeviceConfiguration | application/json
+    configuration = OmniCore.DeviceConfiguration() # DeviceConfiguration | application/json
 
     try:
-        api_response = api_instance.update_configuration_to_device(subscriptionid, registry_id, device_id, device)
+        api_response = api_instance.update_configuration_to_device(subscriptionid, registry_id, device_id, configuration)
         print("The response of DeviceApi->update_configuration_to_device:\n")
         pprint(api_response)
     except Exception as e:
@@ -1731,10 +1731,10 @@ with OmniCore.ApiClient(configuration) as api_client:
     subscriptionid = 'subscriptionid_example' # str | Subscription ID
     registry_id = 'registry_id_example' # str | Registry ID
     device_id = 'device_id_example' # str | Device ID
-    device = OmniCore.DeviceConfiguration() # DeviceConfiguration | application/json
+    configuration = OmniCore.DeviceConfiguration() # DeviceConfiguration | application/json
 
     try:
-        api_response = api_instance.update_configuration_to_device(subscriptionid, registry_id, device_id, device)
+        api_response = api_instance.update_configuration_to_device(subscriptionid, registry_id, device_id, configuration)
         print("The response of DeviceApi->update_configuration_to_device:\n")
         pprint(api_response)
     except Exception as e:
@@ -1748,7 +1748,7 @@ Name | Type | Description  | Notes
  **subscriptionid** | **str**| Subscription ID | 
  **registry_id** | **str**| Registry ID | 
  **device_id** | **str**| Device ID | 
- **device** | [**DeviceConfiguration**](DeviceConfiguration.md)| application/json | 
+ **configuration** | [**DeviceConfiguration**](DeviceConfiguration.md)| application/json | 
 
 ### Return type
 
@@ -1774,7 +1774,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **update_custom_onboard_request**
-> Info update_custom_onboard_request(subscriptionid, registry_id, device_id, device)
+> Info update_custom_onboard_request(subscriptionid, registry_id, device_id, custom_onboard)
 
 
 
@@ -1819,10 +1819,10 @@ with OmniCore.ApiClient(configuration) as api_client:
     subscriptionid = 'subscriptionid_example' # str | Subscription ID
     registry_id = 'registry_id_example' # str | Registry ID
     device_id = 'device_id_example' # str | Device ID
-    device = OmniCore.CustomOnboard() # CustomOnboard | application/json
+    custom_onboard = OmniCore.CustomOnboard() # CustomOnboard | application/json
 
     try:
-        api_response = api_instance.update_custom_onboard_request(subscriptionid, registry_id, device_id, device)
+        api_response = api_instance.update_custom_onboard_request(subscriptionid, registry_id, device_id, custom_onboard)
         print("The response of DeviceApi->update_custom_onboard_request:\n")
         pprint(api_response)
     except Exception as e:
@@ -1866,10 +1866,10 @@ with OmniCore.ApiClient(configuration) as api_client:
     subscriptionid = 'subscriptionid_example' # str | Subscription ID
     registry_id = 'registry_id_example' # str | Registry ID
     device_id = 'device_id_example' # str | Device ID
-    device = OmniCore.CustomOnboard() # CustomOnboard | application/json
+    custom_onboard = OmniCore.CustomOnboard() # CustomOnboard | application/json
 
     try:
-        api_response = api_instance.update_custom_onboard_request(subscriptionid, registry_id, device_id, device)
+        api_response = api_instance.update_custom_onboard_request(subscriptionid, registry_id, device_id, custom_onboard)
         print("The response of DeviceApi->update_custom_onboard_request:\n")
         pprint(api_response)
     except Exception as e:
@@ -1883,7 +1883,7 @@ Name | Type | Description  | Notes
  **subscriptionid** | **str**| Subscription ID | 
  **registry_id** | **str**| Registry ID | 
  **device_id** | **str**| Device ID | 
- **device** | [**CustomOnboard**](CustomOnboard.md)| application/json | 
+ **custom_onboard** | [**CustomOnboard**](CustomOnboard.md)| application/json | 
 
 ### Return type
 
