@@ -5,7 +5,7 @@ import base64
 import OmniCore
 from OmniCore.rest import ApiException
 from pprint import pprint
-# Defining the host is optional and defaults to https://demo-api.omnicore.cloud.korewireless.com
+# Defining the host is optional and defaults to https://api.korewireless.com/omnicore
 # See configuration.py for a list of all supported configuration parameters.
 
 
@@ -16,7 +16,7 @@ from pprint import pprint
 
 # Configure access token and apikey
 configuration = OmniCore.Configuration(
-    host="https://demo-api.omnicore.cloud.korewireless.com",
+    host="https://api.korewireless.com/omnicore",
     access_token="Insert Token Here",
     api_key={"apiKey": "Insert API Key Here"}
 )
