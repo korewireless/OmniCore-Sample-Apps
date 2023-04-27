@@ -82,10 +82,10 @@ with OmniCore.ApiClient(configuration) as api_client:
     api_instance = OmniCore.DeviceApi(api_client)
     subscription_id = 'subscription_id_example' # str | Subscription ID
     registry_id = 'registry_id_example' # str | Registry ID
-    device = OmniCore.BindRequest() # BindRequest | application/json
+    bind = OmniCore.BindRequest() # BindRequest | application/json
 
     try:
-        api_response = api_instance.bind_device(subscription_id, registry_id, device)
+        api_response = api_instance.bind_device(subscription_id, registry_id, bind)
         print("The response of DeviceApi->bind_device:\n")
         pprint(api_response)
     except ApiException as e:

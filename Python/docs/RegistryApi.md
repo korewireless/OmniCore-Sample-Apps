@@ -535,7 +535,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **send_broadcast_to_devices**
-> object send_broadcast_to_devices(subscriptionid, registry_id, registry)
+> object send_broadcast_to_devices(subscriptionid, registry_id, broadcast)
 
 
 
@@ -579,10 +579,10 @@ with OmniCore.ApiClient(configuration) as api_client:
     api_instance = OmniCore.RegistryApi(api_client)
     subscriptionid = 'subscriptionid_example' # str | Subscription ID
     registry_id = 'registry_id_example' # str | Registry ID
-    registry = OmniCore.DeviceCommand() # DeviceCommand | application/json
+    broadcast = OmniCore.DeviceCommand() # DeviceCommand | application/json
 
     try:
-        api_response = api_instance.send_broadcast_to_devices(subscriptionid, registry_id, registry)
+        api_response = api_instance.send_broadcast_to_devices(subscriptionid, registry_id, broadcast)
         print("The response of RegistryApi->send_broadcast_to_devices:\n")
         pprint(api_response)
     except Exception as e:
@@ -625,10 +625,10 @@ with OmniCore.ApiClient(configuration) as api_client:
     api_instance = OmniCore.RegistryApi(api_client)
     subscriptionid = 'subscriptionid_example' # str | Subscription ID
     registry_id = 'registry_id_example' # str | Registry ID
-    registry = OmniCore.DeviceCommand() # DeviceCommand | application/json
+    broadcast = OmniCore.DeviceCommand() # DeviceCommand | application/json
 
     try:
-        api_response = api_instance.send_broadcast_to_devices(subscriptionid, registry_id, registry)
+        api_response = api_instance.send_broadcast_to_devices(subscriptionid, registry_id, broadcast)
         print("The response of RegistryApi->send_broadcast_to_devices:\n")
         pprint(api_response)
     except Exception as e:
@@ -641,7 +641,7 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **subscriptionid** | **str**| Subscription ID | 
  **registry_id** | **str**| Registry ID | 
- **registry** | [**DeviceCommand**](DeviceCommand.md)| application/json | 
+ **broadcast** | [**DeviceCommand**](DeviceCommand.md)| application/json | 
 
 ### Return type
 
