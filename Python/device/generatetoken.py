@@ -3,7 +3,7 @@ import requests
 import datetime
 
 
-def generateTokenHttp(clientId, clientSecret, url='https://api.korewireless.com/Api/api/token'):
+def generateTokenHttp(clientId, clientSecret, url='https://api.korewireless.com/Api/token'):
     if clientId == "" and clientSecret == "":
         raise Exception("Client Id,Secret Invalid")
     data = "grant_type=client_credentials&client_id={clientId}&client_secret={clientSecret}".format(
@@ -28,7 +28,7 @@ def isTokenExpired(access_token):
     return nowDatetime >= expDatetime
 
 
-def fetchToken(currentToken, clientId, clientSecret, url='https://api.korewireless.com/Api/api/token'):
+def fetchToken(currentToken, clientId, clientSecret, url='https://api.korewireless.com/Api/token'):
     if currentToken != "":
         if isTokenExpired(currentToken):
             return generateTokenHttp(clientId, clientSecret, url)
