@@ -1,11 +1,14 @@
 import jwt
 import requests
-import datetime
+from datetime import datetime
+
+# This token generation is relevant to only Multitenant SaaS mode deployment.
 
 
 def generateTokenHttp(clientId, clientSecret, url='https://api.korewireless.com/Api/token'):
     if clientId == "" and clientSecret == "":
         raise Exception("Client Id,Secret Invalid")
+    # The token generated is by default set to 10 hours. To control the lifetime of token add "access_token_lifespan=seconds" in the token request body.
     data = "grant_type=client_credentials&client_id={clientId}&client_secret={clientSecret}".format(
         clientId=clientId, clientSecret=clientSecret)
     headers = {"content-type": "application/x-www-form-urlencoded",
