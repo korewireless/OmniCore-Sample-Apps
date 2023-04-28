@@ -21,8 +21,10 @@ def generateTokenHttp(clientId, clientSecret, url='https://api.korewireless.com/
 
 
 def isTokenExpired(access_token):
-    decodedToken = jwt.decode(access_token, verify=False, algorithms=['RS256'])
-    expTimestamp = decodedToken.get('exp')
+    algorithm = jwt.get_unverified_header(access_token).get('alg')
+    decodedToken = jwt.decode(
+        jwt=access_token, verify=False, algorithms=algorithm, options={"verify_signature": False})
+    expTimestamp = decodedToken.get('exp')-300
     if not expTimestamp:
         return True
     # Token is invalid if it doesn't contain an expiration time
