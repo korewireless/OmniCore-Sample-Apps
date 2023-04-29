@@ -1,5 +1,3 @@
-using System.Collections.Generic;
-using System.Diagnostics;
 using OmniCore.Api;
 using OmniCore.Client;
 using OmniCore.Model;
@@ -11,7 +9,7 @@ namespace Example
         internal static void GetRegistries(Configuration config , String subscriptionId)
         {
             var apiInstance = new RegistryApi(config);
-            
+            var registryId = "provide-registry-name"; // string | Registry ID
             var pageNumber = 1;  // int? | Page Number (optional) 
             var pageSize = 50;  // int? | Page Size (optional) 
 
@@ -35,7 +33,7 @@ namespace Example
         internal static void GetRegistry(Configuration config, String subscriptionId)
         {
             var apiInstance = new RegistryApi(config); 
-            var registryId = "provide-device-name";  // string | Registry ID
+            var registryId = "provide-registry-name"; // string | Registry ID
 
             try
             {
@@ -106,6 +104,28 @@ namespace Example
             try
             {
                 DeviceRegistry result = apiInstance.UpdateRegistry(subscriptionId, registryId, updateMask, uR, 0);
+                Console.WriteLine(result);
+            }
+            catch (ApiException  e)
+            {
+                Console.WriteLine("Exception when calling RegistryApi.UpdateRegistry: " + e.Message);
+                Console.WriteLine("Status Code: " + e.ErrorCode);
+                Console.WriteLine(e.StackTrace);
+            }
+        }
+
+        internal static void BroadcastToDevices(Configuration config, string subscriptionId)
+        {
+            var apiInstance = new RegistryApi(config); 
+            var registryId = "provide-registry-name";  // string | Registry ID
+
+            DeviceRegistry uR = new DeviceRegistry(registryId, getRegistryCredentials(), new HttpConfig(HttpConfig.HttpEnabledStateEnum.ENABLED), new MqttConfig(MqttConfig.MqttEnabledStateEnum.DISABLED),
+                                                    LogLevel.INFO, getEventNotificationConfigs(), getLogNotificationConfig(), getStateNotificationConfig());
+
+            try
+            {
+                DeviceCommand dCommand = new DeviceCommand("c29tZXRoaW5nIGlzIGdvaW5nIG9u", "");  
+                Object result = apiInstance.SendBroadcastToDevices(subscriptionId,  registryId, dCommand, 0);
                 Console.WriteLine(result);
             }
             catch (ApiException  e)

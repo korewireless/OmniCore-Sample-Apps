@@ -13,7 +13,7 @@ namespace Example
             
             string token = await TokenHelper.FetchToken("", "provide-your-clientid", "provide-your-clientsecret",  tokenUrlPath);
             config.AccessToken = token;
-            var subscriptionId =   "korewireless-lynx";  
+            var subscriptionId =   "provide-your-subscription-id";  
             Console.WriteLine("Token: " + token);
             /* Registry operations */
             RegistryOps.GetRegistries(config, subscriptionId);
