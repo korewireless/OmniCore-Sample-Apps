@@ -23,7 +23,7 @@ you may need to run `pip` with root permission:
 Adds or updates a package reference in your project by running below command
 
 ```csharp
-dotnet add package KORE-Wireless.OmniCore --version 2.1.0 
+dotnet add package KORE-Wireless.OmniCore --version 2.4.0
 ```
 
 [More Details](/CSharp/Readme.md)
