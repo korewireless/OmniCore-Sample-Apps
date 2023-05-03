@@ -16,7 +16,7 @@ registryId = process.env.REGISTRY_ID ? process.env.REGISTRY_ID : "registry_id ex
 deviceID = process.env.DEVICE_ID ? process.env.DEVICE_ID : "deviceId_example"
 gatewayId = process.env.GATEWAY_ID ? process.env.GATEWAY_ID : "gatewayId_example"
 newRegistryId = process.env.NEW_REGISTRY_ID ? process.env.NEW_REGISTRY_ID : "registryId_example"
-hostUrl = process.env.HOST_URL ? process.env.HOST_URL : "hosturl_example"
+hostUrl = process.env.HOST_URL ? process.env.HOST_URL : "https://api.korewireless.com/omnicore"
 apikey = process.env.API_KEY ? process.env.API_KEY : "apikey_example"
 
 //Get token
