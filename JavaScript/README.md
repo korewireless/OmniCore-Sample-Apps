@@ -11,87 +11,8 @@ For more information, please visit [http://www.korewireless.com](http://www.kore
 
 ## Installation
 
-### For [Node.js](https://nodejs.org/)
-
-#### npm
-
-To publish the library as a [npm](https://www.npmjs.com/), please follow the procedure in ["Publishing npm packages"](https://docs.npmjs.com/getting-started/publishing-npm-packages).
-
-Then install it via:
-
-```shell
-npm install omni_core_model_and_state_management_api --save
-```
-
-Finally, you need to build the module:
-
-```shell
-npm run build
-```
-
-##### Local development
-
-To use the library locally without publishing to a remote npm registry, first install the dependencies by changing into the directory containing `package.json` (and this README). Let's call this `JAVASCRIPT_CLIENT_DIR`. Then run:
-
-```shell
-npm install
-```
-
-Next, [link](https://docs.npmjs.com/cli/link) it globally in npm with the following, also from `JAVASCRIPT_CLIENT_DIR`:
-
-```shell
-npm link
-```
-
-To use the link you just defined in your project, switch to the directory you want to use your omni_core_model_and_state_management_api from, and run:
-
-```shell
-npm link /path/to/<JAVASCRIPT_CLIENT_DIR>
-```
-
-Finally, you need to build the module:
-
-```shell
-npm run build
-```
-
-#### git
-
-If the library is hosted at a git repository, e.g.https://github.com/korewireless/OmniCore-JavaScript-SDK
-then install it via:
-
 ```shell
     npm install korewireless/OmniCore-JavaScript-SDK --save
-```
-
-### For browser
-
-The library also works in the browser environment via npm and [browserify](http://browserify.org/). After following
-the above steps with Node.js and installing browserify with `npm install -g browserify`,
-perform the following (assuming *main.js* is your entry file):
-
-```shell
-browserify main.js > bundle.js
-```
-
-Then include *bundle.js* in the HTML pages.
-
-### Webpack Configuration
-
-Using Webpack you may encounter the following error: "Module not found: Error:
-Cannot resolve module", most certainly you should disable AMD loader. Add/merge
-the following section to your webpack config:
-
-```javascript
-module: {
-  rules: [
-    {
-      parser: {
-        amd: false
-      }
-    }
-  ]
-}
 ```
 
 ## Getting Started
@@ -99,30 +20,45 @@ module: {
 Please follow the [installation](#installation) instruction and execute the following JS code:
 
 ```javascript
-var OmniCoreModelAndStateManagementApi = require('omni_core_model_and_state_management_api');
+  const OmniCoreModelAndStateManagementApi = require('omni_core_model_and_state_management_api');
 
-var defaultClient = OmniCoreModelAndStateManagementApi.ApiClient.instance;
-// Configure API key authorization: apiKey
-var apiKey = defaultClient.authentications['apiKey'];
-apiKey.apiKey = "YOUR API KEY"
-// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
-//apiKey.apiKeyPrefix['x-api-key'] = "Token"
-// Configure Bearer (JWT) access token for authorization: bearerAuth
-var bearerAuth = defaultClient.authentications['bearerAuth'];
-bearerAuth.accessToken = "YOUR ACCESS TOKEN"
+  let defaultClient = OmnicoreModelAndStateManagementApi.ApiClient.instance;
+  defaultClient.basePath = 'https://api.korewireless.com/omnicore'
+  // Configure API key authorization: apiKey
+  let apiKey = defaultClient.authentications['apiKey'];
+  apiKey.apiKey = 'YOUR API KEY'
+  // Configure Bearer (JWT) access token for authorization: bearerAuth
+  let bearerAuth = defaultClient.authentications['bearerAuth'];
+  bearerAuth.accessToken = 'YOUR ACCESS TOKEN'
 
-var api = new OmniCoreModelAndStateManagementApi.DeviceApi()
-var subscriptionId = "subscriptionId_example"; // {String} Subscription ID
-var registryId = "registryId_example"; // {String} Registry ID
-var device = new OmniCoreModelAndStateManagementApi.BindRequest(); // {BindRequest} application/json
-var callback = function(error, data, response) {
-  if (error) {
-    console.error(error);
-  } else {
-    console.log('API called successfully. Returned data: ' + data);
-  }
-};
-api.bindDevice(subscriptionId, registryId, device, callback);
+  let apiInstance = new OmnicoreModelAndStateManagementApi.RegistryApi();
+  let subscriptionId = 'YOUR SUBSCRIPTION ID'; // String | Subscription ID
+  let opts = {
+    'pageNumber': 1, // Number | Page Number
+    'pageSize': 10 // Number | Page Size
+  };
+  apiInstance.getRegistries(subscriptionId, opts, (error, data, response) => {
+    if (error) {
+      console.error(error);
+    } else {
+      console.log('\nAPI called successfully. Returned data: \n');
+      console.log(" Registry Id: ",data.deviceRegistries[0].id)
+      console.log(" Parent: ",data.deviceRegistries[0].parent)
+      console.log(" Credentials: ",data.deviceRegistries[0].credentials)
+      console.log(" eventNotificationConfigs:",data.deviceRegistries[0].eventNotificationConfigs)
+      console.log(" httpConfig: ",data.deviceRegistries[0].httpConfig)
+      console.log(" logLevel: ",data.deviceRegistries[0].logLevel)
+      console.log(" logNotificationConfig: ",data.deviceRegistries[0].logNotificationConfig)
+      console.log(" customOnboardEnabled: ",data.deviceRegistries[0].customOnboardEnabled)
+      console.log(" customOnboardNotificationConfig: ",data.deviceRegistries[0].customOnboardNotificationConfig)
+      console.log(" mqttConfig: ",data.deviceRegistries[0].mqttConfig)
+      console.log(" name:",data.deviceRegistries[0].name)
+      console.log(" numberOfDevices: ",data.deviceRegistries[0].numberOfDevices)
+      console.log(" numberOfGateways: ",data.deviceRegistries[0].numberOfGateways)
+      console.log(" stateNotificationConfig: ",data.deviceRegistries[0].stateNotificationConfig)
+      console.log(" updatedOn: ",data.deviceRegistries[0].updatedOn)
+    }
+  });
 
 ```
 
