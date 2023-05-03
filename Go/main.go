@@ -1,9 +1,16 @@
 package main
 
-var jwtToken = "<YOUR ACCESS TOKEN>"
+import "fmt"
+
 var apiKey = "<YOUR API KEY>"
+var jwtToken string
 
 func main() {
+	jwtToken = GenerateToken("<Client-Id>", "<Client-Secret>")
+	if jwtToken == "" {
+		fmt.Print("Invalid client id or secret provided")
+		return
+	}
 	CreateRegistry("sample-registry-sdk", "korewireless-development", "projects/gcp-iot-core-361019/topics/data")
 	GetRegistry("korewireless-development", "sample-registry-sdk")
 	GetRegistries("korewireless-development")
@@ -30,7 +37,7 @@ func main() {
 
 	DeleteDevice("korewireless-development", "sample-registry-sdk", "sample-custom-device-sdk")
 	DeleteDevice("korewireless-development", "sample-registry-sdk", "sample-device-sdk")
-	
+
 	DeleteGateway("korewireless-development", "sample-registry-sdk", "sample-gateway-sdk")
 
 	DeleteRegistry("korewireless-development", "sample-registry-sdk")
