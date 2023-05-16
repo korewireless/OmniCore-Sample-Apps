@@ -4,10 +4,11 @@ import "fmt"
 
 var apiKey = "<YOUR API KEY>"
 var jwtToken string
+var err error
 
 func main() {
-	jwtToken = GenerateToken("<Client-Id>", "<Client-Secret>")
-	if jwtToken == "" {
+	jwtToken, err = FetchToken(jwtToken, "<Client-Id>", "<Client-Secret>")
+	if err != nil {
 		fmt.Print("Invalid client id or secret provided")
 		return
 	}
