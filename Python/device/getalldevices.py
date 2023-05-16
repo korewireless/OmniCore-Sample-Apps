@@ -52,7 +52,7 @@ with OmniCore.ApiClient(configuration) as api_client:
 
     try:
         # Get All Devices
-        api_response = api_instance.get_devices(registry_id, subscription_id, page_number=page_number, page_size=page_size, field_mask=field_mask, device_ids=device_ids, device_num_ids=device_num_ids,
+        api_response = api_instance.get_devices(subscription_id, registry_id, page_number=page_number, page_size=page_size, field_mask=field_mask, device_ids=device_ids, device_num_ids=device_num_ids,
                                                 gateway_list_options_associations_device_id=gateway_list_options_associations_device_id, gateway_list_options_associations_gateway_id=gateway_list_options_associations_gateway_id, gateway_list_options_gateway_type=gateway_list_options_gateway_type)
         print("The response of DeviceApi->get_devices:\n")
         print("Device Id:%s" % api_response.devices[0].id)

@@ -39,7 +39,7 @@ with OmniCore.ApiClient(configuration) as api_client:
     try:
         # Get Device
         api_response = api_instance.get_device(
-            registry_id, subscription_id, device_id)
+            subscription_id, registry_id, device_id)
         print("The response of DeviceApi->get_device:\n")
         print("Device Id:%s" % api_response.id)
         print("Device Full Name:%s" % api_response.name)

@@ -100,7 +100,7 @@ func CustomOnBoardDevice(subscriptionId string, registryId string, deviceId stri
 	}
 
 	ctx := context.WithValue(context.Background(), omnicore.ContextAccessToken, jwtToken)
-	response, _, err := apiClient.DeviceApi.UpdateCustomOnboardRequest(ctx, subscriptionId, registryId,deviceId).Device(device).Execute()
+	response, _, err := apiClient.DeviceApi.UpdateCustomOnboardRequest(ctx, subscriptionId, registryId, deviceId).Device(device).Execute()
 	if err != nil {
 		log.Print(err.Error())
 		return
@@ -115,7 +115,7 @@ func GetDevice(subscriptionId string, registryId string, deviceId string) {
 	configuration.AddDefaultHeader("x-api-key", apiKey)
 	apiClient := omnicore.NewAPIClient(configuration)
 	ctx := context.WithValue(context.Background(), omnicore.ContextAccessToken, jwtToken)
-	response, r, err := apiClient.DeviceApi.GetDevice(ctx, registryId, subscriptionId, deviceId).Execute()
+	response, r, err := apiClient.DeviceApi.GetDevice(ctx, subscriptionId, registryId, deviceId).Execute()
 	if err != nil {
 		fmt.Fprintf(os.Stderr, "Error when calling `DeviceApi.GetDevice``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -136,7 +136,7 @@ func GetDevices(subscriptionId string, registryId string) {
 	configuration.AddDefaultHeader("x-api-key", apiKey)
 	apiClient := omnicore.NewAPIClient(configuration)
 	ctx := context.WithValue(context.Background(), omnicore.ContextAccessToken, jwtToken)
-	resp, r, err := apiClient.DeviceApi.GetDevices(ctx, registryId, subscriptionId).Execute()
+	resp, r, err := apiClient.DeviceApi.GetDevices(ctx, subscriptionId, registryId).Execute()
 	if err != nil {
 		fmt.Fprintf(os.Stderr, "Error when calling `DeviceApi.GetDevices``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
