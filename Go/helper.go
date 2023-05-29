@@ -77,7 +77,7 @@ func IsTokenExpired(accessToken string) bool {
 	}
 
 	expTime := time.Unix(int64(exp), 0)
-	return time.Now().UTC().After(expTime)
+	return time.Now().UTC().After(expTime.Add(-5 * time.Second))
 }
 
 func FetchToken(currentToken string, clientID string, clientSecret string) (string, error) {
