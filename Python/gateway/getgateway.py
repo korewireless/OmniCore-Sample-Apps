@@ -1,6 +1,4 @@
 from __future__ import print_function
-import time
-import os
 import OmniCore
 from OmniCore.rest import ApiException
 from pprint import pprint
