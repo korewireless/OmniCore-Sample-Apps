@@ -44,6 +44,7 @@ with OmniCore.ApiClient(configuration) as api_client:
         print("Registry Full Name:%s" % api_response.name)
         print("Certificate 1:%s" %
               api_response.credentials[0].public_key_certificate.certificate)
+        print("Is Marina Routing:%s" % api_response.is_nats_route)
         print("Event Notification Config:%s" %
               api_response.event_notification_configs)
         print("State Notification Config:%s" %

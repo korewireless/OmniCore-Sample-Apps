@@ -62,6 +62,7 @@ with OmniCore.ApiClient(configuration) as api_client:
     registry.custom_onboard_notification_config = OmniCore.NotificationConfig(
         pubsubTopicName="projects/gcp project id /topics/pubsubtopic name"
     )
+    registry.is_nats_route=False
     try:
         # Add New Registry
         api_response = api_instance.create_registry(subscription_id, registry)
