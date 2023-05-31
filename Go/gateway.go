@@ -163,7 +163,7 @@ func bindDeviceToGateway(subscriptionId string, registryId string, deviceId stri
 	configuration.AddDefaultHeader("x-api-key", apiKey)
 	apiClient := omnicore.NewAPIClient(configuration)
 	ctx := context.WithValue(context.Background(), omnicore.ContextAccessToken, jwtToken)
-	resp, r, err := apiClient.DeviceApi.BindDevice(ctx, subscriptionId, registryId).Device(device).Execute()
+	resp, r, err := apiClient.DeviceApi.BindDevice(ctx, subscriptionId, registryId).Bind(device).Execute()
 	if err != nil {
 		fmt.Fprintf(os.Stderr, "Error when calling `DeviceApi.BindDevice``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -180,7 +180,7 @@ func unbindDeviceFromGateway(subscriptionId string, registryId string, deviceId 
 	configuration := omnicore.NewConfiguration()
 	configuration.AddDefaultHeader("x-api-key", apiKey)
 	apiClient := omnicore.NewAPIClient(configuration)
-	resp, r, err := apiClient.DeviceApi.UnBindDevice(ctx, subscriptionId, registryId).Device(device).Execute()
+	resp, r, err := apiClient.DeviceApi.UnBindDevice(ctx, subscriptionId, registryId).Unbind(device).Execute()
 	if err != nil {
 		fmt.Fprintf(os.Stderr, "Error when calling `DeviceApi.UnBindDevice``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -197,7 +197,7 @@ func bindDevicesToGateway(subscriptionId string, registryId string, deviceId str
 	configuration := omnicore.NewConfiguration()
 	configuration.AddDefaultHeader("x-api-key", apiKey)
 	apiClient := omnicore.NewAPIClient(configuration)
-	resp, r, err := apiClient.DeviceApi.BindDevices(ctx, subscriptionId, registryId).Device(device).Execute()
+	resp, r, err := apiClient.DeviceApi.BindDevices(ctx, subscriptionId, registryId).Bind(device).Execute()
 	if err != nil {
 		fmt.Fprintf(os.Stderr, "Error when calling `DeviceApi.BindDevices``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -214,7 +214,7 @@ func unbindDevicesFromGateway(subscriptionId string, registryId string, deviceId
 	configuration := omnicore.NewConfiguration()
 	configuration.AddDefaultHeader("x-api-key", apiKey)
 	apiClient := omnicore.NewAPIClient(configuration)
-	resp, r, err := apiClient.DeviceApi.UnBindDevices(ctx, subscriptionId, registryId).Device(device).Execute()
+	resp, r, err := apiClient.DeviceApi.UnBindDevices(ctx, subscriptionId, registryId).Unbind(device).Execute()
 	if err != nil {
 		fmt.Fprintf(os.Stderr, "Error when calling `DeviceApi.UnBindDevices``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
