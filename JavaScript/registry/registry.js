@@ -31,6 +31,7 @@ module.exports.createRegistry = (token,subId,regId,hostUrl,key) => {
   customOnboardNotificationConfig: {
     pubsubTopicName: ""
   },
+  isNatsRout: false, // If the field is false, the message is routs to Cloud Pub/Sub, if true, message routes to The Marina (OmniCore Stream Analytics)
   eventNotificationConfigs: [
     {
       pubsubTopicName: "" // String | Event Notification pubsub Topic
