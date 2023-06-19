@@ -37,7 +37,7 @@ with OmniCore.ApiClient(configuration) as api_client:
 
     )  
     sink.sink='pubsub' #type of sink
-    sink.config=OmniCore.ListSinksSinksInnerConfig(connectionParameter='gcp-project-name')
+    sink.config=OmniCore.Config(connectionParameter='gcp-project-name')
     sink.status=True
 
 
