@@ -14,7 +14,7 @@ you may need to run `pip` with root permission:
 ```sh
 `sudo pip install git+https://github.com/korewireless/OmniCore-Python-SDK.git`
 ```
-
+Note:Pydantic doesnt work currently with python SDK please install pydantic version 1.x.x(ex: pip install pydantic==1.10.12)
 [More Details](/Python/Readme.md)
 
 ## CSharp 
