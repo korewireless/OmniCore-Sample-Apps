@@ -4,9 +4,10 @@ import (
 	"context"
 	"encoding/base64"
 	"fmt"
-	omnicore "github.com/korewireless/OmniCore-Go-SDK"
 	"log"
 	"os"
+
+	omnicore "github.com/korewireless/OmniCore-Go-SDK"
 )
 
 func CreateDevice(subscriptionId string, registryId string, deviceId string) {
@@ -209,7 +210,7 @@ func DeleteDevice(subscriptionId string, registryId string, deviceId string) {
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 		return
 	}
-	fmt.Fprintf(os.Stdout, "Response from `DeviceApi.DeleteDevice`: %v\n", resp.GetInfo())
+	fmt.Fprintf(os.Stdout, "Response from `DeviceApi.DeleteDevice`: %v\n", resp)
 }
 
 func sendCommandToDevice(subscriptionId string, registryId string, deviceId string) {

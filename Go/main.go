@@ -41,6 +41,22 @@ func main() {
 
 	DeleteGateway("korewireless-development", "sample-registry-sdk", "sample-gateway-sdk")
 
+	GetVaultAudit("korewireless-development")
+	GetVaultStatus("korewireless-development")
+	GetVaultMetrics("korewireless-development","1700028095723","1700632895723")
+	GetFolders("korewireless-development")
+	GetVaultFiles("korewireless-development","sample-registry-sdk")
+	CreateVaultConfigurations("korewireless-development","gcs","{\"bucket\":\"the-vault-korewireless-development-1337\"}")
+	configId := GetVaultConfigurations("korewireless-development")
+	DeleteVaultConfiguration("korewireless-development",configId)
+	GetReplays("korewireless-development")
+	StartReplay("korewireless-development","sample-registry-sdk",1700159400,1700591400,"projects/gcp-iot-core-361019/topics/dumy-sub","sample-registry-sdk")
+	GetExports("korewireless-development")
+	StartExport("korewireless-development","the-vault-korewireless-development-1337","sample-registry-sdk")
+    CreateVaultKey("korewireless-development","sdk-test-key")
+	var keyId = GetVaultKeys("korewireless-development")
+	DeleteVaulKey("korewireless-development",keyId)
+
 	DeleteRegistry("korewireless-development", "sample-registry-sdk")
 
 }
