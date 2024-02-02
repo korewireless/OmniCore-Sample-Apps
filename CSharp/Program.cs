@@ -8,7 +8,7 @@ namespace Example
         {  
             string tokenUrlPath = "https://api.korewireless.com/Api/token"; 
             Configuration config = new Configuration();
-            config.BasePath = "https://api.korewireless.com/omnicore";
+            config.BasePath = "https://api.korewireless.com";
             config.ApiKey.Add("x-api-key", "provide-your-api-key");
             
             string token = await TokenHelper.FetchToken("", "provide-your-clientid", "provide-your-clientsecret",  tokenUrlPath);

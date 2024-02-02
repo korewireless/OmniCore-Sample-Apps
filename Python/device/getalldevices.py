@@ -3,7 +3,7 @@ import OmniCore
 from OmniCore.rest import ApiException
 from pprint import pprint
 from generatetoken import fetchToken
-# Defining the host is optional and defaults to https://api.korewireless.com/omnicore
+# Defining the host is optional and defaults to https://api.korewireless.com
 # See configuration.py for a list of all supported configuration parameters.
 
 # The client must configure the authentication and authorization parameters
@@ -20,7 +20,7 @@ access_token = fetchToken("Insert previous token if used,leave empty if no previ
 # API key is a static key which can be fetched from keys console
 # Configure access token and apikey
 configuration = OmniCore.Configuration(
-    host="https://api.korewireless.com/omnicore",
+   # #host="https://api.korewireless.com",
     access_token=access_token,
     api_key={"apiKey": "Insert Api Key Here"}
 )

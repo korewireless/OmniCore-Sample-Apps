@@ -1,6 +1,6 @@
 # OmniCoreModelAndStateManagementApi.RegistryApi
 
-All URIs are relative to *https://api.korewireless.com/omnicore*
+All URIs are relative to *https://api.korewireless.com*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
