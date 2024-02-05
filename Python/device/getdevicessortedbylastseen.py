@@ -36,7 +36,7 @@ with OmniCore.ApiClient(configuration) as api_client:
 
     try:
         # Get All Devices
-        api_response = api_instance.get_devices_last_seen(subscription_id, device_ids=device_ids)
+        api_response = api_instance.get_devices_last_seen(subscription_id, device_ids=device_ids,sort_by_client_online=True)
         print("The response of DeviceApi->get_devices:\n")
         print("Device Id:%s" % api_response.devices[0].id)
         print("Device LastHeart :%s" % api_response.devices[0].last_heartbeat_time)
