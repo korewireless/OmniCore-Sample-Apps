@@ -209,7 +209,7 @@ func DeleteDevice(subscriptionId string, registryId string, deviceId string) {
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 		return
 	}
-	fmt.Fprintf(os.Stdout, "Response from `DeviceApi.DeleteDevice`: %v\n", resp.GetInfo())
+	fmt.Fprintf(os.Stdout, "Response from `DeviceApi.DeleteDevice`: %v\n", resp)
 }
 
 func sendCommandToDevice(subscriptionId string, registryId string, deviceId string) {
@@ -286,4 +286,71 @@ func getStates(subscriptionId string, registryId string, deviceId string) {
 		fmt.Fprintf(os.Stdout, "BinaryData: %v\n", state.GetBinaryData())
 		fmt.Fprintf(os.Stdout, "Version: %v\n", state.GetUpdateTime())
 	}
+}
+
+func CreateTCPDevice(subscriptionId string, registryId string, deviceId string) {
+	configuration := omnicore.NewConfiguration()
+	configuration.AddDefaultHeader("x-api-key", apiKey)
+	
+	apiClient := omnicore.NewAPIClient(configuration)
+	var format = "RSA_X509_PEM"
+	var key = "-----BEGIN PUBLIC KEY-----\nMIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEAuIFF36Z+cXObhd4Hwtle\nnfXPD8ZqXZLTLpniyJnL7BONcGs55KRTfDuamy1KUHv7xm/Qe+MQDapaKuhj2lfa\nhr/Az88kvRphGOgpcoHly1SK/clDNQ8GFX769tj2Ef0ihgoedmDazwitkU1EqY+8\nDjFh7ZoKMPRA+VfHt2UXgu9+i12lZhbNRwc6ZttikglJBbCMKeU0gUa6GlK6+gdm\nUNVcYXODRTi4OMsKi+K21TP/X+8AAiTE5L+kNtpPUKUCaUNosLq7dVbAFAMPP9Vx\n+4k3JzbxhY4A+N6Os888KJ75p0KfGGfyLk5XRVH8r6O1cFra2t3BsxohWxBcuEg2\nEQIDAQAB\n-----END PUBLIC KEY-----"
+	var gatewayType = "NON_GATEWAY"
+	var gatewayAuth = "GATEWAY_AUTH_METHOD_UNSPECIFIED"
+	var value = false
+	var isTcp = true
+	val := float32(14)
+
+	device := omnicore.Device{
+		Id:       deviceId,
+		LogLevel: omnicore.LogLevel("INFO").Ptr(),
+		Blocked:  &value,
+		GatewayConfig: &omnicore.GatewayConfig{
+			GatewayType:       &gatewayType,
+			GatewayAuthMethod: &gatewayAuth,
+		},
+		Credentials: []omnicore.DeviceCredential{
+			{
+				PublicKey: &omnicore.PublicKeyCredential{
+					Key:    &key,
+					Format: format,
+				},
+			},
+		},
+		Metadata: &map[string]string{
+			"Key":  "Value",
+			"Data": "Sample Data",
+		},
+		IsTcpUdpDevice: &isTcp,
+		TcpUdpModelId:  &val,
+	}
+	fmt.Printf("device %+v", device.IsTcpUdpDevice)
+	ctx := context.WithValue(context.Background(), omnicore.ContextAccessToken, jwtToken)
+	response, _, err := apiClient.DeviceApi.CreateDevice(ctx, subscriptionId, registryId).Device(device).Execute()
+	if err != nil {
+		log.Print(err.Error())
+		return
+	}
+
+	fmt.Printf("Created TCP device:")
+	fmt.Printf("\tID: %s\n", response.GetId())
+	fmt.Printf("\tName: %s\n", response.GetName())
+	fmt.Printf("\tGatewayConfig: %+v\n", response.GatewayConfig.GatewayType)
+	fmt.Printf("\tBlocked: %t\n", response.GetBlocked())
+	fmt.Printf("\tLogLevel: %s\n", response.GetLogLevel())
+}
+
+func DeleteTCPDevice(subscriptionId string, registryId string, deviceId string) {
+	configuration := omnicore.NewConfiguration()
+	configuration.AddDefaultHeader("x-api-key", apiKey)
+	
+	apiClient := omnicore.NewAPIClient(configuration)
+	ctx := context.WithValue(context.Background(), omnicore.ContextAccessToken, jwtToken)
+	resp, r, err := apiClient.DeviceApi.DeleteDevice(ctx, subscriptionId, registryId, deviceId).Execute()
+	if err != nil {
+		fmt.Fprintf(os.Stderr, "Error when calling `DeviceApi.DeleteDevice``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+		return
+	}
+	fmt.Fprintf(os.Stdout, "Response from `DeviceApi.DeleteTCPDevice`: %v\n", resp)
 }
