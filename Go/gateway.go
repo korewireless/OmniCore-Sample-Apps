@@ -63,7 +63,7 @@ func GetGateway(subscriptionId string, registryId string, deviceId string) {
 	ctx := context.WithValue(context.Background(), omnicore.ContextAccessToken, jwtToken)
 	response, r, err := apiClient.DeviceApi.GetDevice(ctx, subscriptionId, registryId, deviceId).Execute()
 	if err != nil {
-		fmt.Fprintf(os.Stderr, "Error when calling `DeviceApi.GetDevice``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Error when calling `DeviceApi.GetGateway``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 		return
 	}
@@ -88,7 +88,7 @@ func GetGateways(subscriptionId string, registryId string) {
 		return
 	}
 	// response from `GetGateways`
-	fmt.Fprintf(os.Stdout, "Response from `DeviceApi.GetGateways`: \n")
+	fmt.Fprintf(os.Stdout, "Response from `DeviceApi.GetGateways`: \n%+v", resp.GetDevices())
 	for _, devices := range resp.GetDevices() {
 		fmt.Printf("\n\t Gateway Details: \t\n")
 		fmt.Printf("\tID: %s\n", devices.GetId())
