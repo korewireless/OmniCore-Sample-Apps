@@ -3,9 +3,10 @@ package main
 import (
 	"context"
 	"fmt"
-	omnicore "github.com/korewireless/OmniCore-Go-SDK"
 	"log"
 	"os"
+
+	omnicore "github.com/korewireless/OmniCore-Go-SDK"
 )
 
 func CreateGateway(subscriptionId string, registryId string, deviceId string) {
@@ -60,9 +61,9 @@ func GetGateway(subscriptionId string, registryId string, deviceId string) {
 	configuration.AddDefaultHeader("x-api-key", apiKey)
 	apiClient := omnicore.NewAPIClient(configuration)
 	ctx := context.WithValue(context.Background(), omnicore.ContextAccessToken, jwtToken)
-	response, r, err := apiClient.DeviceApi.GetDevice(ctx, registryId, subscriptionId, deviceId).Execute()
+	response, r, err := apiClient.DeviceApi.GetDevice(ctx, subscriptionId, registryId, deviceId).Execute()
 	if err != nil {
-		fmt.Fprintf(os.Stderr, "Error when calling `DeviceApi.GetDevice``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Error when calling `DeviceApi.GetGateway``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 		return
 	}
@@ -80,14 +81,14 @@ func GetGateways(subscriptionId string, registryId string) {
 	configuration.AddDefaultHeader("x-api-key", apiKey)
 	apiClient := omnicore.NewAPIClient(configuration)
 	ctx := context.WithValue(context.Background(), omnicore.ContextAccessToken, jwtToken)
-	resp, r, err := apiClient.DeviceApi.GetDevices(ctx, registryId, subscriptionId).GatewayListOptionsGatewayType("GATEWAY").Execute()
+	resp, r, err := apiClient.DeviceApi.GetDevices(ctx, subscriptionId, registryId).GatewayListOptionsGatewayType("GATEWAY").Execute()
 	if err != nil {
 		fmt.Fprintf(os.Stderr, "Error when calling `DeviceApi.GetGateways``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 		return
 	}
 	// response from `GetGateways`
-	fmt.Fprintf(os.Stdout, "Response from `DeviceApi.GetGateways`: \n")
+	fmt.Fprintf(os.Stdout, "Response from `DeviceApi.GetGateways`: \n%+v", resp.GetDevices())
 	for _, devices := range resp.GetDevices() {
 		fmt.Printf("\n\t Gateway Details: \t\n")
 		fmt.Printf("\tID: %s\n", devices.GetId())
@@ -153,7 +154,7 @@ func DeleteGateway(subscriptionId string, registryId string, deviceId string) {
 		return
 	}
 	// response from `GetGateway`: OmnicoreGateway
-	fmt.Fprintf(os.Stdout, "Response from `DeviceApi.DeleteGateway`: %v\n", resp.GetInfo())
+	fmt.Fprintf(os.Stdout, "Response from `DeviceApi.DeleteGateway`: %v\n", resp)
 }
 
 func bindDeviceToGateway(subscriptionId string, registryId string, deviceId string) {
