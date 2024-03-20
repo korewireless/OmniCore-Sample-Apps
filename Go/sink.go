@@ -46,14 +46,14 @@ func GetSink(subscriptionId string, sinkId string) {
 	
 	apiClient := omnicore.NewAPIClient(configuration)
 	ctx := context.WithValue(context.Background(), omnicore.ContextAccessToken, jwtToken)
-	response, r, err := apiClient.SinkApi.GetASink(ctx, subscriptionId, sinkId).Execute()
+	response, r, err := apiClient.SinkApi.GetSink(ctx, subscriptionId, sinkId).Execute()
 	if err != nil {
-		fmt.Fprintf(os.Stderr, "Error when calling `SinkApi.GetASink``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Error when calling `SinkApi.GetSink``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 		return
 	}
 	// response from `GetDevice`: OmnicoreDevice
-	fmt.Fprintf(os.Stdout, "Response from `SinkApi.GetASink`: \n")
+	fmt.Fprintf(os.Stdout, "Response from `SinkApi.GetSink`: \n")
 	fmt.Printf("\tID: %s\n", response.GetId())
 	fmt.Printf("\tSinkConfig: %+v\n", response.GetConfig())
 }
