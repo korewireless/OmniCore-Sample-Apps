@@ -206,3 +206,44 @@ func DeleteRegistry(subscriptionId string, registryId string) {
 	// response from `GetRegistry`: OmnicoreDeviceRegistry
 	fmt.Fprintf(os.Stdout, "Response from `RegistryApi.DeleteRegistry`: %v\n", resp.GetInfo())
 }
+
+func CreateTCPRegistry(registryId string, subscriptionId string, topicName string) {
+	configuration := omnicore.NewConfiguration()
+	configuration.AddDefaultHeader("x-api-key", apiKey)
+	
+	
+	apiClient := omnicore.NewAPIClient(configuration)
+	
+	var MqttConfig = "MQTT_DISABLED"
+	var HttpConfig = "HTTP_DISABLED"
+	registry := omnicore.DeviceRegistry{
+		Id: registryId,
+		EventNotificationConfigs: []omnicore.EventNotificationConfig{
+			{
+				PubsubTopicName: &topicName,
+			},
+		},
+		StateNotificationConfig: &omnicore.NotificationConfig{
+			PubsubTopicName: &topicName,
+		},
+		LogNotificationConfig: &omnicore.NotificationConfig{
+			PubsubTopicName: &topicName,
+		},
+		MqttConfig: &omnicore.MqttConfig{
+			MqttEnabledState: &MqttConfig,
+		},
+		HttpConfig: &omnicore.HttpConfig{
+			HttpEnabledState: &HttpConfig,
+		},
+		LogLevel: omnicore.LogLevel("INFO").Ptr(),
+	}
+
+	ctx := context.WithValue(context.Background(), omnicore.ContextAccessToken, jwtToken)
+	_, resp, err := apiClient.RegistryApi.CreateRegistry(ctx, subscriptionId).Registry(registry).Execute()
+	if err != nil {
+		log.Printf("Error %+v %+v", resp, err.Error())
+		return
+	}
+
+	fmt.Printf("Created TCP registry!")
+}
