@@ -25,6 +25,7 @@ token = TokenHelper.fetchToken(token, clientId, clientSecret, tokenUrl)
 
 // Device Api calls
 deviceApi.createDevice(token, subscriptionId, registryId, deviceID, hostUrl,apikey)
+deviceApi.createTCPDevice(token, subscriptionId, registryId, deviceID, hostUrl,apikey)
 deviceApi.getDevice(token, subscriptionId, registryId, deviceID, hostUrl,apikey);
 deviceApi.updateDevice(token, subscriptionId, registryId, deviceID, hostUrl,apikey)
 deviceApi.getDevices(token, subscriptionId, registryId, deviceID, hostUrl,apikey)
