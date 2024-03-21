@@ -80,6 +80,52 @@ module.exports.createDevice = (token, subId, regId, devId, hostUrl, key) => {
   });
 }
 
+module.exports.createTCPDevice = (token, subId, regId, devId, hostUrl, key) => {
+  let defaultClient = OmnicoreModelAndStateManagementApi.ApiClient.instance;
+  defaultClient.basePath = hostUrl // API url end point
+  // Configure API key authorization: apiKey
+  var apiKey = defaultClient.authentications['apiKey'];
+  apiKey.apiKey = key
+  // Configure Bearer (JWT) access token for authorization: bearerAuth
+  let bearerAuth = defaultClient.authentications['bearerAuth'];
+  bearerAuth.accessToken = token
+  let apiInstance = new OmnicoreModelAndStateManagementApi.DeviceApi();
+  let subscriptionId = subId; // String | Subscription ID
+  let registryId = regId; // String | Registry ID
+  let deviceObj = {
+    id: devId,
+    logLevel: "INFO",
+    blocked: false,
+    gatewayConfig: {
+      gatewayType: "NON_GATEWAY",   // String | Gateway Type
+      gatewayAuthMethod: "GATEWAY_AUTH_METHOD_UNSPECIFIED" // String | Gateway Auth Method
+    },
+    credentials: [
+      {
+        expirationTime: "",
+        publicKey: {
+          format: "RSA_X509_PEM",
+          key: "-----BEGIN CERTIFICATE-----\nMIIDujCCAqKgAwIBAgITaOszYpBme+SRHZUkFWLgDs7EMDANBgkqhkiG9w0BAQsF\nADAeMQ0wCwYDVQQKEwRrb3JlMQ0wCwYDVQQDEwRrb3JlMB4XDTIyMDgwNDEwMzQy\nMloXDTMyMDgwMTEwMzIwOFowADCCASIwDQYJKoZIhvcNAQEBBQADggEPADCCAQoC\nggEBAMFvTBHPdgH7+5wVlUnEdIS/0a4p9fkVzMdEMdDVr5s62VoGO7nZWxMCaxxU\nXqQiGuX3N7SINyD7h8LI8CxQsn5zyDda3QVNGU7I96iWjwzOYJmNHAN1nRI2hRDY\n8fJoQgTZI+IiRDBmgkmL9yjTY04qY7UP8zpofuMnKRuTwP6Ey1eFEMBqFfvgwrVl\niLNcq9At0bd/vlQ0VUnKV6oKqSTq9ZDPB6Cxu5amhejVwTeE6p5GGmiKw5vskmtB\ndGNgsom1K/pJdOMes8lODVp00tIVnsplL3jLgrWfbfCPALRnGz/C5XlKW8fNKEuW\nqFw2Lhnk51dtobw/oBo7vJcx2w0CAwEAAaOCAQ0wggEJMA4GA1UdDwEB/wQEAwIF\noDAMBgNVHRMBAf8EAjAAMB0GA1UdDgQWBBQUiRS8X3OWpJNpjQoJ+22xGb3xXTAf\nBgNVHSMEGDAWgBTKO7S10CConGVgZZli7NVAcim/AzCBjQYIKwYBBQUHAQEEgYAw\nfjB8BggrBgEFBQcwAoZwaHR0cDovL3ByaXZhdGVjYS1jb250ZW50LTYyZTM5YmRh\nLTAwMDAtMjI0My1hNjFhLTNjMjg2ZDRlZWUwYS5zdG9yYWdlLmdvb2dsZWFwaXMu\nY29tL2MwZGQxZjg3ZDcwZGZhMDEwNGEwL2NhLmNydDAZBgNVHREBAf8EDzANggtn\nYWRnZW9uLmNvbTANBgkqhkiG9w0BAQsFAAOCAQEAK82b/xGn8B6Nfogw0myKjy3O\nWg53YPXuct3E04qRmD3JJtFzpSkjI2WyRmIkRX1b5SKF+ImOmGzvENZDkjT/Y2I/\nnsBL639OlXnz/+GYSq4rL6fVxXistP4LGA+khoBYSfHFZb7EYoVOYJFzZjnvJbtz\n7XG0jTMeHo8KhCBPxrNWkOERrcc7OWqREldQ36yg7zdbRLjDOjeD6FByTrpRhbDC\n0AeozF9ug9W/gPYtnkI++ksUqjJcV06uGd+9XLJPGcjH0Bai1alxROh+dkWx6TcB\nHC94el4KR6EJijMvylmnOyKHedmYaDvb52+B6zXTW9rQkh1UycmONlmAlA3OeQ==\n-----END CERTIFICATE-----"
+        }
+      }
+    ],
+    metadata: {},
+    isTcpUdpDevice: true,
+    tcpUdpModelId: parseFloat(14),
+  }
+  apiInstance.createDevice(subscriptionId, registryId, deviceObj, (error, data, response) => {
+    if (error) {
+      console.error(error);
+    } else {
+      console.log('Created TCP device: \n');
+      console.log('Device Id: ', data.id);
+      console.log('blocked: ', data.blocked);
+      console.log('createdOn:', data.createdOn);
+      console.log('deviceErrors: ', data.deviceErrors);
+    }
+  });
+}
+
 module.exports.getDevice = (token, subId, regId, devId, hostUrl, key) => {
   let defaultClient = OmnicoreModelAndStateManagementApi.ApiClient.instance;
   defaultClient.basePath = hostUrl
